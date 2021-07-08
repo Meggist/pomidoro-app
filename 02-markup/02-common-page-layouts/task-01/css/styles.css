@@ -1,0 +1,599 @@
+body {
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+header {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+nav {
+    margin: 0;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: block;
+}
+
+header nav ul .first-nav-item {
+    float: left;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul .second-nav-item {
+    float: right;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 0.4em;
+}
+
+header nav ul .second-nav-item button {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    margin-right: 0;
+    width: 7.3em;
+    border: none;
+    background: #0EBFDD;
+    color: #F7FDFE;
+    height: 2.8em;
+    border-radius: 1.5em;
+    font-size: 0.8em;
+}
+
+a {
+    display: inline-block;
+}
+
+header nav ul:first-child img {
+    width: 6.1em;
+    padding-top: 0.4em;
+    padding-left: 0.8em;
+}
+
+.third-nav-item,
+.fourth-nav-item,
+.fifth-nav-item {
+    font-style: normal;
+    color: #82868F;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    font-weight: 500;
+    border-top: solid #DBE0E3 1px;
+    padding: 0.8em 0;
+    margin-top: 0.6em;
+}
+
+.mission {
+    height: 25.4rem;
+    width: 100%;
+    background-image: url("../images/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 85%;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    width: 50%;
+    font-size: 2.9em;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.1em;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+p {
+    margin: 0;
+    font-size: 1.3em;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    width: 75%;
+    font-weight: 500;
+    line-height: 1.2em;
+    color: white;
+    padding: 0.8em 1.4em 0;
+    height: 100%;
+}
+
+section {
+    width: 100%;
+}
+
+main section .about h2 {
+    color: #0EBFDD;
+    font-size: 2.7em;
+    padding-top: 0.5em;
+}
+
+main section .about p {
+    color: #45494D;
+    padding: 1em;
+    font-weight: bold;
+    text-align: center;
+    width: 85%;
+    padding-bottom: 3em;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+}
+
+main section .team {
+    background-color: #0FBFDE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main section .team h2 {
+    font-size: 2.7em;
+    padding-top: 0.6em;
+}
+
+.workers {
+    width: 45%;
+    margin-top: 3em;
+}
+
+.person-image {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.first-person,
+.second-person,
+.third-person {
+    display: flex;
+    flex-direction: column;
+    height: 33%;
+}
+
+.second-person,
+.third-person {
+    padding-top: 1.5em;
+}
+
+.name {
+    color: #F7FDFE;
+    font-size: 1.2em;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-weight: 800;
+}
+
+.position {
+    color: #F7FDFE;
+    font-size: 1em;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-weight: 400;
+}
+
+h3 {
+    text-align: center;
+    width: 50%;
+    font-size: 0.9em;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    margin-top: 4.2em;
+}
+
+main section .newsletter h2 {
+    color: #0EBFDD;
+    width: 100%;
+    padding: 0;
+    padding-top: 0.5em;
+}
+
+main section .newsletter p {
+    color: #45494D;
+    font-weight: 600;
+    width: 80%;
+    text-align: center;
+    padding: 0;
+    margin-top: 1em;
+}
+
+section .newsletter {
+    background-color: #F9F5ED;
+}
+
+section .newsletter input {
+    display: block;
+    border: 1px solid #959495;
+    padding: 0;
+    color: black;
+    background: url("../images/email.svg");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center;
+    margin-top: 3em;
+    height: 2.6em;
+    width: 16.2em;
+    border-radius: 0.5em;
+    background-size: 1.5em;
+    margin-bottom: 1.5em;
+    background-color: white;
+}
+
+section .newsletter input::placeholder {
+    color: #C2C2C2;
+    font-style: italic;
+    padding-left: 0.8em;
+    font-size: 1em;
+}
+
+.footer-about {
+    background-color: #44494C;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-about ul li a {
+    color: #D7DEE4;
+    font-family: 'Nunito', sans-serif;
+    font-weight: normal;
+    font-size: 1.3em;
+}
+
+.footer-about ul li {
+    padding-top: 2.4em;
+}
+
+.footer-about ul {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.footer-about .first-elem {
+    padding-top: 0;
+}
+
+.icons {
+    display: flex;
+    align-self: center;
+    width: 14.5em;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.icons a {
+    display: flex;
+    border: solid #73777A 1px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 4em;
+    height: 4em;
+}
+
+.icons a svg {
+    display: block;
+    width: 2em;
+    height: 2em;
+}
+
+.policy {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    border-top: solid #73777A 1px;
+    margin-top: 1.7em;
+}
+
+.policy ul li {
+    display: inline-block;
+    color: #878A8F;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2em;
+    padding: 0;
+    padding-top: 0.8em;
+}
+
+.policy ul {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5em;
+}
+
+.footer-about .first-elem {
+    margin-top: -0.3em;
+}
+
+@media (min-width:480px) {
+    .mission {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content {
+        height: auto;
+        padding-top: 3em;
+    }
+    h2 {
+        width: 100%;
+    }
+    main section .about h2 {
+        margin-top: -1em;
+    }
+    main section .about p {
+        width: 75%;
+        padding-bottom: 1.5em;
+    }
+    .workers>div {
+        height: auto;
+        padding-top: 0;
+        padding: 0 1.5em;
+    }
+    .workers {
+        flex-wrap: wrap;
+        width: 85%;
+        display: flex;
+        justify-content: center;
+        margin-top: 2.5em;
+    }
+    .third-person {
+        margin-top: 0.7em;
+    }
+    main section .newsletter h2 {
+        margin-top: -1em;
+    }
+    main section .newsletter p {
+        width: 75%;
+    }
+    section .newsletter input {
+        margin-top: 1.5em;
+    }
+    header {
+        position: sticky;
+        top: 0px;
+    }
+    header nav ul .second-nav-item button {
+        border-radius: 1em;
+    }
+}
+
+@media (min-width:600px) {
+    .third-nav-item,
+    .fourth-nav-item,
+    .fifth-nav-item {
+        border-top: none;
+        width: auto;
+        font-size: 0.9em;
+    }
+    header nav ul:first-child img {
+        width: 5em;
+        padding: 1em 0;
+    }
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+    header nav ul .first-nav-item,
+    header nav ul .second-nav-item {
+        width: auto;
+        float: none;
+    }
+    header nav ul .second-nav-item {
+        order: 5;
+    }
+    header nav ul .second-nav-item button {
+        border-radius: 1em;
+    }
+    header nav ul .first-nav-item {
+        margin-right: auto
+    }
+    .second-nav-item,
+    .third-nav-item,
+    .fourth-nav-item,
+    .fifth-nav-item {
+        padding: 0.8em 0.8em;
+    }
+    nav ul li {
+        margin-bottom: -0.2em;
+    }
+    .mission {
+        height: 25rem;
+    }
+    .mission .content {
+        padding-top: 4.4em;
+    }
+    footer {
+        background-color: #44494C;
+    }
+    .footer-about {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 90%;
+        margin: auto;
+        justify-content: space-between;
+    }
+    .policy {
+        width: 100%;
+    }
+    .footer-nav {
+        flex-direction: row;
+        display: flex;
+    }
+    .footer-about .footer-nav li {
+        padding: 2.5em 2.1em;
+    }
+    .footer-about .footer-nav {
+        margin-top: 0.4em;
+        width: 18em;
+    }
+    .footer-nav li {
+        font-size: 0.6em;
+    }
+    .icons {
+        margin-top: 1em;
+        width: 10.5em;
+    }
+    .footer-about .first-elem {
+        padding: 2.5em 0;
+        margin: 0;
+    }
+    .icons a {
+        width: 2.6em;
+        height: 2.6em;
+    }
+    .icons a svg {
+        width: 1.3em;
+        height: 1.3em;
+    }
+    .policy {
+        margin-top: 0.5em;
+    }
+    .policy ul {
+        flex-direction: row;
+        padding-bottom: 1em;
+        margin-top: 0.5em;
+        justify-content: flex-end;
+        padding-top: 0.4em;
+    }
+    .policy .first-elem {
+        margin: 0;
+        padding: 0;
+    }
+    .policy ul li,
+    .policy .first-elem {
+        font-size: 0.8em;
+        padding: 0;
+        padding-right: 0.8em;
+    }
+    .policy ul li:nth-child(3) {
+        padding-left: 0.6em;
+        border-left: solid #73777A 1px;
+    }
+    .policy ul li:nth-child(2) {
+        padding: 0 0.9em;
+        border-left: solid #73777A 1px;
+    }
+}
+
+@media (min-width:768px) {
+    .mission {
+        height: 18.5em;
+    }
+    .mission .content {
+        padding-top: 0;
+    }
+    .about {
+        height: 13em;
+    }
+    main section .newsletter p {
+        width: 85%;
+        margin-top: 0.6em;
+    }
+    .third-person {
+        margin-top: 0;
+    }
+}
+
+@media (min-width:1024px) {
+    .mission {
+        height: 31.2em;
+        justify-content: flex-end;
+    }
+    .mission .content {
+        margin: 0;
+        padding-bottom: 5.1em;
+    }
+    .about {
+        height: 17.8em;
+    }
+    .about p {
+        padding-bottom: 2em;
+        font-size: 1.3em;
+    }
+    .about .content {
+        margin-top: 2.4em;
+    }
+    .team h2 {
+        padding: 2.4em 0;
+        margin-top: 0.8em;
+    }
+    .workers>div {
+        padding: 0 3.5em;
+    }
+    .workers {
+        margin-top: 0;
+    }
+    .team h3 {
+        padding: 2.5em 0;
+        padding-bottom: 3em;
+    }
+    main section .newsletter h2 {
+        margin-top: -0.2em;
+    }
+    section .newsletter input {
+        margin-top: 1.5em;
+        margin-bottom: 4.4em;
+    }
+    main section .newsletter p {
+        width: 80%;
+        padding-top: 0.4em;
+        max-width: 50rem
+    }
+    .footer-about .footer-nav {
+        width: auto;
+    }
+    .footer-about .footer-nav li:nth-child(3) {
+        padding-left: 5em;
+    }
+    .footer-about {
+        max-width: 59rem
+    }
+    .mission p {
+        max-width: 59rem
+    }
+    .about p {
+        max-width: 60rem
+    }
+    nav {
+        max-width: 59rem
+    }
+    body {
+        max-width: 1366px;
+        margin: auto;
+    }
+}
