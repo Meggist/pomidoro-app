@@ -1,0 +1,82 @@
+@mixin button($color-light, $color-dark) {
+  width: 200px;
+  height: 50px;
+  background: linear-gradient($color-light, $color-dark);
+  margin: 30px 30px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  box-shadow: inset 0 0 1px 1px rgb(0, 0, 0, 0.4);
+}
+
+@mixin button-hover($color) {
+  box-shadow: none;
+  background-color: $color;
+}
+
+@mixin button-focus($color) {
+  box-shadow: inset 0 0 2px 2px rgb(0, 0, 0, 0.4);
+  background-color: $color;
+}
+
+@mixin checkbox-checked($color-light, $color-dark) {
+  background: linear-gradient($color-light, $color-dark)
+}
+
+@mixin page-button($color-light, $color-dark) {
+  height: 35px;
+  width: 35px;
+  color: #454C4D;
+  background: linear-gradient($color-light, $color-dark);
+  border: none;
+  box-shadow: inset 0 0 1px 1px rgb(0, 0, 0, 0.1);
+}
+
+@mixin page-button-hover($color,$bg) {
+  border: none;
+  color: $color;
+  background: $bg;
+}
+
+@mixin page-button-focus($color-light, $color-dark) {
+  background: linear-gradient($color-light, $color-dark);
+  color: white;
+  border: none;
+}
+
+@mixin nav {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  width: 50%;
+  padding-bottom: 20px;
+}
+
+@mixin nav-elem {
+  width: auto;
+  padding: 10px;
+  font-size: 20px;
+  display: inline-block;
+  color: rgba(0,0,0,0.5);
+  border-bottom: 2px solid rgb(214,213,213);
+}
+
+@mixin nav-elem-hover($color) {
+  border-bottom: solid $color 2px;
+}
+
+@mixin tabs-button {
+  padding: 7px;
+  width: 80px;
+  height: 35px;
+  border: 1px solid rgb(214,213,213);
+  background: white;
+  font-size: 15px;
+}
+
+@mixin tabs-button-hover ($color) {
+  color: white;
+  background: $color;
+  border: none;
+}
+

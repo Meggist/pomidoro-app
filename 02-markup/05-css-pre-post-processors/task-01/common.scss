@@ -1,0 +1,269 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  background-color: rgb(243, 243, 243);
+  margin: 0;
+}
+
+.main {
+  background-color: rgb(243, 243, 243);
+  max-width: 1366px;
+  margin: auto;
+}
+
+p {
+  text-transform: uppercase;
+  padding-left: 50px;
+  font-style: normal;
+  font-size: 30px;
+}
+
+.button--green {
+  @include button($first-button_light, $first-button_dark);
+
+  &:hover {
+    @include button-hover($first-button_hover)
+  }
+
+  &:focus {
+    @include button-focus(#2bb164)
+  }
+}
+
+.button--yellow {
+  @include button($second-button_light, $second-button_dark);
+
+  &:hover {
+    @include button-hover($second-button_hover)
+  }
+
+  &:focus {
+    @include button-focus(#f2c713)
+  }
+}
+
+.button--red {
+  @include button($third-button_light, $third-button_dark);
+
+  &:hover {
+    @include button-hover($third-button_hover)
+  }
+
+  &:focus {
+    @include button-focus(#e85040)
+  }
+}
+
+.button--blue {
+  @include button($fourth-button_light, $fourth-button_dark);
+
+  &:hover {
+    @include button-hover(blue-hover)
+  }
+
+  &:focus {
+    @include button-focus(#2a81ba)
+  }
+}
+
+.button--black {
+  @include button($fifth-button_light, $fifth-button_dark);
+
+  &:hover {
+    @include button-hover($fifth-button_hover)
+  }
+
+  &:focus {
+    @include button-focus(#4d5455)
+  }
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.checkbox-row {
+  margin-left: 50px;
+}
+
+label {
+  padding-right: 20px;
+}
+
+.checkbox {
+  display: none;
+}
+
+input[type=checkbox]:checked + span:before {
+  content: '\2714';
+  position: absolute;
+  top: -1px;
+  left: 8px;
+  color: white;
+  font-size: 25px;
+}
+
+input[type=checkbox]:checked + .span-checkbox--green {
+  @include checkbox-checked($first-button_light, $first-button_dark);
+}
+
+input[type=checkbox]:checked + .span-checkbox--yellow {
+  @include checkbox-checked($second-button_light, $second-button_dark);
+}
+
+input[type=checkbox]:checked + .span-checkbox--red {
+  @include checkbox-checked($third-button_light, $third-button_dark);
+}
+
+input[type=checkbox]:checked + .span-checkbox--blue {
+  @include checkbox-checked($fourth-button_light, $fourth-button_dark);
+}
+
+input[type=checkbox]:checked + .span-checkbox--black {
+  @include checkbox-checked($fifth-button_light, $fifth-button_dark);
+}
+
+.span-checkbox {
+  height: 35px;
+  width: 35px;
+  border: 1px solid black;
+  display: inline-block;
+  position: relative;
+  background-color: #e8ebec;
+}
+
+input[type=checkbox]:disabled + .span-checkbox {
+  opacity: 0.6;
+}
+
+.paginations-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+}
+
+.paginations-buttons-group {
+  margin-right: 100px;
+}
+
+
+.paginations-button--arrow {
+  @include page-button($page-button_light, $page-button_dark);
+
+  &:hover {
+    @include page-button-hover(black, #CACFD2);
+  }
+
+  &:focus {
+    @include page-button-hover(black, #CACFD2)
+  }
+}
+
+.paginations-button--green {
+  @include page-button($page-button_light, $page-button_dark);
+
+  &:hover {
+    @include page-button-hover(black, #27AE60);
+  }
+
+  &:focus {
+    @include page-button-focus($first-button_light, $first-button_dark);
+  }
+}
+
+.paginations-button--yellow {
+  @include page-button($page-button_light, $page-button_dark);
+
+  &:hover {
+    @include page-button-hover(black, #F1C40F);
+  }
+
+  &:focus {
+    @include page-button-focus($second-button_light, $second-button_dark)
+  }
+}
+
+.paginations-button--red {
+  @include page-button($page-button_light, $page-button_dark);
+
+  &:hover {
+    @include page-button-hover(black, #E74C3C);
+  }
+
+  &:focus {
+    @include page-button-focus($third-button_light, $third-button_dark)
+  }
+}
+
+.paginations-button--blue {
+  @include page-button($page-button_light, $page-button_dark);
+
+  &:hover {
+    @include page-button-hover(black, #2980B9);
+  }
+
+  &:focus {
+    @include page-button-focus($fourth-button_light, $fourth-button_dark);
+  }
+}
+
+.paginations-row {
+  margin-top: 30px;
+}
+
+
+.tabs-nav{
+  @include nav;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs-nav-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tabs-buttons-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tabs-elem--green {
+  @include nav-elem;
+  &:hover {@include nav-elem-hover($first-button_hover)}
+}
+
+.tabs-elem--red {
+  @include nav-elem;
+  &:hover {@include nav-elem-hover($third-button_hover)}
+}
+
+.tabs-row {
+  margin-left: 50px;
+  width: 100%;
+}
+
+.tabs-button--green {
+  @include tabs-button ;
+  &:hover {
+      @include tabs-button-hover($first-button_hover)
+  }
+}
+
+.tabs-button--red {
+  @include tabs-button;
+  &:hover {
+    @include tabs-button-hover($third-button_hover)
+  }
+}
+
+.tabs-buttons-group {
+  padding: 0 40px;
+  display: flex;
+}
+
