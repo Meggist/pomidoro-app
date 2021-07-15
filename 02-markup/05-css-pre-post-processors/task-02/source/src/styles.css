@@ -1,0 +1,178 @@
+
+/* Base */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display SC", Times, serif;
+  color: #333;
+}
+
+p,
+li,
+a {
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.75em;
+  color: #4e4e4e;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: #333 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Common */
+
+.container {
+  max-width: 662px;
+  margin: auto;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.section:first-child {
+  margin: 95px 0 70px;
+}
+
+.section .container {
+  border-bottom: 1px solid #ccc;
+}
+
+.section h1,
+.section h2 {
+  margin-bottom: 30px;
+  font-size: 2.25em;
+  text-transform: uppercase;
+}
+
+/* Header */
+
+.header {
+  padding: 23px 0;
+  background: #f4f4f4;
+}
+
+.header .navbar {
+  margin-bottom: 0;
+}
+
+.header .navbar li a {
+  color: #a7a7a7;
+}
+
+.header .navbar li.active a {
+  color: #4d4d4d;
+}
+
+/* Main article */
+
+/* About */
+
+.about .units-row .avatar {
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+}
+
+/* Experiences */
+
+.experiences .work-list li {
+  font-size: 0.9375em;
+  color: #8c8c8c;
+}
+
+.experiences .work-list li a {
+  padding-bottom: 5px;
+  font-size: 1.1875em;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.experiences .work-list li a:hover {
+  border-bottom: 1px solid #333;
+}
+
+/* Achievements & Skills */
+
+.achievements .award-list li:first-child,
+.skills .skill-list li:first-child {
+  font-size: 0.9375em;
+  color: #8c8c8c;
+}
+
+/* Aside */
+
+.quote {
+  margin-top: 90px;
+  padding: 20px 0;
+  background: url(../img/bg.jpg);
+}
+
+.quote h3 {
+  margin: 100px 0;
+  padding: 40px 20px;
+  font-size: 2.25em;
+  color: #fff;
+  border: 5px solid #fff;
+}
+
+/* Footer */
+
+.footer {
+  padding-top: 50px;
+}
+
+.social {
+  margin: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+.social li {
+  float: left;
+  margin: 0 10px 0 20px;
+}
+
+.social li a {
+  display: block;
+  width: 33px;
+  height: 33px;
+  text-indent: -9999px;
+  background-image: url(../img/icons.png);
+}
+
+.social .facebook a {
+  background-position: 71px 0;
+}
+
+.social .facebook a:hover {
+  background-position: 71px 33px;
+}
+
+.social .twitter a {
+  background-position: 33px 0;
+}
+
+.social .twitter a:hover {
+  background-position: 33px 33px;
+}
+
+.social .google a {
+  background-position: 0 0;
+}
+
+.social .google a:hover {
+  background-position: 0 33px;
+}
+
+.social-flex {
+  display: flex;
+}
