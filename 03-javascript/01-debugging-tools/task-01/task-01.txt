@@ -1,0 +1,6 @@
+1. The first problem was that console.log showed error. I started searching the bug and found out this code in app-view.js "function ($,console, foo, bar)". So we should delete "console" in the agruments of main function in app-view.js because this one overlaps the "console" method, that prevents correct working of "log" function.
+2. The second problem is no existing button after marking the task as completed. I found this code in
+index.html <% if (completed) { %>
+      <button id="clear-completed">Clear completed (<%= completed %>)</button>
+      <% } %>
+So I decided to look for this boolean value. I found out this value in collections/todos.js and code of this value was incorrect. We should rename "completed" instead of "compledet" the property, that returns true if the task is marked as completed. There is that property in variable "Todos" in collections/todos.js
