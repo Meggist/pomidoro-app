@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+<section class="task-details">
+    <h1 class="task-name">Task: Events &amp; DOM manipulation</h1>
+    <div class="task-description">
+        <p>All controls that you need are located below.</p>
+    </div>
+</section>
+
+<section class="output-config">
+    <h3>Configuration controls</h3>
+    <form class="config-group">
+        <!-- input attrs browser support: https://developer.mozilla.org/en/docs/Web/HTML/Element/input -->
+        <!-- Feature        Chrome  Firefox (Gecko) Internet Explorer   Opera   Safari-->
+        <!-- type=number    6.0[7]  29.0 (29.0)     10                  10.62   (Yes) -->
+        <label>
+            Columns start (number):
+            <input type="number" class="js-config-output-cols" min="1">
+        </label>
+        <label>
+            Rows start (number):
+            <input type="number" class="js-config-output-rows" min="1">
+        </label>
+        <label>
+            Table size (number):
+            <input type="number" class="js-config-output-size" min="1">
+        </label>
+        <button class="js-cta-render-table btn btn-success">Render table</button>
+    </form>
+    <p>-> Table should re-render every time you hit the action button or ENTER key (custom form submit)</p>
+    <p> --- </p>
+</section>
+
+
+<section class="output">
+    <h3>Output</h3>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>TODO: #</th>
+                <th>TODO: col + index (start from 1)</th>
+                <th>TODO: col + index (start from 1)</th>
+                <th>TODO: col + index (start from 1)</th>
+                <th>TODO: col + index (start from 1)</th>
+                <th>TODO: col + index (start from 1)</th>
+                <th>TODO: col + index (start from 1)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">TODO: row + index (start from 1)</th>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+            </tr>
+            <tr>
+                <th scope="row">TODO: row + index (start from 1)</th>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+            </tr>
+            <tr>
+                <th scope="row">TODO: row + index (start from 1)</th>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+                <td>TODO: generate Table cell</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+<script src="js/multiplication-table.js"></script>
+<script src="js/table.js"></script>
+</body>
+</html>
