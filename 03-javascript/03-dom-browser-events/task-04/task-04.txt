@@ -1,0 +1,26 @@
+1.	`'' + 1 + 0` // '10', After '' + 1, the number(1) becomes string because JS means this operation as the addition of strings, and next operation looks '1' + 0.
+2.	`'' - 1 + 0` // -1, '' - 1 = -1 - Number, because in this situation Js changes '' to 0.
+3.	`true + false`// 1, in this operation Js changes boolean values to number ones i.e. true => 1, false => 0.  
+4.	`6 / '3'`// 2, in this situation values become numbers.
+5.	`'2' * '3'`// 6, in this situation values become numbers.
+6.	`4 + 5 + 'px'`// '9px', 4 + 5 = 9, because these values are numbers, and  Js perceives 9 + 'px' as the additional of strings.
+7.	`'$' + 4 + 5` // '$45', Js perceives this operations as the additional of strings.
+8.	`'4' - 2` // 2, Js changes the first value to Number.
+9.	`'4px' - 2`// Nan, Js changes the first value to Number.
+10.	`7 / 0` // Infinity.
+11.	`parseInt('09')` // 9, this method changes to Number.
+12.	`'  -9\n' + 5` //  -9/n 5, Js perceives this operations as the additional of strings.
+13.	`'  -9\n' - 5` // -14, Js changes the first value to Number.
+14.	`5 && 2` // 2, && returns first false value or last value.
+15.	`2 && 5` // 5, && returns first false value or last value.
+16.	`5 || 0` // 5, || returns first true value or last value.
+17.	`0 || 5` // 5, || returns first true value or last value.
+18.	`null + 1` // 1, null changes to 0.
+19.	`undefined + 1` // Nan.
+20.	`(1,5 - 1) * 2` // 8.
+21.	`+ ''` // 0, '+' changes string value to number one as parseInt().
+22.	`+[]` // 0.
+23.	`[] + []` // , cause they are arrays.
+24.	`[7] + [8]` // '78'.
+25.	`+[8]` // 8.
+26.	`+[7,8]`// Nan.
