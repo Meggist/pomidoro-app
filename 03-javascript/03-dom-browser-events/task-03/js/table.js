@@ -1,10 +1,17 @@
 let tableRenderButton = document.getElementsByTagName('button')[0];
 
-tableRenderButton.onclick = function createTable(event) {
+tableRenderButton.onclick = (event) => {
     event.preventDefault();
+
     let colStart = +document.getElementsByClassName('js-config-output-cols')[0].value;
     let rowStart = +document.getElementsByClassName('js-config-output-rows')[0].value;
     let tableSize = +document.getElementsByClassName('js-config-output-size')[0].value;
+
+    if (Number.isInteger(tableSize) !== true || Number.isInteger(colStart) !== true
+        || Number.isInteger(rowStart) !== true || colStart < 1 || rowStart < 1 || tableSize < 1) {
+        alert('Function requires three integer arguments that are greater or equal than 1')
+        return;
+    }
 
     let tableValues = multiplicationTable(colStart, rowStart, tableSize);
 
@@ -40,7 +47,7 @@ tableRenderButton.onclick = function createTable(event) {
         }
     }
 
-    table.onmouseover = function(event) {
+    table.onmouseover = (event) => {
         let target = event.target;
         if (target.tagName === 'TD') {
             target.classList.add('hover');
@@ -51,7 +58,7 @@ tableRenderButton.onclick = function createTable(event) {
 
     }
 
-    table.onmouseout = function (event) {
+    table.onmouseout = (event) => {
         let target = event.target;
         if (target.tagName === 'TD') {
             target.classList.remove('hover');
@@ -61,22 +68,20 @@ tableRenderButton.onclick = function createTable(event) {
         }
     }
 
-    table.onclick = function (event) {
+
+    table.addEventListener('click', (event) => {
         let target = event.target;
+
         if (target.tagName === 'TD') {
             let row = target.parentNode;
             let tbody = row.parentNode;
             let previousRow = tbody.children[row.rowIndex-2];
-            if (previousRow === undefined){
-                return;
+            if (previousRow !== undefined){
+                previousRow.insertAdjacentElement('beforebegin', row)
             }
-            previousRow.insertAdjacentElement('beforebegin', row)
         }
-    }
 
-    table.addEventListener('click', function(event) {
         if(event.ctrlKey){
-            let target = event.target;
             if (target.tagName === 'TD') {
                 let row = target.parentNode;
                 let tbody = row.parentNode;
@@ -85,6 +90,7 @@ tableRenderButton.onclick = function createTable(event) {
         }
     })
 }
+
 
 
 

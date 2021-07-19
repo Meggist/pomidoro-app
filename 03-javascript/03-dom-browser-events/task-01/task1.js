@@ -1,4 +1,4 @@
-function createCounter(startCount, incrementor) {
+const createCounter = (startCount, incrementor) => {
     if (!startCount) {
         startCount = 0;
     }
@@ -19,7 +19,7 @@ function createCounter(startCount, incrementor) {
         let sum = startCount;
         let isFirstCall = true;
 
-        return function counter() {
+        return function counter() { // I don't use an arrow function because I must create method
 
             counter.resetCounter = () => {
                 sum = startCount;
@@ -32,9 +32,31 @@ function createCounter(startCount, incrementor) {
             } else {
                 return sum+=incrementor
             }
-
         }
 }
+
+const func1 = createCounter();
+console.log(func1());
+console.log(func1());
+console.log(func1());
+console.log(func1());
+console.log(func1.resetCounter());
+console.log(func1());
+console.log(func1());
+console.log(func1());
+
+
+console.log('......')
+
+const func2 = createCounter(100,25);
+console.log(func2());
+console.log(func2());
+console.log(func2());
+console.log(func2());
+console.log(func2.resetCounter());
+console.log(func2());
+console.log(func2());
+console.log(func2());
 
 
 

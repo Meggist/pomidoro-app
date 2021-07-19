@@ -1,7 +1,7 @@
 function multiplicationTable(colStart, rowStart, size) {
     try {
-        if ( typeof colStart !== 'number' || typeof rowStart !== 'number' || typeof size !== 'number'
-            || colStart < 1 || rowStart < 1 || size < 1 ) {
+        if (Number.isInteger(size) !== true || Number.isInteger(colStart) !== true
+            || Number.isInteger(rowStart) !== true || colStart < 1 || rowStart < 1 || size < 1) {
                 throw new Error('Function requires three integer arguments that are greater or equal than 1.')
         }
     } catch (error) {
