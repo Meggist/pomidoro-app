@@ -19,13 +19,7 @@ const createCounter = (startCount, incrementor) => {
         let sum = startCount;
         let isFirstCall = true;
 
-        return function counter() { // I don't use an arrow function because I must create method
-
-            counter.resetCounter = () => {
-                sum = startCount;
-                isFirstCall = true;
-            }
-
+        const counter = () => {
             if (isFirstCall === true) {
                 isFirstCall = false;
                 return startCount;
@@ -33,6 +27,13 @@ const createCounter = (startCount, incrementor) => {
                 return sum+=incrementor
             }
         }
+
+        counter.resetCounter = () => {
+            sum = startCount;
+            isFirstCall = true;
+        }
+
+        return counter
 }
 
 const func1 = createCounter();

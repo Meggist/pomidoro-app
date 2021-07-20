@@ -1,5 +1,5 @@
 function passToCallbackES5() {
-    let args = Array.from(arguments);
+    var args = Array.from(arguments);
 
     try {
         if(typeof args[args.length - 1] !== 'function')
@@ -11,7 +11,7 @@ function passToCallbackES5() {
         return err.message;
     }
 
-    let callbackArgs = args.slice(0, args.length-1);
+    var callbackArgs = args.slice(0, args.length-1);
 
     return args[args.length-1].apply(null, callbackArgs);
 }
@@ -33,4 +33,9 @@ const passToCallbackES6 = (...args) => {
 
 console.log(passToCallbackES5(4, 5, 2, (...nums) => nums.reduce((prev, cur) => prev + cur, 0))); //returns 11
 console.log(passToCallbackES5(3, 4, 1, function(...nums){console.log(nums)})); //logs [3, 4, 1], returns undefined
+console.log("......");
+console.log(passToCallbackES6(4, 5, 2, (...nums) => nums.reduce((prev, cur) => prev + cur, 0))); //returns 11
+console.log(passToCallbackES6(3, 4, 1, function(...nums){console.log(nums)})); //logs [3, 4, 1], returns undefined
+
+
 

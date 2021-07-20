@@ -9,7 +9,7 @@ function multiplicationTable(colStart, rowStart, size) {
         return error
     }
 
-    let table = new Array(size+1);
+    const table = new Array(size+1);
 
     for (let i = 0; i < size+1; i++) {
 
@@ -32,11 +32,10 @@ function multiplicationTable(colStart, rowStart, size) {
             }
 
             table[i][j] = table[i][0] * table[0][j];
-
       }
     }
     return table
 }
 
-//const table = multiplicationTable(1, 3, 4);
-//console.log(table)
+const table = multiplicationTable(1, 3, 4);
+console.log(table)
