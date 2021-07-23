@@ -1,0 +1,3267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Productivity app</title>
+</head>
+
+<body>
+<!-- Task-list -->
+
+<!-- 01,02
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+<main class="main">
+
+  <div class="taskType">
+      <div class="taskType__right-side">
+    <span class="taskType__ToDo">To Do</span>
+    <span class="taskType__Done">Done</span>
+      </div>
+  </div>
+  <section class="tasks">
+    <ul class="tasks__list">
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+        <div class="tasks__category-indicator hobby"></div>
+        <span class="tasks__date">Today</span>
+        <div class="tasks__info">
+          <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+          <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+        </div>
+        </div>
+        <div class="tasks__right-side">
+        <div class="tasks__icons">
+          <span class="icon-edit tasks__edit"></span>
+          <span class="icon-trash tasks__trash"></span>
+        </div>
+        <div class="priority urgent">
+          <span class="icon-tomato tasks__tomato"></span>
+          <span class="tasks__num">3</span>
+
+        </div>
+        </div>
+      </li>
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator sport"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority high">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">3</span>
+          </div>
+        </div>
+      </li>
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator work"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority high">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">3</span>
+          </div>
+        </div>
+      </li>
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator education"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority middle">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">3</span>
+          </div>
+        </div>
+      </li>
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator other"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority low">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">3</span>
+          </div>
+        </div>
+      </li>
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator hobby"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority low">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">2</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <div class="global-list">
+    <div class="global-list__left-side">
+  <span class="global-list__name">Global List</span>
+  <span class="icon-global-list-arrow-right global-list__arrow"></span>
+      </div>
+  </div>
+</main>
+-->
+<!-- 03
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+<main class="main">
+  <div class="taskType">
+      <div class="taskType__right-side">
+          <span class="taskType__ToDo">To Do</span>
+          <span class="taskType__Done">Done</span>
+      </div>
+  </div>
+  <section>
+          <div class="tasks">
+    <ul class="tasks__list">
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator hobby"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority urgent">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">3</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+          </div>
+  </section>
+  <div class="global-list">
+    <div class="global-list__left-side">
+    <span class="global-list__name">Global List</span>
+    <span class="icon-global-list-arrow-down global-list__arrow"></span>
+    </div>
+    <div class="global-list__right-side">
+        <ul class="global-list__categories">
+          <li>All</li>
+          <li>Urgent</li>
+          <li>High</li>
+          <li>Middle</li>
+          <li>Low</li>
+        </ul>
+    </div>
+  </div>
+  <section>
+    <div class="tasks-group">
+    <div class="task-category__title">
+    <img src="../images/ring-work.png" alt="ring-education">
+      <span class="task-category__name work-color">Work</span>
+    </div>
+        <div class="tasks__title-line work"></div>
+    <div class="tasks">
+      <ul class="tasks__list">
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator connected work"></div>
+            <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+            <div class="tasks__info">
+              <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-arrows-up tasks__arrows"></span>
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority high">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator work"></div>
+            <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+            <div class="tasks__info">
+              <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-arrows-up tasks__arrows"></span>
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority middle">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div class="tasks-group">
+      <div class="task-category__title">
+        <img src="../images/ring-education.png" alt="ring-education">
+        <span class="task-category__name education-color">Education</span>
+      </div>
+        <div class="tasks__title-line education"></div>
+      <div class="tasks">
+        <ul class="tasks__list">
+          <li class="tasks__element">
+            <div class="tasks__left-side">
+              <div class="tasks__category-indicator connected education"></div>
+              <span class="tasks__date">
+                <span class="tasks__day">23</span>
+                <span class="tasks__month">may</span>
+              </span>
+              <div class="tasks__info">
+                <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+              </div>
+            </div>
+            <div class="tasks__right-side">
+              <div class="tasks__icons">
+                <span class="icon-arrows-up tasks__arrows"></span>
+                <span class="icon-edit tasks__edit"></span>
+                <span class="icon-trash tasks__trash"></span>
+              </div>
+              <div class="priority urgent">
+                <span class="icon-tomato tasks__tomato"></span>
+                <span class="tasks__num">3</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="tasks__element">
+            <div class="tasks__left-side">
+              <div class="tasks__category-indicator education"></div>
+              <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+              <div class="tasks__info">
+                <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+              </div>
+            </div>
+            <div class="tasks__right-side">
+              <div class="tasks__icons">
+                <span class="icon-arrows-up tasks__arrows"></span>
+                <span class="icon-edit tasks__edit"></span>
+                <span class="icon-trash tasks__trash"></span>
+              </div>
+              <div class="priority low">
+                <span class="icon-tomato tasks__tomato"></span>
+                <span class="tasks__num">3</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+-->
+<!-- 04
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+<main class="main">
+        <div class="tasks__add-task">
+            <img src="../images/add-task.png" alt="add task" class="add-task__image">
+            <span class="add-task__text">Add your first task</span>
+        </div>
+</main>
+-->
+<!-- 05
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+
+<main class="main">
+    <div class="taskType">
+        <div class="taskType__right-side">
+    <span class="taskType__ToDo">To Do</span>
+    <span class="taskType__Done">Done</span>
+      </div>
+    </div>
+        <div class="tasks__message">
+            <span class="tasks__message-text">Task added,</span>
+            <span class="tasks__message-text">move it to the top 5 in daily task list</span>
+            <span class="icon-arrow_circle tasks__message-img"></span>
+        </div>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-down global-list__arrow"></span>
+            </div>
+            <div class="global-list__right-side">
+                <ul class="global-list__categories">
+                    <li>All</li>
+                    <li>Urgent</li>
+                    <li>High</li>
+                    <li>Middle</li>
+                    <li>Low</li>
+                </ul>
+            </div>
+        </div>
+    <section>
+        <div class="tasks-group">
+            <div class="task-category__title">
+                <img src="../images/ring-work.png" alt="ring-education">
+                <span class="task-category__name work-color">Work</span>
+            </div>
+            <div class="tasks__title-line work"></div>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    <li class="tasks__element">
+                        <div class="tasks__left-side">
+                            <div class="tasks__category-indicator connected work"></div>
+                            <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                            <div class="tasks__info">
+                                <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                                <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                            </div>
+                        </div>
+                        <div class="tasks__right-side">
+                            <div class="tasks__icons">
+                                <span class="icon-arrows-up tasks__arrows"></span>
+                                <span class="icon-edit tasks__edit"></span>
+                                <span class="icon-trash tasks__trash"></span>
+                            </div>
+                            <div class="priority high">
+                                <span class="icon-tomato tasks__tomato"></span>
+                                <span class="tasks__num">3</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="tasks__element">
+                        <div class="tasks__left-side">
+                            <div class="tasks__category-indicator work"></div>
+                            <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                            <div class="tasks__info">
+                                <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                                <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                            </div>
+                        </div>
+                        <div class="tasks__right-side">
+                            <div class="tasks__icons">
+                                <span class="icon-arrows-up tasks__arrows"></span>
+                                <span class="icon-edit tasks__edit"></span>
+                                <span class="icon-trash tasks__trash"></span>
+                            </div>
+                            <div class="priority middle">
+                                <span class="icon-tomato tasks__tomato"></span>
+                                <span class="tasks__num">3</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+-->
+<!-- 06
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+<main class="main">
+        <div class="taskType">
+            <div class="taskType__right-side">
+    <span class="taskType__ToDo">To Do</span>
+    <span class="taskType__Done">Done</span>
+      </div>
+        </div>
+        <section class="tasks">
+            <ul class="tasks__list">
+                <li class="tasks__element done">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator hobby"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-urgent crossed">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="priority urgent">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element done">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator sport"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-high crossed">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="priority high">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element done">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator work"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-high crossed">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="priority high">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element done">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator education"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-middle crossed">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="priority middle">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element done">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator other"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-low crossed">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="priority low">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element done">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator hobby"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-low crossed">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="priority low">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">2</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-right global-list__arrow"></span>
+            </div>
+        </div>
+</main>
+-->
+<!-- 07
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+
+<main class="main">
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+        </div>
+        <div class="tasks__message">
+            <span class="tasks__message-text">Excellent,</span>
+            <span class="tasks__message-text">all daily tasks done :)</span>
+        </div>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-down global-list__arrow"></span>
+            </div>
+            <div class="global-list__right-side">
+                <ul class="global-list__categories">
+                    <li>All</li>
+                    <li>Urgent</li>
+                    <li>High</li>
+                    <li>Middle</li>
+                    <li>Low</li>
+                </ul>
+            </div>
+        </div>
+        <section>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-work.png" alt="ring-education">
+                    <span class="task-category__name work-color">Work</span>
+                </div>
+                <div class="tasks__title-line work"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected work"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority high">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator work"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority middle">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+</main>
+-->
+<!-- 08
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+
+<main class="main">
+        <div class="taskType">
+            <div class="taskType__right-side">
+            <span class="taskType__ToDo">To Do</span>
+            <span class="taskType__Done">Done</span>
+            </div>
+
+            <div class="taskType__left-side">
+                <span class="taskType__select-all">Select All</span>
+                <span class="taskType__deselect-all">Deselect All</span>
+            </div>
+        </div>
+        <section class="tasks">
+            <ul class="tasks__list">
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate hobby">
+                            <span class="icon-trash"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority urgent">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate sport">
+                            <span class="icon-trash"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority high">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate work">
+                            <span class="icon-trash"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority high">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate education">
+                            <span class="icon-trash"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority middle">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate other">
+                            <span class="icon-trash"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority low">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate hobby">
+                            <span class="icon-trash"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority low">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">2</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-right global-list__arrow"></span>
+            </div>
+        </div>
+</main>
+-->
+<!-- 09
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"><div class="menu__amounts urgent">2</div></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+
+<main class="main">
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+
+            <div class="taskType__left-side">
+                <span class="taskType__select-all">Select All</span>
+                <span class="taskType__deselect-all">Deselect All</span>
+            </div>
+        </div>
+        <section class="tasks">
+            <ul class="tasks__list">
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate hobby-close">
+                            <span class="icon-close"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority urgent">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate sport">
+                            <span class="icon-trash"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority high">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate work">
+                            <span class="icon-trash"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority high">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate education-close">
+                            <span class="icon-close"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority middle">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate other">
+                            <span class="icon-trash"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority low">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator--activate hobby">
+                            <span class="icon-trash"></span>
+                        </div>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority low">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">2</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-right global-list__arrow"></span>
+            </div>
+        </div>
+</main>
+-->
+<!-- 10
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"><div class="menu__amounts urgent">1</div></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+<main class="main">
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+        </div>
+        <section>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    <li class="tasks__element">
+                        <div class="tasks__left-side">
+                            <div class="tasks__category-indicator--activate hobby-close">
+                                <span class="icon-close"></span>
+                            </div>
+                            <div class="tasks__info">
+                                <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                            </div>
+                        </div>
+                        <div class="tasks__right-side">
+                            <div class="tasks__icons">
+                                <span class="icon-edit tasks__edit"></span>
+                                <span class="icon-trash tasks__trash"></span>
+                            </div>
+                            <div class="priority urgent">
+                                <span class="icon-tomato tasks__tomato"></span>
+                                <span class="tasks__num">3</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-down global-list__arrow"></span>
+            </div>
+            <div class="global-list__right-side">
+                <ul class="global-list__categories">
+                    <li>All</li>
+                    <li>Urgent</li>
+                    <li>High</li>
+                    <li>Middle</li>
+                    <li>Low</li>
+                </ul>
+            </div>
+        </div>
+        <section>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-work.png" alt="ring-education">
+                    <span class="task-category__name work-color">Work</span>
+                </div>
+                <div class="tasks__title-line work"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected work"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority high">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator work"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority middle">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-education.png" alt="ring-education">
+                    <span class="task-category__name education-color">Education</span>
+                </div>
+                <div class="tasks__title-line education"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected education"></div>
+                                <span class="tasks__date">
+                <span class="tasks__day">23</span>
+                <span class="tasks__month">may</span>
+              </span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority urgent">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator education"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority low">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+</main>
+-->
+<!-- 11
+<header class="header fixed space-between">
+<div class="header__logo">
+    <img src="../images/Logo.svg" alt="logo" class="logo__img">
+</div>
+<ul class="header__menu">
+    <li class="icon-add menu__icon"></li>
+    <li class="icon-trash menu__icon"></li>
+    <li class="icon-list menu__icon"></li>
+    <li class="icon-statistics menu__icon"></li>
+    <li class="icon-settings menu__icon"></li>
+</ul>
+</header>
+<main class="main">
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+        </div>
+        <section>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    <li class="tasks__element">
+                        <div class="tasks__left-side">
+                            <div class="tasks__category-indicator hobby"></div>
+                            <span class="tasks__date">Today</span>
+                            <div class="tasks__info">
+                                <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                            </div>
+                        </div>
+                        <div class="tasks__right-side">
+                            <div class="tasks__icons">
+                                <span class="icon-edit tasks__edit"></span>
+                                <span class="icon-trash tasks__trash"></span>
+                            </div>
+                            <div class="priority urgent">
+                                <span class="icon-tomato tasks__tomato"></span>
+                                <span class="tasks__num">3</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-down global-list__arrow"></span>
+            </div>
+            <div class="global-list__right-side">
+                <ul class="global-list__categories">
+                    <li>All</li>
+                    <li>Urgent</li>
+                    <li>High</li>
+                    <li>Middle</li>
+                    <li>Low</li>
+                </ul>
+            </div>
+        </div>
+        <section>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-work.png" alt="ring-work">
+                    <span class="task-category__name work-color">Work</span>
+                </div>
+                <div class="tasks__title-line work"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected work"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority high">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator work"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority middle">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-education.png" alt="ring-education">
+                    <span class="task-category__name education-color">Education</span>
+                </div>
+                <div class="tasks__title-line education"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected education"></div>
+                                <span class="tasks__date">
+                <span class="tasks__day">23</span>
+                <span class="tasks__month">may</span>
+              </span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority urgent">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected education"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority low">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected education"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority high">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected education"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority middle">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator education"></div>
+                                <span class="tasks__date"><span class="tasks__day">23</span>
+                <span class="tasks__month">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority low">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+</main>
+-->
+<!-- 12
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+
+<main class="main">
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+        </div>
+        <div class="tasks__first-task">
+            <img src="../images/first-task.png" alt="add task" class="first-task__image">
+            <span class="first-task__text">As you visited site for a first time you can check and customize your default application settings</span>
+        </div>
+        <div class="tasks__buttons">
+            <button class="buttons__skip">Skip</button>
+            <button class="buttons__go-to-settings">Go to settings</button>
+        </div>
+</main>
+-->
+<!-- 13
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+
+<main class="main">
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+        </div>
+        <div class="tasks__noTasks-task">
+            <img src="../images/noTasks-task.png" alt="add task" class="noTasks-task__image">
+            <span class="noTasks-task__text">You don’t have any tasks left. Add new tasks to stay productive</span>
+        </div>
+</main>
+-->
+<!-- 14
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+<main class="main">
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+        </div>
+        <section>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    <li class="tasks__element">
+                        <div class="tasks__left-side">
+                            <div class="tasks__category-indicator hobby"></div>
+                            <span class="tasks__date">Today</span>
+                            <div class="tasks__info">
+                                <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                            </div>
+                        </div>
+                        <div class="tasks__right-side">
+                            <div class="tasks__icons">
+                                <span class="icon-edit tasks__edit"></span>
+                                <span class="icon-trash tasks__trash"></span>
+                            </div>
+                            <div class="priority urgent">
+                                <span class="icon-tomato tasks__tomato"></span>
+                                <span class="tasks__num">3</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-down global-list__arrow"></span>
+            </div>
+            <div class="global-list__right-side">
+                <ul class="global-list__categories">
+                    <li>All</li>
+                    <li>Urgent</li>
+                    <li>High</li>
+                    <li>Middle</li>
+                    <li>Low</li>
+                </ul>
+            </div>
+        </div>
+        <section>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-work.png" alt="ring-education">
+                    <span class="task-category__name work-color">Work</span>
+                </div>
+                <div class="tasks__title-line work"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected work"></div>
+                                <span class="tasks__date"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority high">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator work"></div>
+                                <span class="tasks__date"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority middle">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-education.png" alt="ring-education">
+                    <span class="task-category__name education-color">Education</span>
+                </div>
+                <div class="tasks__title-line education"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected education"></div>
+                                <span class="tasks__date">
+                <span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span>
+              </span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority urgent">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator education"></div>
+                                <span class="tasks__date urgent-color"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority low">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+</main>
+-->
+
+<!-- Notifications -->
+
+<!-- 01
+<header class="header">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+<main class="main">
+  <div class="taskType">
+      <div class="taskType__right-side">
+    <span class="taskType__ToDo">To Do</span>
+    <span class="taskType__Done">Done</span>
+      </div>
+  </div>
+  <section class="tasks">
+    <ul class="tasks__list">
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+        <div class="tasks__category-indicator hobby"></div>
+        <span class="tasks__date">Today</span>
+        <div class="tasks__info">
+          <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+          <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+        </div>
+        </div>
+        <div class="tasks__right-side">
+        <div class="tasks__icons">
+          <span class="icon-edit tasks__edit"></span>
+          <span class="icon-trash tasks__trash"></span>
+        </div>
+        <div class="priority urgent">
+          <span class="icon-tomato tasks__tomato"></span>
+          <span class="tasks__num">3</span>
+
+        </div>
+        </div>
+      </li>
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator sport"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority high">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">3</span>
+          </div>
+        </div>
+      </li>
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator work"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority high">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">3</span>
+          </div>
+        </div>
+      </li>
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator education"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority middle">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">3</span>
+          </div>
+        </div>
+      </li>
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator other"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority low">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">3</span>
+          </div>
+        </div>
+      </li>
+      <li class="tasks__element">
+        <div class="tasks__left-side">
+          <div class="tasks__category-indicator hobby"></div>
+          <span class="tasks__date">Today</span>
+          <div class="tasks__info">
+            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+          </div>
+        </div>
+        <div class="tasks__right-side">
+          <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+          </div>
+          <div class="priority low">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">2</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <div class="global-list">
+    <div class="global-list__left-side">
+  <span class="global-list__name">Global List</span>
+  <span class="icon-global-list-arrow-right global-list__arrow"></span>
+      </div>
+  </div>
+  <div class="tasks__notification education">
+    <div class="notification__left-side">
+    <div class="notification__icon">
+      <span class="icon-tomato-info notification__pomodoro"></span>
+    </div>
+    <span class="notification__text">This is just an info notification message!</span>
+    </div>
+    <div class="notification__right-side">
+    <div class="notification__close">
+      <span class="icon-close notification__close-icon"></span>
+    </div>
+    </div>
+  </div>
+</main>
+-->
+<!-- 02
+<header class="header">
+  <div class="header__title">
+    <h3 class="header__text">Daily Task List</h3>
+    <span class="icon-add title__add"></span>
+  </div>
+  <ul class="header__menu">
+    <li class="icon-trash menu__icon"></li>
+    <li class="icon-list menu__icon"></li>
+    <li class="icon-statistics menu__icon"></li>
+    <li class="icon-settings menu__icon"></li>
+  </ul>
+</header>
+<main class="main">
+    <div class="taskType">
+      <div class="taskType__right-side">
+        <span class="taskType__ToDo">To Do</span>
+        <span class="taskType__Done">Done</span>
+      </div>
+    </div>
+    <section class="tasks">
+      <ul class="tasks__list">
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator hobby"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority urgent">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator sport"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority high">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator work"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority high">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator education"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority middle">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator other"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority low">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator hobby"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority low">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">2</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <div class="global-list">
+      <div class="global-list__left-side">
+        <span class="global-list__name">Global List</span>
+        <span class="icon-global-list-arrow-right global-list__arrow"></span>
+      </div>
+    </div>
+    <div class="tasks__notification urgent">
+      <div class="notification__left-side">
+        <div class="notification__icon">
+          <span class="icon-tomato-error notification__pomodoro"></span>
+        </div>
+        <span class="notification__text">This is just an info notification message!</span>
+      </div>
+      <div class="notification__right-side">
+        <div class="notification__close">
+          <span class="icon-close notification__close-icon"></span>
+        </div>
+      </div>
+    </div>
+</main>
+-->
+<!-- 03
+<header class="header">
+  <div class="header__title">
+    <h3 class="header__text">Daily Task List</h3>
+    <span class="icon-add title__add"></span>
+  </div>
+  <ul class="header__menu">
+    <li class="icon-trash menu__icon"></li>
+    <li class="icon-list menu__icon"></li>
+    <li class="icon-statistics menu__icon"></li>
+    <li class="icon-settings menu__icon"></li>
+  </ul>
+</header>
+<main class="main">
+    <div class="taskType">
+      <div class="taskType__right-side">
+        <span class="taskType__ToDo">To Do</span>
+        <span class="taskType__Done">Done</span>
+      </div>
+    </div>
+    <section class="tasks">
+      <ul class="tasks__list">
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator hobby"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority urgent">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator sport"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority high">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator work"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority high">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator education"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority middle">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator other"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority low">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator hobby"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority low">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">2</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <div class="global-list">
+      <div class="global-list__left-side">
+        <span class="global-list__name">Global List</span>
+        <span class="icon-global-list-arrow-right global-list__arrow"></span>
+      </div>
+    </div>
+    <div class="tasks__notification low">
+      <div class="notification__left-side">
+        <div class="notification__icon">
+          <span class="icon-tomato-success notification__pomodoro"></span>
+        </div>
+        <span class="notification__text">This is just an info notification message!</span>
+      </div>
+      <div class="notification__right-side">
+        <div class="notification__close">
+          <span class="icon-close notification__close-icon"></span>
+        </div>
+      </div>
+    </div>
+</main>
+-->
+<!-- 04
+<header class="header">
+  <div class="header__title">
+    <h3 class="header__text">Daily Task List</h3>
+    <span class="icon-add title__add"></span>
+  </div>
+  <ul class="header__menu">
+    <li class="icon-trash menu__icon"></li>
+    <li class="icon-list menu__icon"></li>
+    <li class="icon-statistics menu__icon"></li>
+    <li class="icon-settings menu__icon"></li>
+  </ul>
+</header>
+<main class="main">
+    <div class="taskType">
+      <div class="taskType__right-side">
+        <span class="taskType__ToDo">To Do</span>
+        <span class="taskType__Done">Done</span>
+      </div>
+    </div>
+    <section class="tasks">
+      <ul class="tasks__list">
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator hobby"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority urgent">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator sport"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority high">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator work"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority high">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator education"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority middle">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator other"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority low">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">3</span>
+            </div>
+          </div>
+        </li>
+        <li class="tasks__element">
+          <div class="tasks__left-side">
+            <div class="tasks__category-indicator hobby"></div>
+            <span class="tasks__date">Today</span>
+            <div class="tasks__info">
+              <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+              <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+            </div>
+          </div>
+          <div class="tasks__right-side">
+            <div class="tasks__icons">
+              <span class="icon-edit tasks__edit"></span>
+              <span class="icon-trash tasks__trash"></span>
+            </div>
+            <div class="priority low">
+              <span class="icon-tomato tasks__tomato"></span>
+              <span class="tasks__num">2</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <div class="global-list">
+      <div class="global-list__left-side">
+        <span class="global-list__name">Global List</span>
+        <span class="icon-global-list-arrow-right global-list__arrow"></span>
+      </div>
+    </div>
+    <div class="tasks__notification high">
+      <div class="notification__left-side">
+        <div class="notification__icon">
+          <span class="icon-tomato-warning notification__pomodoro"></span>
+        </div>
+        <span class="notification__text">This is just an info notification message!</span>
+      </div>
+      <div class="notification__right-side">
+        <div class="notification__close">
+          <span class="icon-close notification__close-icon"></span>
+        </div>
+      </div>
+    </div>
+</main>
+-->
+
+<!-- Modals -->
+<!-- 01
+<header class="header modal-display">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+
+<div class="modal-wrapper">
+<section class="modal-window">
+    <div class="modal-save-close">
+        <span class="icon-close"></span>
+        <span class="icon-check"></span>
+    </div>
+    <div class="modal-title">
+        <span>Add task</span>
+    </div>
+    <form class="modal-form">
+        <label class="model-label">Title
+            <span class="modal-placeholder">Add title here</span>
+            <input type="text" class="modal-input model-input__text">
+        </label>
+
+        <label class="model-label">description
+            <span class="modal-placeholder">Add title here</span>
+            <input type="text" class="modal-input model-input__text">
+        </label>
+
+        <label class="model-label">category
+            <div class="modal-input modal-categories">
+                <div class="modal-category">
+                    <img src="../images/ring-work.png">
+                    <span class="modal-category__text">Work</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Education</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Hobby</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Sport</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Other</span>
+                </div>
+            </div>
+        </label>
+
+        <label class="model-label">DEADLINE
+            <span class="modal-placeholder">May 23, 2021</span>
+            <input type="text" class="modal-input model-input__text">
+        </label>
+
+        <label class="model-label">Estimation
+            <div class="modal-input modal-estimations">
+                <img src="../images/fill tomato.svg">
+                <img src="../images/fill tomato.svg">
+                <img src="../images/fill tomato.svg">
+                <img src="../images/empty-tomato.svg">
+                <img src="../images/empty-tomato.svg">
+            </div>
+        </label>
+
+        <label class="model-label">priority
+            <div class="modal-input modal-categories">
+                <div class="modal-category">
+                    <img src="../images/modal-ring-urgent.png">
+                    <span class="modal-category__text">Urgent</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">High</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Middle</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Low</span>
+                </div>
+            </div>
+        </label>
+    </form>
+</section>
+</div>
+
+<main class="main modal-display">
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+        </div>
+        <section>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    <li class="tasks__element">
+                        <div class="tasks__left-side">
+                            <div class="tasks__category-indicator hobby"></div>
+                            <span class="tasks__date">Today</span>
+                            <div class="tasks__info">
+                                <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                            </div>
+                        </div>
+                        <div class="tasks__right-side">
+                            <div class="tasks__icons">
+                                <span class="icon-edit tasks__edit"></span>
+                                <span class="icon-trash tasks__trash"></span>
+                            </div>
+                            <div class="priority urgent">
+                                <span class="icon-tomato tasks__tomato"></span>
+                                <span class="tasks__num">3</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-down global-list__arrow"></span>
+            </div>
+            <div class="global-list__right-side">
+                <ul class="global-list__categories">
+                    <li>All</li>
+                    <li>Urgent</li>
+                    <li>High</li>
+                    <li>Middle</li>
+                    <li>Low</li>
+                </ul>
+            </div>
+        </div>
+        <section>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-work.png" alt="ring-education">
+                    <span class="task-category__name work-color">Work</span>
+                </div>
+                <div class="tasks__title-line work"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected work"></div>
+                                <span class="tasks__date"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority high">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator work"></div>
+                                <span class="tasks__date"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority middle">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-education.png" alt="ring-education">
+                    <span class="task-category__name education-color">Education</span>
+                </div>
+                <div class="tasks__title-line education"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected education"></div>
+                                <span class="tasks__date">
+                <span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span>
+              </span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority urgent">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator education"></div>
+                                <span class="tasks__date urgent-color"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority low">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+</main>
+-->
+<!-- 02
+<header class="header modal-display">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+
+<div class="modal-wrapper">
+<section class="modal-window">
+    <div class="modal-save-close">
+        <span class="icon-close"></span>
+        <span class="icon-check"></span>
+    </div>
+    <div class="modal-title">
+        <span>Edit Task</span>
+    </div>
+    <form class="modal-form">
+        <label class="model-label">Title
+            <span class="modal-placeholder">Add title here</span>
+            <input type="text" class="modal-input model-input__text">
+        </label>
+
+        <label class="model-label">description
+            <span class="modal-placeholder">Add title here</span>
+            <input type="text" class="modal-input model-input__text">
+        </label>
+
+        <label class="model-label">category
+            <div class="modal-input modal-categories">
+                <div class="modal-category">
+                    <img src="../images/ring-work.png">
+                    <span class="modal-category__text">Work</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Education</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Hobby</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Sport</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Other</span>
+                </div>
+            </div>
+        </label>
+
+        <label class="model-label">DEADLINE
+            <span class="modal-placeholder">May 23, 2021</span>
+            <input type="text" class="modal-input model-input__text">
+        </label>
+
+        <label class="model-label">Estimation
+            <div class="modal-input modal-estimations">
+                <img src="../images/fill tomato.svg">
+                <img src="../images/fill tomato.svg">
+                <img src="../images/fill tomato.svg">
+                <img src="../images/empty-tomato.svg">
+                <img src="../images/empty-tomato.svg">
+            </div>
+        </label>
+
+        <label class="model-label">priority
+            <div class="modal-input modal-categories">
+                <div class="modal-category">
+                    <img src="../images/modal-ring-urgent.png">
+                    <span class="modal-category__text">Urgent</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">High</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Middle</span>
+                </div>
+                <div class="modal-category">
+                    <div class="modal-point"></div>
+                    <span class="modal-category__text">Low</span>
+                </div>
+            </div>
+        </label>
+    </form>
+</section>
+</div>
+
+<main class="main modal-display">
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+        </div>
+        <section>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    <li class="tasks__element">
+                        <div class="tasks__left-side">
+                            <div class="tasks__category-indicator hobby"></div>
+                            <span class="tasks__date">Today</span>
+                            <div class="tasks__info">
+                                <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                            </div>
+                        </div>
+                        <div class="tasks__right-side">
+                            <div class="tasks__icons">
+                                <span class="icon-edit tasks__edit"></span>
+                                <span class="icon-trash tasks__trash"></span>
+                            </div>
+                            <div class="priority urgent">
+                                <span class="icon-tomato tasks__tomato"></span>
+                                <span class="tasks__num">3</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-down global-list__arrow"></span>
+            </div>
+            <div class="global-list__right-side">
+                <ul class="global-list__categories">
+                    <li>All</li>
+                    <li>Urgent</li>
+                    <li>High</li>
+                    <li>Middle</li>
+                    <li>Low</li>
+                </ul>
+            </div>
+        </div>
+        <section>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-work.png" alt="ring-education">
+                    <span class="task-category__name work-color">Work</span>
+                </div>
+                <div class="tasks__title-line work"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected work"></div>
+                                <span class="tasks__date"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority high">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator work"></div>
+                                <span class="tasks__date"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority middle">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-education.png" alt="ring-education">
+                    <span class="task-category__name education-color">Education</span>
+                </div>
+                <div class="tasks__title-line education"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected education"></div>
+                                <span class="tasks__date">
+                <span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span>
+              </span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority urgent">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator education"></div>
+                                <span class="tasks__date urgent-color"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority low">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+</main>
+-->
+<!-- 03
+<header class="header modal-display">
+    <div class="header__title">
+        <h3 class="header__text">Daily Task List</h3>
+        <span class="icon-add title__add"></span>
+    </div>
+    <ul class="header__menu">
+        <li class="icon-trash menu__icon"></li>
+        <li class="icon-list menu__icon"></li>
+        <li class="icon-statistics menu__icon"></li>
+        <li class="icon-settings menu__icon"></li>
+    </ul>
+</header>
+
+<div class="modal-wrapper">
+<section class="modal-window">
+    <div class="modal-save-close">
+        <span class="icon-close"></span>
+    </div>
+    <div class="modal-title">
+        <span>Remove Task</span>
+    </div>
+    <div class="modal__info">
+        <span>Are you sure you want to remove selected task(s)?</span>
+    </div>
+
+    <div class="modal-buttons">
+        <button class="modal__cancel">Cancel</button>
+        <button class="modal__remove">Remove</button>
+    </div>
+</section>
+</div>
+
+<main class="main modal-display">
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+        </div>
+        <section>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    <li class="tasks__element">
+                        <div class="tasks__left-side">
+                            <div class="tasks__category-indicator hobby"></div>
+                            <span class="tasks__date">Today</span>
+                            <div class="tasks__info">
+                                <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                            </div>
+                        </div>
+                        <div class="tasks__right-side">
+                            <div class="tasks__icons">
+                                <span class="icon-edit tasks__edit"></span>
+                                <span class="icon-trash tasks__trash"></span>
+                            </div>
+                            <div class="priority urgent">
+                                <span class="icon-tomato tasks__tomato"></span>
+                                <span class="tasks__num">3</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-down global-list__arrow"></span>
+            </div>
+            <div class="global-list__right-side">
+                <ul class="global-list__categories">
+                    <li>All</li>
+                    <li>Urgent</li>
+                    <li>High</li>
+                    <li>Middle</li>
+                    <li>Low</li>
+                </ul>
+            </div>
+        </div>
+        <section>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-work.png" alt="ring-education">
+                    <span class="task-category__name work-color">Work</span>
+                </div>
+                <div class="tasks__title-line work"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected work"></div>
+                                <span class="tasks__date"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority high">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator work"></div>
+                                <span class="tasks__date"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority middle">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tasks-group">
+                <div class="task-category__title">
+                    <img src="../images/ring-education.png" alt="ring-education">
+                    <span class="task-category__name education-color">Education</span>
+                </div>
+                <div class="tasks__title-line education"></div>
+                <div class="tasks">
+                    <ul class="tasks__list">
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator connected education"></div>
+                                <span class="tasks__date">
+                <span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span>
+              </span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority urgent">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="tasks__element">
+                            <div class="tasks__left-side">
+                                <div class="tasks__category-indicator education"></div>
+                                <span class="tasks__date urgent-color"><span class="tasks__day urgent-color">23</span>
+                <span class="tasks__month urgent-color">may</span></span>
+                                <div class="tasks__info">
+                                    <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                                    <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                                </div>
+                            </div>
+                            <div class="tasks__right-side">
+                                <div class="tasks__icons">
+                                    <span class="icon-arrows-up tasks__arrows"></span>
+                                    <span class="icon-edit tasks__edit"></span>
+                                    <span class="icon-trash tasks__trash"></span>
+                                </div>
+                                <div class="priority low">
+                                    <span class="icon-tomato tasks__tomato"></span>
+                                    <span class="tasks__num">3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+</main>
+-->
+<script src="/bundle.js"></script>
+</body>
+
+</html>
