@@ -50,16 +50,6 @@ const firstRow = document.getElementsByClassName('cycle__first-row')[0];
 const secondRow = document.getElementsByClassName('cycle__second-row')[0];
 const thirdRow = document.getElementsByClassName('cycle__third-row')[0];
 
-const createtopPoint = () => {
-    const topPoint = document.createElement('div');
-    topPoint.classList.add('cycle__point');
-    firstRow.appendChild(topPoint);
-}
-
-const createGraghBlock = () => {
-
-}
-
 const createCycle = () => {
     firstRow.innerHTML = '';
     secondRow.innerHTML = '';
@@ -123,11 +113,14 @@ const createCycle = () => {
             bottomPoint.style.marginLeft = ((30 / minutesSum) * 100) + "%";
             if (i == 0) {
                 text.innerHTML = '30m';
+                text.classList.add('cycle__bottom-display');
+                point.classList.add('cycle__bottom-display');
             } else {
                 text.innerHTML = `${Math.floor(bottomTime/60)}h`;
                 if (bottomTime % 60 === 30) {
                     text.innerHTML += ' 30m'
-
+                    text.classList.add('cycle__bottom-display');
+                    point.classList.add('cycle__bottom-display');
                 }
             }
         }
