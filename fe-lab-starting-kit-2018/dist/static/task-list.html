@@ -5,185 +5,191 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <title>Productivity app</title>
 </head>
 
 <body>
-<!-- Task-list -->
+    <!-- Task-list -->
+    <!-- 01,02
 
-<!-- 01,02
+    <header class="header">
+        <div class="header__title">
+            <h3 class="header__text">Daily Task List</h3>
+            <span class="icon-add title__add"></span>
+        </div>
+        <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
+        <ul class="header__menu">
+            <li class="icon-trash menu__icon"></li>
+            <li class="icon-list menu__icon"></li>
+            <li class="icon-statistics menu__icon"></li>
+            <li class="icon-settings menu__icon"></li>
+        </ul>
+    </header>
+    <main class="main">
+
+        <div class="taskType">
+            <div class="taskType__right-side">
+                <span class="taskType__ToDo">To Do</span>
+                <span class="taskType__Done">Done</span>
+            </div>
+        </div>
+        <section class="tasks">
+            <ul class="tasks__list">
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator hobby"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority urgent">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator sport"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority high">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator work"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority high">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator education"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority middle">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator other"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority low">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">3</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="tasks__element">
+                    <div class="tasks__left-side">
+                        <div class="tasks__category-indicator hobby"></div>
+                        <span class="tasks__date">Today</span>
+                        <div class="tasks__info">
+                            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
+                            <span class="tasks__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          </span>
+                        </div>
+                    </div>
+                    <div class="tasks__right-side">
+                        <div class="tasks__icons">
+                            <span class="icon-edit tasks__edit"></span>
+                            <span class="icon-trash tasks__trash"></span>
+                        </div>
+                        <div class="priority low">
+                            <span class="icon-tomato tasks__tomato"></span>
+                            <span class="tasks__num">2</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <div class="global-list">
+            <div class="global-list__left-side">
+                <span class="global-list__name">Global List</span>
+                <span class="icon-global-list-arrow-right global-list__arrow"></span>
+            </div>
+        </div>
+    </main>
+    -->
+    <!-- 03
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
-    <ul class="header__menu">
-        <li class="icon-trash menu__icon"></li>
-        <li class="icon-list menu__icon"></li>
-        <li class="icon-statistics menu__icon"></li>
-        <li class="icon-settings menu__icon"></li>
-    </ul>
-</header>
-<main class="main">
-
-  <div class="taskType">
-      <div class="taskType__right-side">
-    <span class="taskType__ToDo">To Do</span>
-    <span class="taskType__Done">Done</span>
-      </div>
-  </div>
-  <section class="tasks">
-    <ul class="tasks__list">
-      <li class="tasks__element">
-        <div class="tasks__left-side">
-        <div class="tasks__category-indicator hobby"></div>
-        <span class="tasks__date">Today</span>
-        <div class="tasks__info">
-          <span class="tasks__name name-urgent">Lorem ipsum sit amet</span>
-          <span class="tasks__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          </span>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
         </div>
-        </div>
-        <div class="tasks__right-side">
-        <div class="tasks__icons">
-          <span class="icon-edit tasks__edit"></span>
-          <span class="icon-trash tasks__trash"></span>
-        </div>
-        <div class="priority urgent">
-          <span class="icon-tomato tasks__tomato"></span>
-          <span class="tasks__num">3</span>
-
-        </div>
-        </div>
-      </li>
-      <li class="tasks__element">
-        <div class="tasks__left-side">
-          <div class="tasks__category-indicator sport"></div>
-          <span class="tasks__date">Today</span>
-          <div class="tasks__info">
-            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
-            <span class="tasks__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          </span>
-          </div>
-        </div>
-        <div class="tasks__right-side">
-          <div class="tasks__icons">
-            <span class="icon-edit tasks__edit"></span>
-            <span class="icon-trash tasks__trash"></span>
-          </div>
-          <div class="priority high">
-            <span class="icon-tomato tasks__tomato"></span>
-            <span class="tasks__num">3</span>
-          </div>
-        </div>
-      </li>
-      <li class="tasks__element">
-        <div class="tasks__left-side">
-          <div class="tasks__category-indicator work"></div>
-          <span class="tasks__date">Today</span>
-          <div class="tasks__info">
-            <span class="tasks__name name-high">Lorem ipsum sit amet</span>
-            <span class="tasks__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          </span>
-          </div>
-        </div>
-        <div class="tasks__right-side">
-          <div class="tasks__icons">
-            <span class="icon-edit tasks__edit"></span>
-            <span class="icon-trash tasks__trash"></span>
-          </div>
-          <div class="priority high">
-            <span class="icon-tomato tasks__tomato"></span>
-            <span class="tasks__num">3</span>
-          </div>
-        </div>
-      </li>
-      <li class="tasks__element">
-        <div class="tasks__left-side">
-          <div class="tasks__category-indicator education"></div>
-          <span class="tasks__date">Today</span>
-          <div class="tasks__info">
-            <span class="tasks__name name-middle">Lorem ipsum sit amet</span>
-            <span class="tasks__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          </span>
-          </div>
-        </div>
-        <div class="tasks__right-side">
-          <div class="tasks__icons">
-            <span class="icon-edit tasks__edit"></span>
-            <span class="icon-trash tasks__trash"></span>
-          </div>
-          <div class="priority middle">
-            <span class="icon-tomato tasks__tomato"></span>
-            <span class="tasks__num">3</span>
-          </div>
-        </div>
-      </li>
-      <li class="tasks__element">
-        <div class="tasks__left-side">
-          <div class="tasks__category-indicator other"></div>
-          <span class="tasks__date">Today</span>
-          <div class="tasks__info">
-            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
-            <span class="tasks__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          </span>
-          </div>
-        </div>
-        <div class="tasks__right-side">
-          <div class="tasks__icons">
-            <span class="icon-edit tasks__edit"></span>
-            <span class="icon-trash tasks__trash"></span>
-          </div>
-          <div class="priority low">
-            <span class="icon-tomato tasks__tomato"></span>
-            <span class="tasks__num">3</span>
-          </div>
-        </div>
-      </li>
-      <li class="tasks__element">
-        <div class="tasks__left-side">
-          <div class="tasks__category-indicator hobby"></div>
-          <span class="tasks__date">Today</span>
-          <div class="tasks__info">
-            <span class="tasks__name name-low">Lorem ipsum sit amet</span>
-            <span class="tasks__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          </span>
-          </div>
-        </div>
-        <div class="tasks__right-side">
-          <div class="tasks__icons">
-            <span class="icon-edit tasks__edit"></span>
-            <span class="icon-trash tasks__trash"></span>
-          </div>
-          <div class="priority low">
-            <span class="icon-tomato tasks__tomato"></span>
-            <span class="tasks__num">2</span>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </section>
-  <div class="global-list">
-    <div class="global-list__left-side">
-  <span class="global-list__name">Global List</span>
-  <span class="icon-global-list-arrow-right global-list__arrow"></span>
-      </div>
-  </div>
-</main>
--->
-<!-- 03
-<header class="header">
-    <div class="header__title">
-        <h3 class="header__text">Daily Task List</h3>
-        <span class="icon-add title__add"></span>
-    </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -367,12 +373,15 @@
   </section>
 </main>
 -->
-<!-- 04
+    <!-- 04
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -387,12 +396,15 @@
         </div>
 </main>
 -->
-<!-- 05
+    <!-- 05
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -492,12 +504,15 @@
     </section>
 </main>
 -->
-<!-- 06
+    <!-- 06
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -633,12 +648,15 @@
         </div>
 </main>
 -->
-<!-- 07
+    <!-- 07
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -737,12 +755,15 @@
         </section>
 </main>
 -->
-<!-- 08
+    <!-- 08
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -914,12 +935,15 @@
         </div>
 </main>
 -->
-<!-- 09
+    <!-- 09
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"><div class="menu__amounts urgent">2</div></li>
         <li class="icon-list menu__icon"></li>
@@ -1091,12 +1115,15 @@
         </div>
 </main>
 -->
-<!-- 10
+    <!-- 10
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"><div class="menu__amounts urgent">1</div></li>
         <li class="icon-list menu__icon"></li>
@@ -1281,11 +1308,14 @@
         </section>
 </main>
 -->
-<!-- 11
+    <!-- 11
 <header class="header fixed space-between">
 <div class="header__logo">
     <img src="../images/Logo.svg" alt="logo" class="logo__img">
 </div>
+   <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
 <ul class="header__menu">
     <li class="icon-add menu__icon"></li>
     <li class="icon-trash menu__icon"></li>
@@ -1542,12 +1572,15 @@
         </section>
 </main>
 -->
-<!-- 12
+    <!-- 12
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-list menu__icon"></li>
         <li class="icon-statistics menu__icon"></li>
@@ -1572,12 +1605,15 @@
         </div>
 </main>
 -->
-<!-- 13
+    <!-- 13
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-list menu__icon"></li>
         <li class="icon-statistics menu__icon"></li>
@@ -1598,12 +1634,15 @@
         </div>
 </main>
 -->
-<!-- 14
+    <!-- 14
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -1788,14 +1827,17 @@
 </main>
 -->
 
-<!-- Notifications -->
+    <!-- Notifications -->
 
-<!-- 01
+    <!-- 01
 <header class="header">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -1968,12 +2010,15 @@
   </div>
 </main>
 -->
-<!-- 02
+    <!-- 02
 <header class="header">
   <div class="header__title">
     <h3 class="header__text">Daily Task List</h3>
     <span class="icon-add title__add"></span>
   </div>
+     <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
   <ul class="header__menu">
     <li class="icon-trash menu__icon"></li>
     <li class="icon-list menu__icon"></li>
@@ -2146,12 +2191,15 @@
     </div>
 </main>
 -->
-<!-- 03
+    <!-- 03
 <header class="header">
   <div class="header__title">
     <h3 class="header__text">Daily Task List</h3>
     <span class="icon-add title__add"></span>
   </div>
+     <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
   <ul class="header__menu">
     <li class="icon-trash menu__icon"></li>
     <li class="icon-list menu__icon"></li>
@@ -2324,12 +2372,15 @@
     </div>
 </main>
 -->
-<!-- 04
+    <!-- 04
 <header class="header">
   <div class="header__title">
     <h3 class="header__text">Daily Task List</h3>
     <span class="icon-add title__add"></span>
   </div>
+     <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
   <ul class="header__menu">
     <li class="icon-trash menu__icon"></li>
     <li class="icon-list menu__icon"></li>
@@ -2503,13 +2554,16 @@
 </main>
 -->
 
-<!-- Modals -->
-<!-- 01
+    <!-- Modals -->
+    <!-- 01
 <header class="header modal-display">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -2778,12 +2832,15 @@
         </section>
 </main>
 -->
-<!-- 02
+    <!-- 02
 <header class="header modal-display">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -3052,12 +3109,15 @@
         </section>
 </main>
 -->
-<!-- 03
+    <!-- 03
 <header class="header modal-display">
     <div class="header__title">
         <h3 class="header__text">Daily Task List</h3>
         <span class="icon-add title__add"></span>
     </div>
+       <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
     <ul class="header__menu">
         <li class="icon-trash menu__icon"></li>
         <li class="icon-list menu__icon"></li>
@@ -3261,7 +3321,7 @@
         </section>
 </main>
 -->
-<script src="/bundle.js"></script>
+    <script src="/bundle.js"></script>
 </body>
 
-</html>
+</html

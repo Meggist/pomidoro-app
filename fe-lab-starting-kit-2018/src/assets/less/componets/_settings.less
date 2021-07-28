@@ -183,11 +183,63 @@
 }
 
 .cycle__img {
+  display: flex;
+  flex-direction: column;
   margin-top: 1.5rem;
-  width: 720px;
+  width: 100%;
   height: 70px;
-  background-color: red;
-  
+}
+
+.cycle__first-row {
+  display: flex;
+  margin-bottom: 7px;
+}
+
+
+.cycle__third-row {
+  display: flex;
+  margin-top: 12px;
+}
+
+.cycle__top-text {
+  padding-bottom: 5px;
+  position: absolute;
+  font-size: 12px;
+  line-height: 15px;
+  color: @default;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.cycle__bottom-text {
+  padding-top: 5px;
+  padding-left: 5px;
+  position: absolute;
+  font-size: 12px;
+  line-height: 15px;
+  color: @default;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.cycle__bottom-elem {
+  display: flex;
+  justify-content: center;
+}
+
+.cycle__point {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #00D4D9;
+  border-radius: 50%;
+}
+
+.cycle__top-elem {
+  display: flex;
+  align-items: flex-end;
+}
+
+.cycle__second-row {
+  display: flex;
 }
 
 .settings-pomodoros__buttons {

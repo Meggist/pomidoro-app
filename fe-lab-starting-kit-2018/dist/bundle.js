@@ -96,6 +96,7 @@ __webpack_require__(3); // include router
 /* example of including header component */
 __webpack_require__(4);
 
+__webpack_require__(7)
 
 /***/ }),
 /* 1 */
@@ -116,12 +117,74 @@ __webpack_require__(4);
 
 __webpack_require__(5); // example of including component's styles
 
+const title = document.querySelector('.header__title');
+const header = document.querySelector('.header');
+const menu = document.querySelector('.header__menu');
+let isTimerHeader = document.querySelector(".timer-header");
+
+window.onscroll = () => {
+    if (window.pageYOffset > 110) {
+        if (title) {
+            title.style.display = 'none';
+        }
+        header.classList.add('fixed');
+        header.classList.add('space-between');
+        if (isTimerHeader) {
+            header.classList.remove('timer-header');
+        }
+        document.querySelector('.header__logo').style.display = 'flex';
+        if (menu.ElementfirstChild == document.querySelector(".icon-add.menu__icon")) {
+            menu.insertAdjacentHTML('afterbegin', '<li class="icon-add menu__icon"></li>')
+        }
+    } else {
+        if (title) {
+            title.style.display = 'flex';
+        }
+        document.querySelector('.header__logo').style.display = 'none';
+        header.classList.remove('fixed');
+        header.classList.remove('space-between');
+        if (isTimerHeader) {
+            header.classList.add('timer-header');
+        }
+        const addMenuIcon = document.querySelector(".icon-add.menu__icon");
+        addMenuIcon.parentNode.removeChild(addMenuIcon);
+    }
+}
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/less-loader/dist/cjs.js):\n\r\n\r\nh1.test {\r\n .opacity(0.5);\r\n^\r\n.opacity is undefined\r\n      in C:\\Epam\\repoLab\\fe-lab-oleksandr_yarovyi\\fe-lab-starting-kit-2018\\src\\app\\components\\header\\header.less (line 7, column 1)\n    at C:\\Epam\\repoLab\\fe-lab-oleksandr_yarovyi\\fe-lab-starting-kit-2018\\node_modules\\webpack\\lib\\NormalModule.js:286:20\n    at C:\\Epam\\repoLab\\fe-lab-oleksandr_yarovyi\\fe-lab-starting-kit-2018\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Epam\\repoLab\\fe-lab-oleksandr_yarovyi\\fe-lab-starting-kit-2018\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (C:\\Epam\\repoLab\\fe-lab-oleksandr_yarovyi\\fe-lab-starting-kit-2018\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)");
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 6 */,
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(8);
+/*
+const minusButtons = Array.from(document.querySelectorAll('.icon-minus.counter__button'));
+const plusButtons = Array.from(document.querySelectorAll('.icon-add.counter__button'));
+const numbersButtons = Array.from(document.querySelectorAll('.counter__number'));
+
+for (let i = 0; i < 4; i++) {
+    if (i = 0) {
+        minusButtons[i].onclick = () => changeNumber(5, i, '-')
+    }
+}
+
+const changeNumber = (step, position, operation) => {
+    alert(step)
+        //(operation === '+')?numbersButtons[position].innerHTML = 
+}
+*/
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ })
 /******/ ]);
