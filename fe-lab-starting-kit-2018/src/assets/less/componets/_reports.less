@@ -1,3 +1,24 @@
+.tool-tip {
+  width: 1rem;
+  height: 0.49rem;
+  position: absolute;
+  background-color: #DBEAF5;
+  color: #3C5162;
+  border-radius: 0.06rem;
+  z-index: 20;
+}
+
+.tool-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 20%;
+  margin-left: -0.05rem;
+  border-width: 0.05rem;
+  border-style: solid;
+  border-color: #DBEAF5 transparent transparent transparent;
+}
+
 .reports-tabs{
   color: @default;
   font-family: "PT Sans", sans-serif;
@@ -8,7 +29,7 @@
   .flex-center-normal;
 }
 
-.reports-tabs__month, .reports-tabs__Tasks{
+.reports-tabs__month, .reports-tabs__tasks{
   padding-left: 1rem;
 }
 

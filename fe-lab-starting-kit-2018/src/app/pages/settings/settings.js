@@ -50,36 +50,47 @@ const firstRow = document.getElementsByClassName('cycle__first-row')[0];
 const secondRow = document.getElementsByClassName('cycle__second-row')[0];
 const thirdRow = document.getElementsByClassName('cycle__third-row')[0];
 
-const createCycle = () => {
-    firstRow.innerHTML = '';
-    secondRow.innerHTML = '';
-    thirdRow.innerHTML = '';
 
+const createCycle = () => {
     const iterationAmount = Number(numbersButtons[1].value);
     const workTime = (iterationAmount * 2) * Number(numbersButtons[0].value);
     const shortBreakTime = ((iterationAmount * 2) - 2) * Number(numbersButtons[2].value);
     const minutesSum = workTime + shortBreakTime + Number(numbersButtons[3].value);
     const firstCycle = (workTime + shortBreakTime) / 2 + (Number(numbersButtons[3].value));
 
+    const createGraphElem = (color, index) => {
+        const elem = document.createElement('div');
+        elem.classList.add(color);
+        elem.style.height = "10px";
+        elem.style.width = ((Number(numbersButtons[index].value) / minutesSum) * 100) + '%';
+        secondRow.appendChild(elem);
+    }
+
+    const createInfoElem = (side, row) => {
+        const container = document.createElement('div');
+        container.classList.add(`cycle__${side}-elem`);
+        row.appendChild(container);
+        const text = document.createElement('span');
+        const point = document.createElement('div');
+        text.classList.add(`cycle__${side}-text`);
+        container.appendChild(text);
+        point.classList.add('cycle__point');
+        container.appendChild(point);
+        return arr = [container, text, point];
+    }
+
+    firstRow.innerHTML = '';
+    secondRow.innerHTML = '';
+    thirdRow.innerHTML = '';
+
     let bottomTime = 0;
 
     for (let i = 0; i < iterationAmount * 2; i++) {
-        const iteration = document.createElement('div');
-        iteration.classList.add('work');
-        iteration.style.height = "10px";
-        iteration.style.width = ((Number(numbersButtons[0].value) / minutesSum) * 100) + '%';
-        secondRow.appendChild(iteration);
+
+        createGraphElem('work', 0)
 
         if (i < 3) {
-            const topPoint = document.createElement('div');
-            topPoint.classList.add('cycle__top-elem');
-            firstRow.appendChild(topPoint);
-            const text = document.createElement('span');
-            const point = document.createElement('div');
-            text.classList.add('cycle__top-text');
-            topPoint.appendChild(text);
-            point.classList.add('cycle__point');
-            topPoint.appendChild(point);
+            const [topPoint, text, point] = createInfoElem('top', firstRow)
 
             switch (i) {
                 case 0:
@@ -100,15 +111,8 @@ const createCycle = () => {
         }
 
         if (i < Math.floor(minutesSum / 30)) {
-            const bottomPoint = document.createElement('div');
-            bottomPoint.classList.add('cycle__bottom-elem');
-            thirdRow.appendChild(bottomPoint);
-            const text = document.createElement('span');
-            const point = document.createElement('div');
-            text.classList.add('cycle__bottom-text');
-            bottomPoint.appendChild(text);
-            point.classList.add('cycle__point');
-            bottomPoint.appendChild(point);
+            const [bottomPoint, text, point] = createInfoElem('bottom', thirdRow);
+
             bottomTime += 30;
             bottomPoint.style.marginLeft = ((30 / minutesSum) * 100) + "%";
             if (i == 0) {
@@ -126,18 +130,11 @@ const createCycle = () => {
         }
 
         if (i !== iterationAmount - 1 && i !== (iterationAmount * 2) - 1) {
-            const shortBreak = document.createElement('div');
-            shortBreak.classList.add('other');
-            shortBreak.style.height = "10px";
-            shortBreak.style.width = ((Number(numbersButtons[2].value) / minutesSum) * 100) + '%';
-            secondRow.appendChild(shortBreak);
+            createGraphElem('other', 2);
         }
+
         if (i == iterationAmount - 1) {
-            const longBreak = document.createElement('div');
-            longBreak.classList.add('hobby');
-            longBreak.style.height = "10px";
-            longBreak.style.width = ((Number(numbersButtons[3].value) / minutesSum) * 100) + '%';
-            secondRow.appendChild(longBreak);
+            createGraphElem('hobby', 3);
         }
     }
 }
