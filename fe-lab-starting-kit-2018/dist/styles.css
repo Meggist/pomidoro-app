@@ -2,13 +2,13 @@
 /* base styles */
 @font-face {
   font-family: "Roboto Light", sans-serif;
-  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+  src: url(6090d256d88dcd7f0244eaa4a3eafbba.ttf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "PT Sans", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+  src: url(4ea26cd5e7f64894d6c2451446f7dda5.ttf);
   font-weight: normal;
   font-style: normal;
 }
@@ -403,6 +403,7 @@ template {
 }
 /* common styles */
 body {
+  font-family: "Roboto Light", sans-serif;
   background: #2a3f50;
   min-width: 32.5rem;
   max-width: 90rem;
@@ -413,7 +414,7 @@ body {
   background-color: #2a3f50;
   display: flex;
   justify-content: space-between;
-  height: 3.75rem;
+  height: 1.34rem;
   padding: 0 1.5rem 3.5rem 1.5rem;
   position: absolute;
   width: 94%;
@@ -429,6 +430,11 @@ body {
 .header__logo {
   display: none;
 }
+.logo__img {
+  width: 13.75rem;
+  height: 4.25rem;
+  margin-top: -0.05rem;
+}
 .header__text {
   font-size: 1.5rem;
   margin: 0;
@@ -440,15 +446,21 @@ body {
 }
 .menu__icon {
   color: #8DA5B8;
-  height: 1.5rem;
-  font-size: 1rem;
-  padding: 0.75rem 1.3125rem 0 1.3125rem;
+  width: 0.23rem;
+  height: 0.23rem;
+  font-size: 100%;
+  padding: 0 0.2rem;
+}
+.menu__icon:hover {
+  color: #82C7E0;
+}
+.menu__icon:active {
+  color: white;
 }
 .header__menu {
-  height: 1.5rem;
   display: flex;
   margin-bottom: 0;
-  padding-top: 1.5rem;
+  padding-top: 0.36rem;
 }
 .menu__icon:last-child {
   padding-right: 0;
@@ -532,9 +544,6 @@ ul {
 .low-color {
   color: #1ABC9C;
 }
-.menu__icon:hover {
-  color: #82C7E0;
-}
 .white-color {
   color: white;
 }
@@ -545,13 +554,13 @@ input {
 .hidden {
   display: none;
 }
-/* components styles */
-body {
-  font-family: "Roboto Light", sans-serif;
-  margin: 0 auto;
-  min-width: 32.5rem;
+@media (min-width: 10.24rem) {
+  .menu__icon {
+    padding: 0 0.16rem;
+  }
 }
-.taskType {
+/* components styles */
+.task-type {
   color: #8DA5B8;
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
@@ -559,17 +568,17 @@ body {
   line-height: 1.375rem;
   padding-bottom: 1.5rem;
 }
-.taskType__right-side {
+.task-type__right-side {
   float: right;
 }
-.taskType__left-side {
+.task-type__left-side {
   float: left;
 }
-.taskType__Done,
-.taskType__deselect-all {
+.task-type__done,
+.task-type__deselect-all {
   padding-left: 1rem;
 }
-.taskType__ToDo {
+.task-type__to-do {
   padding: 0 1rem;
   border-right: solid 0.0625rem #8DA5B8;
 }
@@ -579,7 +588,7 @@ body {
 .tasks__element {
   justify-content: space-between;
   display: flex;
-  height: 6.25rem;
+  height: 1rem;
   margin-bottom: 0.75rem;
   background-color: white;
 }
@@ -611,18 +620,18 @@ body {
   flex-direction: column;
 }
 .tasks__name {
-  font-size: 1.125rem;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
   font-weight: 500;
   margin-top: 1rem;
 }
 .tasks__description {
   color: #7F7F7F;
-  font-size: 1rem;
+  font-size: 0.12rem;
   font-weight: 400;
-  line-height: 1.25rem;
+  line-height: 0.16rem;
   margin-top: 0.25rem;
-  width: 100%;
+  width: 98%;
   max-width: 26.25rem;
   height: 100%;
 }
@@ -640,9 +649,9 @@ body {
 .tasks__edit,
 .tasks__trash,
 .tasks__arrows {
-  height: 1.1875rem;
-  width: 1.1875rem;
-  font-size: 1.1875rem;
+  height: 0.15rem;
+  width: 0.15rem;
+  font-size: 0.15rem;
 }
 .tasks__edit:hover,
 .tasks__trash:hover,
@@ -650,10 +659,10 @@ body {
   color: #82C7E0;
 }
 .tasks__trash {
-  padding-left: 0.625rem;
+  padding-left: 0.23rem;
 }
 .tasks__arrows {
-  padding-right: 0.3125rem;
+  padding-right: 0.23rem;
 }
 .priority {
   color: white;
@@ -695,7 +704,7 @@ body {
   padding-top: 0.4375rem;
   margin-left: 1.125rem;
 }
-.taskType span:hover,
+.task-type span:hover,
 .global-list__left-side:hover {
   color: #82C7E0;
 }
@@ -847,11 +856,6 @@ body {
 .education-close {
   background-color: #368BC5;
 }
-.logo__img {
-  width: 13.75rem;
-  height: 4.25rem;
-  margin-top: -1.5625rem;
-}
 .fixed {
   position: fixed;
 }
@@ -957,7 +961,7 @@ body {
   font-size: 1.75rem;
   line-height: 1.75rem;
   color: white;
-  margin: 4rem 0;
+  margin: 1rem 0;
 }
 .modal-form {
   display: flex;
@@ -966,23 +970,23 @@ body {
   margin-top: -1.5rem;
 }
 .model-label {
-  width: 36rem;
+  width: 24rem;
   display: flex;
   flex-direction: column;
   font-size: 1rem;
   line-height: 1.25rem;
   color: white;
   text-transform: uppercase;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 .modal-input {
   background-color: #2a3f50;
+  border-bottom: solid #8DA5B8 0.0625rem;
+  color: #8DA5B8;
   margin-top: 1rem;
   height: 2.25rem;
-  border-bottom: solid #8DA5B8 0.0625rem;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  color: #8DA5B8;
+  font-size: 0.14rem;
+  line-height: 1rem;
 }
 .model-input__text {
   color: white;
@@ -1005,6 +1009,12 @@ body {
   margin-right: 2rem;
   text-transform: none;
 }
+.modal-category {
+  margin-right: 1rem;
+}
+.modal-estimations {
+  margin-right: 2rem;
+}
 .modal-estimations > * {
   width: 1.25rem;
   height: 1.25rem;
@@ -1017,8 +1027,8 @@ body {
   color: #82C7E0;
 }
 .modal-point {
-  width: 1rem;
-  height: 1rem;
+  width: 0.5rem;
+  height: 0.5rem;
   background-color: #8DA5B8;
   border-radius: 50%;
 }
@@ -1055,7 +1065,57 @@ body {
 .modal__remove {
   background: #F15A4A;
 }
+@media (min-width: 7.68rem) {
+  .tasks__description {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-top: 0.25rem;
+    width: 100%;
+    max-width: 26.25rem;
+    height: 100%;
+  }
+  .tasks__name {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  .tasks__icons {
+    color: #CACACA;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-right: 0.23rem;
+  }
+  .tasks__edit,
+  .tasks__trash,
+  .tasks__arrows {
+    height: 0.2rem;
+    width: 0.2rem;
+    font-size: 0.2rem;
+  }
+  .model-label {
+    width: 36rem;
+  }
+  .modal-input {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+  .modal-category {
+    margin-right: 2rem;
+  }
+  .modal-point {
+    width: 1rem;
+    height: 1rem;
+  }
+}
 @media (min-width: 64rem) {
+  .modal-estimations {
+    width: 100%;
+  }
+  .tasks__element {
+    height: 1rem;
+  }
   .modal__info {
     margin-top: 13.75rem;
   }
@@ -1070,24 +1130,42 @@ body {
     line-height: 1.25rem;
     margin: 0 0.75rem;
   }
+  .modal-placeholder {
+    padding-top: 2.5rem;
+  }
   .modal-buttons {
     justify-content: center;
     margin-top: 15.625rem;
   }
+  .model-label {
+    margin: 0.5rem 0;
+    width: 80%;
+  }
   .modal-display {
     display: block;
   }
+  .modal-input {
+    margin-top: 0.5rem;
+  }
   .modal-title {
-    margin: 2rem 0;
+    margin: 1rem 0 2rem 0;
     font-size: 2rem;
+  }
+  .modal-input {
+    font-size: 0.11rem;
+    line-height: 1rem;
+  }
+  .modal-placeholder {
+    font-size: 1rem;
+    line-height: 1.25rem;
   }
   .modal-window {
     position: fixed;
-    top: 50%;
     left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    width: 43.75rem;
-    height: 53.125rem;
+    width: 5.2rem;
+    height: 6.39rem;
     z-index: 5;
   }
   .modal-wrapper {
@@ -1211,6 +1289,25 @@ body {
     z-index: 100;
   }
 }
+.tool-tip {
+  width: 1rem;
+  height: 0.49rem;
+  position: absolute;
+  background-color: #DBEAF5;
+  color: #3C5162;
+  border-radius: 0.06rem;
+  z-index: 20;
+}
+.tool-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 20%;
+  margin-left: -0.05rem;
+  border-width: 0.05rem;
+  border-style: solid;
+  border-color: #DBEAF5 transparent transparent transparent;
+}
 .reports-tabs {
   color: #8DA5B8;
   font-family: "PT Sans", sans-serif;
@@ -1222,7 +1319,7 @@ body {
   justify-content: center;
 }
 .reports-tabs__month,
-.reports-tabs__Tasks {
+.reports-tabs__tasks {
   padding-left: 1rem;
 }
 .reports-tabs__Pomodoros {
@@ -1355,9 +1452,9 @@ body {
 .settings-pomodoros__name {
   padding-bottom: 0.75rem;
   font-weight: 400;
-  font-size: 14px;
-  width: 124px;
-  margin-right: 12px;
+  font-size: 0.14rem;
+  width: 1.24rem;
+  margin-right: 0.12rem;
   line-height: 1.5rem;
   color: white;
   text-transform: uppercase;
@@ -1382,8 +1479,8 @@ body {
   display: flex;
 }
 .counter__number {
-  width: 80px;
-  height: 16px;
+  width: 0.8rem;
+  height: 0.16rem;
   text-align: center;
   background: none;
   color: #8DA5B8;
@@ -1398,9 +1495,9 @@ body {
 .counter__button {
   transform: translateY(50%);
   padding: 0;
-  font-size: 10px;
-  width: 10px;
-  height: 10px;
+  font-size: 0.1rem;
+  width: 0.1rem;
+  height: 0.1rem;
   background: none;
   color: #8DA5B8;
 }
@@ -1424,10 +1521,54 @@ body {
   color: white;
 }
 .cycle__img {
+  display: flex;
+  flex-direction: column;
   margin-top: 1.5rem;
-  width: 720px;
-  height: 70px;
-  background-color: red;
+  width: 100%;
+  height: 0.7rem;
+}
+.cycle__first-row {
+  display: flex;
+  margin-bottom: 0.07rem;
+}
+.cycle__third-row {
+  display: flex;
+  margin-top: 0.12rem;
+}
+.cycle__top-text {
+  padding-bottom: 0.05rem;
+  position: absolute;
+  font-size: 0.12rem;
+  line-height: 0.15rem;
+  color: #8DA5B8;
+  font-family: 'PT Sans', sans-serif;
+}
+.cycle__bottom-text {
+  padding-top: 0.05rem;
+  padding-left: 0.05rem;
+  position: absolute;
+  font-size: 0.12rem;
+  line-height: 0.15rem;
+  color: #8DA5B8;
+  font-family: 'PT Sans', sans-serif;
+}
+.cycle__bottom-elem {
+  display: flex;
+  justify-content: center;
+}
+.cycle__point {
+  position: absolute;
+  width: 0.04rem;
+  height: 0.04rem;
+  background-color: #00D4D9;
+  border-radius: 50%;
+}
+.cycle__top-elem {
+  display: flex;
+  align-items: flex-end;
+}
+.cycle__second-row {
+  display: flex;
 }
 .settings-pomodoros__buttons {
   margin-top: 4.375rem;
@@ -1448,7 +1589,13 @@ body {
 .settings-pomodoros__save:hover {
   background-color: #0E8C74;
 }
+.cycle__bottom-display {
+  display: none;
+}
 @media (min-width: 64rem) {
+  .cycle__bottom-display {
+    display: flex;
+  }
   .settings-header__text {
     left: 50%;
     padding-left: 3.125rem;
@@ -1643,5 +1790,4 @@ body {
 }
 
 /* example of using mixins */
-
 
