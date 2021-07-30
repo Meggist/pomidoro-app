@@ -414,7 +414,7 @@ body {
   background-color: #2a3f50;
   display: flex;
   justify-content: space-between;
-  height: 116px;
+  height: 7.25rem;
   position: absolute;
   width: 95.5%;
   margin: auto;
@@ -425,8 +425,8 @@ body {
 }
 .tabs__edge {
   position: static;
-  height: 16px;
-  width: 1px;
+  height: 1rem;
+  width: 0.0625rem;
   background-color: #8DA5B8;
   padding: 0 !important;
   margin: auto;
@@ -462,21 +462,21 @@ body {
 .menu__icon {
   width: 1.4375rem;
   height: 1.4375rem;
-  font-size: 23px;
+  font-size: 1.4375rem;
   margin: 0 1.25rem;
 }
 .header__menu {
   align-items: flex-end;
   display: flex;
   margin-bottom: 0;
-  height: 25px;
+  height: 1.5625rem;
 }
 .menu__button {
   color: #8DA5B8;
   background: none;
   position: absolute;
-  width: 23px;
-  height: 23px;
+  width: 1.4375rem;
+  height: 1.4375rem;
   padding: 0;
   cursor: pointer;
 }
@@ -492,7 +492,7 @@ body {
 .main {
   margin: auto;
   width: 94%;
-  padding-top: 116px;
+  padding-top: 7.25rem;
 }
 ul {
   list-style: none;
@@ -584,7 +584,7 @@ input {
 }
 .fixed {
   position: fixed;
-  height: 138px;
+  height: 8.625rem;
 }
 @media (min-width: 48rem) {
   .logo__img {
@@ -600,7 +600,7 @@ input {
     margin-top: 2rem;
   }
   .header {
-    height: 138px;
+    height: 8.625rem;
     justify-content: flex-end;
   }
   .space-between {
@@ -665,7 +665,7 @@ input {
   background-color: white;
 }
 .tasks__category-indicator {
-  width: 8px;
+  width: 0.5rem;
   height: 100%;
 }
 .tasks__title-line {
@@ -677,13 +677,13 @@ input {
   padding-bottom: 2.5rem;
 }
 .tasks__date {
-  width: 64px;
+  width: 4rem;
   text-align: center;
   color: #9F9F9F;
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 2.625rem 16px;
+  padding: 2.625rem 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -779,7 +779,7 @@ input {
   display: block;
   padding-top: 0.4375rem;
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: 0.3125rem;
 }
 .task-type span:hover,
 .global-list__left-side:hover {
@@ -809,7 +809,7 @@ input {
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-size: 1.375rem;
-  height: 20px;
+  height: 1.25rem;
   align-items: center;
 }
 .global-list__categories > *:not(:last-child) {
@@ -848,7 +848,7 @@ input {
 .tasks__add-task,
 .tasks__first-task,
 .tasks__noTasks-task {
-  margin-top: 90px;
+  margin-top: 5.625rem;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -885,8 +885,8 @@ input {
   margin-top: 4.25rem;
 }
 .message__excellent {
-  margin-bottom: 156px;
-  margin-top: 96px;
+  margin-bottom: 9.75rem;
+  margin-top: 6rem;
 }
 .tasks__message-text {
   font-weight: 300;
@@ -895,7 +895,7 @@ input {
 }
 .tasks__message-img {
   margin-top: 1.5rem;
-  font-size: 56px;
+  font-size: 3.5rem;
 }
 .done {
   background-color: #D4D9DC;
@@ -988,7 +988,7 @@ input {
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 88px;
+  width: 5.5rem;
   color: white;
   font-size: 2rem;
 }
@@ -1009,8 +1009,8 @@ input {
 }
 .notification__text {
   font-weight: 700;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 1rem;
+  line-height: 1rem;
   color: white;
   padding: 1.1rem 0.625rem;
 }
@@ -1152,9 +1152,9 @@ input {
   background: #F15A4A;
 }
 .tasks__not-today {
-  width: 62px;
-  height: 36px;
-  padding: 31px 5px;
+  width: 3.875rem;
+  height: 2.25rem;
+  padding: 1.9375rem 0.3125rem;
 }
 @media (min-width: 48rem) {
   .global-list__arrow {
@@ -1182,16 +1182,16 @@ input {
     height: 4.5rem;
   }
   .tasks__not-today {
-    width: 62px;
-    height: 36px;
-    padding: 31px 16px;
+    width: 3.875rem;
+    height: 2.25rem;
+    padding: 1.9375rem 1rem;
   }
   .tasks__description {
     font-size: 1rem;
     line-height: 1.25rem;
     margin-top: 0.25rem;
     width: 100%;
-    max-width: 396px;
+    max-width: 24.75rem;
     height: 100%;
   }
   .tasks__name {
@@ -1231,7 +1231,7 @@ input {
 }
 @media (min-width: 64rem) {
   .tasks__element {
-    height: 88px;
+    height: 5.5rem;
   }
   .modal-estimations {
     width: 100%;
@@ -1313,24 +1313,24 @@ input {
     line-height: 1.25rem;
   }
   .tasks__description {
-    width: 604px;
+    width: 37.75rem;
     max-width: none;
   }
   .task-category__title > img {
     width: 1.25rem;
-    margin-left: -2px;
+    margin-left: -0.125rem;
     margin-bottom: -0.125rem;
   }
   .tasks__notification {
-    width: 500px;
+    width: 31.25rem;
     height: 3.5rem;
   }
   .notification__text {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1rem;
     color: white;
-    padding: 1.2rem 16px;
+    padding: 1.2rem 1rem;
     width: 100%;
   }
   .notification__pomodoro {
@@ -1425,7 +1425,7 @@ input {
 .reports__arrow:hover {
   color: #82C7E0;
 }
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .reports__arrow {
     transform: translate(-360%, 80%);
   }
@@ -1529,7 +1529,7 @@ input {
   width: 100%;
   max-width: 32.25rem;
   justify-content: center;
-  margin-bottom: 48px;
+  margin-bottom: 3rem;
 }
 .settings-pomodoros__name {
   padding-bottom: 0.75rem;
@@ -1546,7 +1546,7 @@ input {
   width: 24.125rem;
 }
 .settings-pomodoros__counter {
-  width: 100px;
+  width: 6.25rem;
   display: flex;
   justify-content: space-between;
   color: #8DA5B8;
@@ -1664,7 +1664,7 @@ input {
 }
 .settings-pomodoros__goToTasks,
 .settings-pomodoros__save {
-  width: 220px;
+  width: 13.75rem;
   height: 4rem;
   color: white;
   font-size: 1.5rem;
@@ -1679,7 +1679,7 @@ input {
 .cycle__bottom-display {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .settings__name {
     margin-left: 1.25rem;
   }
@@ -1722,7 +1722,7 @@ input {
     justify-content: space-between;
   }
   .settings-pomodoros__element {
-    width: 425px;
+    width: 26.5625rem;
     margin: 1.875rem 0;
   }
   .settings-pomodoros__buttons {
