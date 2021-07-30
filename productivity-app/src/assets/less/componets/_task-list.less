@@ -1,0 +1,867 @@
+.task-type {
+  color: @default;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 1.375rem;
+  padding-bottom: 1.5rem;
+}
+
+.task-type__right-side {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+.task-type__left-side {
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+.task-type__done,
+.task-type__deselect-all {
+  padding-left: 1rem;
+}
+
+
+.task-type__to-do {
+  padding: 0 1rem;
+}
+
+.tasks {
+  margin-top: 1.5rem;
+}
+
+.tasks__element {
+  justify-content: space-between;
+  display: flex;
+  height: 6.25rem;
+  margin-bottom: 0.75rem;
+  background-color: white;
+}
+
+.tasks__category-indicator {
+  width: 0.5rem;
+  height: 100%;
+}
+
+.tasks__title-line {
+  height: 1.5625rem;
+  width: 0.5rem;
+  position: absolute;
+}
+
+.connected {
+  padding-bottom: 2.5rem;
+}
+
+.tasks__date {
+  width: 4rem;
+  text-align: center;
+  color: #9F9F9F;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2.625rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tasks__info {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.tasks__name {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.tasks__description {
+  color: #7F7F7F;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1rem;
+  margin-top: 0.25rem;
+  width: 98%;
+  max-width: 26.25rem;
+  height: 100%;
+}
+
+.tasks__left-side,
+.tasks__right-side {
+  display: flex;
+}
+
+.tasks__icons {
+  color: #CACACA;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-right: 0.625rem;
+}
+
+.tasks__edit, .tasks__trash, .tasks__arrows {
+  height: 0.9375rem;
+  width: 0.9375rem;
+  font-size: 0.9375rem;
+  cursor: pointer;
+
+  &:hover {
+    color: @icons-hover;
+  }
+}
+
+.tasks__trash {
+  padding-left: 1.4375rem;
+}
+
+.tasks__arrows {
+  padding-right: 1.4375rem;
+}
+
+.priority {
+  cursor: pointer;
+  color: white;
+  width: 5.5rem;
+  height: 100%;
+}
+
+.tasks__tomato {
+  position: absolute;
+  font-size: 3rem;
+  color: #FFFFFF;
+  padding: 1.5625rem 1.375rem;
+  margin: auto;
+}
+
+.tasks__num {
+  font-family: 'PT Sans', sans-serif;
+  color: #FFFFFF;
+  font-size: 1.5625rem;
+  margin: auto;
+  padding: 2.3125rem 2.4375rem;
+  position: absolute;
+}
+
+
+.global-list {
+  justify-content: space-between;
+  margin-top: 5rem;
+  display: flex;
+  color: @default;
+  padding-bottom: 4.125rem;
+}
+
+.global-list__name {
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  font-family: 'PT Sans', sans-serif;
+  line-height: 1rem;
+  font-weight: 700;
+}
+
+.global-list__arrow {
+  font-size: 0.75rem;
+  display: block;
+  padding-top: 0.4375rem;
+  cursor: pointer;
+  margin-left: 0.3125rem;
+}
+
+.task-type span:hover,
+.global-list__left-side:hover {
+  color: @icons-hover;
+}
+
+.urgent {
+  &:hover {
+    background-color: @name-urgent;
+  }
+}
+
+.high {
+  &:hover {
+    background-color: @name-high;
+  }
+}
+
+.middle {
+  &:hover {
+    background-color: @name-middle;
+  }
+}
+
+.low {
+  &:hover {
+    background-color: @name-low;
+  }
+}
+
+.global-list__left-side,
+.global-list__right-side,
+.notification__left-side,
+.notification__right-side {
+  display: flex;
+}
+
+.global-list__categories {
+  display: flex;
+  color: @default;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.375rem;
+  height: 1.25rem;
+  align-items: center;
+}
+
+.global-list__categories > *:not(:last-child) {
+  padding: 0 1rem;
+  &:hover {
+    color: @icons-hover;
+  }
+}
+
+.global-list__categories > *:last-child {
+  padding-left: 1rem;
+
+  &:hover {
+    color: @icons-hover;
+  }
+}
+
+.task-category__name {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+}
+
+.task-category__title {
+  margin-left: -0.25rem;
+  margin-bottom: -0.375rem;
+}
+
+.tasks-group__connect-line {
+  position: absolute;
+  height: 14.75rem;
+  width: 0.5rem;
+}
+
+.tasks-group {
+  margin-bottom: 3.5rem;
+}
+
+.tasks__day {
+  font-size: 1.375rem;
+}
+
+.tasks__add-task,
+.tasks__first-task,
+.tasks__noTasks-task {
+  margin-top: 5.625rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rem;
+}
+
+.add-task__image,
+.first-task__image,
+.noTasks-task__image {
+  height: 13.125rem;
+  width: 13.125rem;
+}
+
+.add-task__text,
+.first-task__text,
+.noTasks-task__text {
+  text-align: center;
+  color: @default;
+  .defaul-font-size;
+  font-weight: 300;
+  line-height: 3rem;
+  margin-top: 4rem;
+}
+
+.first-task__text {
+  width: 30.75rem;
+}
+
+.noTasks-task__text {
+  max-width: 33.4375rem
+}
+
+.tasks__message {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: @default;
+  margin-bottom: 6.75rem;
+  margin-top: 4.25rem;
+}
+
+.message__excellent {
+  margin-bottom: 9.75rem;
+  margin-top: 6rem;
+}
+
+.tasks__message-text {
+  font-weight: 300;
+  .defaul-font-size;
+  line-height: 3rem;
+}
+
+.tasks__message-img {
+  margin-top: 1.5rem;
+  font-size: 3.5rem;
+}
+
+.done {
+  background-color: @done;
+}
+
+.crossed {
+  text-decoration: line-through;
+}
+
+.taskType__select-all {
+  padding-right: 1rem;
+}
+
+.tasks__category-indicator--activate {
+  .flex-center-center;
+  color: white;
+  width: 5.5rem;
+  margin-right: 1rem;
+}
+
+.tasks__category-indicator--activate > * {
+  .defaul-font-size;
+}
+
+.menu__amounts {
+  position: absolute;
+  z-index: 2;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.65rem;
+  .flex-center-center;
+  transform: translate(80%,90%);
+}
+
+.hobby-close {
+  background-color: @hobby-close;
+}
+
+.education-close {
+  background-color: @education-close;
+}
+
+.tasks__buttons {
+  .flex-spacebetween;
+  margin-bottom: 3rem;
+}
+
+.buttons__go-to-settings,
+.buttons__skip {
+  font-family: 'PT Sans', sans-serif;
+  .button-font-default;
+  font-weight: 700;
+  color: white;
+  width: 12.75rem;
+  height: 4.5rem;
+}
+
+.buttons__go-to-settings {
+  background-color: #59ABE3;
+}
+
+.buttons__skip {
+  background-color: #1ABC9C;
+}
+
+.tasks__notification {
+  float: right;
+  display: flex;
+  width: 100%;
+  opacity: 0.9;
+  margin-top: -6.875rem;
+  height: 4.5rem;
+  border-radius: 0.3125rem;
+  border: solid white 0.0625rem;
+}
+
+.notification__icon {
+  color: white;
+  width: 5.5rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notification__bg--left {
+  background: rgba(255, 255, 255, 0.2)
+}
+
+.notification__content {
+  width: 100%;
+  .flex-spacebetween;
+}
+
+.notification__close {
+  .flex-center-center;
+  height: 100%;
+  width: 5.5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+
+.notification__pomodoro {
+  font-size: 3rem;
+  color: #FFFFFF;
+  position: absolute;
+  opacity: 1;
+  z-index: 10;
+}
+
+.notification__symbol {
+  font-family: 'PT Sans', sans-serif;
+  color: #FFFFFF;
+  font-size: 1.5625rem;
+  padding: 1.4375rem 2.5625rem;
+  margin: auto;
+  position: absolute;
+}
+
+.notification__text {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: white;
+  padding: 1.1rem 0.625rem;
+}
+
+.modal-window {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: @background-color;
+}
+
+.modal-display {
+  display: none;
+}
+
+.modal-save-close {
+  margin: 1.5rem 1.5rem 0 0;
+  display: flex;
+  justify-content: flex-end;
+  color: @default;
+  font-size: 2rem;
+}
+
+.modal-save-close > * {
+  margin-left: 2rem;
+
+  &:hover {
+    color: @active-icon;
+  }
+}
+
+.modal-title {
+  .flex-center-normal;
+  font-weight: bold;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+  color: white;
+  margin: 1rem 0;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -1.5rem;
+}
+
+.model-label {
+  width: 24rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+}
+
+.modal-input {
+  background-color: @background-color;
+  border-bottom: solid @default 0.0625rem;
+  color: @default;
+  margin-top: 1rem;
+  height: 2.25rem;
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
+.model-input__text {
+  color: white;
+}
+
+.modal-placeholder {
+  position: absolute;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: @default;
+  text-transform: none;
+  padding-top: 2.5rem;
+}
+
+.modal-categories {
+  display: flex;
+}
+
+.modal-category,
+.modal-estimations {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  text-transform: none;
+}
+
+.modal-category {
+  margin-right: 1rem;
+}
+
+.modal-estimations {
+  margin-right: 2rem;
+}
+
+.modal-estimations > * {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.75rem;
+}
+
+.modal-category__text {
+  margin-left: 0.5rem;
+
+  &:hover {
+    color: @active-icon;
+  }
+}
+
+.modal-point {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: @default;
+  border-radius: 50%;
+}
+
+.modal__info {
+  margin-top: 19.75rem;
+  .flex-center-center;
+  color: @default;
+  .defaul-font-size;
+  line-height: 3rem;
+}
+
+.modal__info > * {
+  text-align: center;
+  width: 33.4375rem;
+  display: inline-block;
+}
+
+.modal-buttons {
+  .flex-spacebetween;
+  margin: 21.5rem 1.5rem 0 1.5rem;
+}
+
+.modal__remove,
+.modal__cancel {
+  width: 21.75rem;
+  height: 4.5rem;
+  color: white;
+  .button-font-default;
+}
+
+.modal__cancel {
+  background: #59ABE3;
+}
+
+.modal__remove {
+  background: #F15A4A;
+}
+
+.tasks__not-today {
+  width: 3.875rem;
+  height: 2.25rem;
+  padding: 1.9375rem 0.3125rem;
+}
+
+
+@media (min-width: 48rem) {
+  .global-list__arrow {
+    font-size: 0.75rem;
+    margin-left: 1.125rem;
+  }
+
+  .notification__text {
+    font-size: 1.375rem;
+    line-height: 1.5rem;
+    padding: 1.5rem 0.625rem;
+  }
+
+  .global-list__name {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .tasks__info {
+    width: auto;
+  }
+
+  .first-task__text {
+    width: 43.75rem;
+  }
+
+  .buttons__go-to-settings,
+  .buttons__skip {
+    width: 21.75rem;
+    height: 4.5rem;
+  }
+
+  .tasks__not-today {
+    width: 3.875rem;
+    height: 2.25rem;
+    padding: 1.9375rem 1rem;
+  }
+
+
+  .tasks__description {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-top: 0.25rem;
+    width: 100%;
+    max-width: 24.75rem;
+    height: 100%;
+  }
+
+  .tasks__name {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .tasks__icons {
+    color: #CACACA;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-right: 1.4375rem;
+  }
+
+  .tasks__edit, .tasks__trash, .tasks__arrows {
+    height: 1.25rem;
+    width: 1.25rem;
+    font-size: 1.25rem;
+  }
+
+  .model-label {
+    width: 36rem;
+  }
+
+  .modal-input {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  .modal-category {
+    margin-right: 2rem;
+  }
+
+  .modal-point {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+
+@media (min-width: 64rem) {
+  .tasks__element {
+    height: 5.5rem;
+  }
+
+  .modal-estimations {
+    width: 100%;
+  }
+
+  .modal__info {
+    margin-top: 13.75rem;
+  }
+
+  .modal__info > * {
+    width: 25rem;
+  }
+
+  .modal__remove,
+  .modal__cancel {
+    width: 7.5rem;
+    height: 2.75rem;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    margin: 0 0.75rem;
+  }
+
+  .modal-placeholder {
+    padding-top: 2.5rem;
+  }
+
+  .modal-buttons {
+    justify-content: center;
+    margin-top: 15.625rem;
+  }
+
+  .model-label {
+    margin: 0.5rem 0;
+    width: 80%;
+  }
+
+  .modal-display {
+    display: block;
+  }
+
+  .modal-input {
+    margin-top: 0.5rem;
+  }
+
+  .modal-title {
+    margin: 1rem 0 2rem 0;
+    font-size: 2rem;
+  }
+
+  .modal-input {
+    font-size: 0.6875rem;
+    line-height: 1rem;
+  }
+
+  .modal-placeholder {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+
+  .modal-window {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 32.5rem;
+    height: 39.9375rem;
+    z-index: 5;
+  }
+
+  .modal-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    z-index: 100;
+  }
+
+  .tasks__buttons {
+    justify-content: center;
+    margin-top: -7.5rem;
+  }
+
+  .buttons__skip {
+    margin-right: 1.5rem;
+    width: 6.0625rem;
+    height: 2.75rem;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+  }
+
+  .buttons__go-to-settings {
+    width: 10.8125rem;
+    height: 2.75rem;
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+  }
+
+  .tasks__description {
+    width: 37.75rem;
+    max-width: none;
+  }
+
+  .task-category__title > img {
+    width: 1.25rem;
+    margin-left: -0.125rem;
+    margin-bottom: -0.125rem;
+  }
+
+  .tasks__notification {
+    width: 31.25rem;
+    height: 3.5rem;
+  }
+
+  .notification__text {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    line-height: 1rem;
+    color: white;
+    padding: 1.2rem 1rem;
+    width: 100%;
+  }
+
+  .notification__pomodoro {
+    font-size: 2.625rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .notification__symbol {
+    font-size: 1.375rem;
+    padding: 1.25rem 2.375rem;
+  }
+}
+
+@media (min-width: 90rem) {
+
+  .tasks__category-indicator {
+    width: 0.5rem;
+    height: 100%;
+  }
+
+  .tasks__description {
+    margin-top: 0.5rem;
+    width: 56.25rem;
+  }
+
+  .tasks__name {
+    margin-top: 1.25rem;
+  }
+
+  .modal-wrapper {
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    z-index: 100;
+  }
+}
