@@ -35,12 +35,10 @@
 
 .reports-tabs__Pomodoros {
   padding-right: 1rem;
-  border-right: solid 0.0625rem @default;
 }
 
 .reports-tabs__week, .reports-tabs__day {
   padding: 0 1rem;
-  border-right: solid 0.0625rem @default;
 }
 
 .graph {
@@ -49,26 +47,39 @@
   margin-bottom: 11.875rem;
 }
 
+.reports-tabs__list {
+  display: flex;
+}
+
 .graph__image {
   min-width: 18.75rem;
 }
 
 .reports__arrow {
-  padding-top: 8.125rem;
-  padding-right: 90%;
+  background: none;
   position: absolute;
   font-size: 5rem;
   color: @default;
+  transform: translate(-250%, 80%);
+
+  &:hover {
+    color: @active-icon;
+  }
+}
+
+@media (min-width: 768px) {
+  .reports__arrow {
+    transform: translate(-360%, 80%);
+  }
 }
 
 @media (min-width: 64rem) {
   .reports-header__text {
-    left: 47%;
+    left: 46%;
+  }
+
+  .reports__arrow {
+    transform: translate(-440%, 80%);
   }
 }
 
-@media (min-width: 90rem) {
-  .reports-header__text {
-    left: 50%;
-  }
-}

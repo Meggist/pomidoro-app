@@ -11,30 +11,47 @@ body {
   background-color: @background-color;
   display: flex;
   justify-content: space-between;
-  height: 8.375rem;
-  padding: 0 1.5rem 3.5rem 1.5rem;
+  height: 116px;
   position: absolute;
-  width: 94%;
+  width: 95.5%;
   margin: auto;
   z-index: 1;
+  align-items: center;
+  left:50%;
+  transform:translateX( -50%);
 }
 
+.tabs__edge{
+  position: static;
+  height: 16px;
+  width: 1px;
+  background-color: @default;
+  padding: 0 !important;
+  margin: auto;
+}
 
-.header__title,
-.header__logo {
+.tabs {
+  padding: 0;
+  background: none;
+  color: @default;
+  cursor: pointer;
+
+  &:hover {
+    color: @active-icon
+  }
+
+  &:focus {
+    color: white;
+  }
+}
+
+.header__title {
   display: flex;
-  margin-top: 2rem;
   color: white;
 }
 
 .header__logo {
   display: none;
-}
-
-.logo__img {
-  width: 13.75rem;
-  height: 4.25rem;
-  margin-top: -0.3125rem;
 }
 
 .header__text {
@@ -49,35 +66,45 @@ body {
 }
 
 .menu__icon {
-  color: @default;
   width: 1.4375rem;
   height: 1.4375rem;
-  font-size: 100%;
-  padding: 0 1.25rem;
+  font-size: 23px;
+  margin: 0 1.25rem;
+}
+
+.header__menu {
+  align-items: flex-end;
+  display: flex;
+  margin-bottom: 0;
+  height: 25px;
+}
+
+.menu__button {
+  color: @default;
+  background: none;
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  padding: 0;
+  cursor: pointer;
 
   &:hover {
     color: @icons-hover;
   }
 
-  &:active {
+  &:focus {
     color: white;
   }
 }
 
-.header__menu {
-  display: flex;
-  margin-bottom: 0;
-  padding-top: 2.25rem;
-}
-
 .menu__icon:last-child {
-  padding-right: 0;
+  margin-right: 0;
 }
 
 .main {
   margin: auto;
   width: 94%;
-  padding-top: 7.25rem;
+  padding-top: 116px;
 }
 
 ul {
@@ -191,8 +218,63 @@ input{
   display: none;
 }
 
+.logo__img {
+  width: 12rem;
+  height: 3.3rem;
+}
+
+.fixed {
+  position: fixed;
+  height: 138px;
+}
+
+@media (min-width: 48rem) {
+  .logo__img {
+    width: 13.75rem;
+    height: 4.25rem;
+  }
+}
+
 @media (min-width: 64rem) {
   .menu__icon {
-    padding: 0 1rem;
+    margin: 0 1rem;
+  }
+
+  .header__title {
+    margin-top: 2rem;
+  }
+
+  .header {
+    height: 138px;
+    justify-content: flex-end;
+  }
+
+  .space-between {
+    justify-content: space-between;
+  }
+
+  .header__title {
+    top: 3.125rem;
+    left: 41%;
+    position: absolute;
+  }
+
+  .main {
+    margin: auto;
+    width: 94%;
+    padding-top: 10.375rem;
+  }
+
+  .header__logo {
+    padding-left: 0.625rem;
+  }
+}
+@media (min-width: 90rem) {
+  .main {
+    width: 76.5rem;
+  }
+
+  .header {
+    width: 77.3rem;
   }
 }

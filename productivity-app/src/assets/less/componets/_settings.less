@@ -1,5 +1,7 @@
 .settings__right-side {
   float: right;
+  display: flex;
+  align-items: center;
 }
 
 .settings__Categories{
@@ -17,7 +19,6 @@
 
 .settings__pomodoros {
   padding-right: 1rem;
-  border-right: solid 0.0625rem @default;
 }
 
 .settings__title {
@@ -43,6 +44,8 @@
   align-items: center;
 }
 
+
+
 .settings__element {
   margin-top: 2.5rem;
   display: flex;
@@ -59,8 +62,8 @@
 .settings__name {
   padding-bottom: 0.75rem;
   border-bottom: solid @default 0.0625rem;
-  width: 100%;
-  margin-left: 1.25rem;
+  width: 90%;
+  margin-left: 1rem;
   font-weight: 400;
   font-size: 1.375rem;
   line-height: 1.5rem;
@@ -68,7 +71,7 @@
 }
 
 .settings__buttons {
-  margin-top: 16.875rem;
+  margin-top: 8.875rem;
   .flex-center-normal;
 }
 
@@ -93,11 +96,11 @@
 }
 
 .settings-pomodoros__element {
-  margin-top: 2.5rem;
   display: flex;
   width: 100%;
   max-width: 32.25rem;
-  margin-left: 3.75rem;
+  justify-content: center;
+  margin-bottom: 48px;
 }
 
 .settings-pomodoros__name {
@@ -112,12 +115,12 @@
 }
 
 .settings-pomodoros__elem-content {
-  margin-left: 1.25rem;
-  width: 23.125rem;
+  margin-left: 0.85rem;
+  width: 24.125rem;
 }
 
 .settings-pomodoros__counter {
-  width: 10rem;
+  width: 100px;
   display: flex;
   justify-content: space-between;
   color: @default;
@@ -133,7 +136,6 @@
   display: flex;
 }
 
-
 .counter__number {
   width: 5rem;
   height: 1rem;
@@ -142,11 +144,18 @@
   color: @default;
   border: none;
   pointer-events:none;
-  
+
+  -moz-appearance: textfield;
+
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button{
   -webkit-appearance: none;
   margin: 0;
+  }
+
+  &:hover,
+  &:focus {
+    -moz-appearance: number-input;
   }
 }
 
@@ -250,8 +259,8 @@
 
 .settings-pomodoros__goToTasks,
 .settings-pomodoros__save {
-  width: 21.75rem;
-  height: 4.5rem;
+  width: 220px;
+  height: 4rem;
   color: white;
   .button-font-default;
 }
@@ -266,6 +275,22 @@
 
 .cycle__bottom-display {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .settings__name {
+    margin-left: 1.25rem;
+  }
+
+  .settings__buttons {
+    margin-top: 16.875rem;
+  }
+
+  .settings-pomodoros__goToTasks,
+  .settings-pomodoros__save {
+    width: 21.75rem;
+    height: 4.5rem;
+  }
 }
 
 @media (min-width: 64rem) {
@@ -305,7 +330,7 @@
   }
 
   .settings-pomodoros__element  {
-    width: 22.25rem;
+    width: 425px;
     margin: 1.875rem 0;
   }
 

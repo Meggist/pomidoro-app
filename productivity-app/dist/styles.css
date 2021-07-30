@@ -414,26 +414,41 @@ body {
   background-color: #2a3f50;
   display: flex;
   justify-content: space-between;
-  height: 8.375rem;
-  padding: 0 1.5rem 3.5rem 1.5rem;
+  height: 116px;
   position: absolute;
-  width: 94%;
+  width: 95.5%;
   margin: auto;
   z-index: 1;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.header__title,
-.header__logo {
+.tabs__edge {
+  position: static;
+  height: 16px;
+  width: 1px;
+  background-color: #8DA5B8;
+  padding: 0 !important;
+  margin: auto;
+}
+.tabs {
+  padding: 0;
+  background: none;
+  color: #8DA5B8;
+  cursor: pointer;
+}
+.tabs:hover {
+  color: #82C7E0;
+}
+.tabs:focus {
+  color: white;
+}
+.header__title {
   display: flex;
-  margin-top: 2rem;
   color: white;
 }
 .header__logo {
   display: none;
-}
-.logo__img {
-  width: 13.75rem;
-  height: 4.25rem;
-  margin-top: -0.3125rem;
 }
 .header__text {
   font-size: 1.5rem;
@@ -445,30 +460,39 @@ body {
   margin-top: 0.375rem;
 }
 .menu__icon {
-  color: #8DA5B8;
   width: 1.4375rem;
   height: 1.4375rem;
-  font-size: 100%;
-  padding: 0 1.25rem;
-}
-.menu__icon:hover {
-  color: #82C7E0;
-}
-.menu__icon:active {
-  color: white;
+  font-size: 23px;
+  margin: 0 1.25rem;
 }
 .header__menu {
+  align-items: flex-end;
   display: flex;
   margin-bottom: 0;
-  padding-top: 2.25rem;
+  height: 25px;
+}
+.menu__button {
+  color: #8DA5B8;
+  background: none;
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  padding: 0;
+  cursor: pointer;
+}
+.menu__button:hover {
+  color: #82C7E0;
+}
+.menu__button:focus {
+  color: white;
 }
 .menu__icon:last-child {
-  padding-right: 0;
+  margin-right: 0;
 }
 .main {
   margin: auto;
   width: 94%;
-  padding-top: 7.25rem;
+  padding-top: 116px;
 }
 ul {
   list-style: none;
@@ -554,9 +578,54 @@ input {
 .hidden {
   display: none;
 }
+.logo__img {
+  width: 12rem;
+  height: 3.3rem;
+}
+.fixed {
+  position: fixed;
+  height: 138px;
+}
+@media (min-width: 48rem) {
+  .logo__img {
+    width: 13.75rem;
+    height: 4.25rem;
+  }
+}
 @media (min-width: 64rem) {
   .menu__icon {
-    padding: 0 1rem;
+    margin: 0 1rem;
+  }
+  .header__title {
+    margin-top: 2rem;
+  }
+  .header {
+    height: 138px;
+    justify-content: flex-end;
+  }
+  .space-between {
+    justify-content: space-between;
+  }
+  .header__title {
+    top: 3.125rem;
+    left: 41%;
+    position: absolute;
+  }
+  .main {
+    margin: auto;
+    width: 94%;
+    padding-top: 10.375rem;
+  }
+  .header__logo {
+    padding-left: 0.625rem;
+  }
+}
+@media (min-width: 90rem) {
+  .main {
+    width: 76.5rem;
+  }
+  .header {
+    width: 77.3rem;
   }
 }
 /* components styles */
@@ -570,9 +639,13 @@ input {
 }
 .task-type__right-side {
   float: right;
+  display: flex;
+  align-items: center;
 }
 .task-type__left-side {
   float: left;
+  display: flex;
+  align-items: center;
 }
 .task-type__done,
 .task-type__deselect-all {
@@ -580,7 +653,6 @@ input {
 }
 .task-type__to-do {
   padding: 0 1rem;
-  border-right: solid 0.0625rem #8DA5B8;
 }
 .tasks {
   margin-top: 1.5rem;
@@ -593,7 +665,7 @@ input {
   background-color: white;
 }
 .tasks__category-indicator {
-  width: 0.5rem;
+  width: 8px;
   height: 100%;
 }
 .tasks__title-line {
@@ -605,19 +677,20 @@ input {
   padding-bottom: 2.5rem;
 }
 .tasks__date {
-  width: 4rem;
+  width: 64px;
   text-align: center;
   color: #9F9F9F;
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 2.5rem 3%;
+  padding: 2.625rem 16px;
   display: flex;
   flex-direction: column;
 }
 .tasks__info {
   display: flex;
   flex-direction: column;
+  width: 70%;
 }
 .tasks__name {
   font-size: 1rem;
@@ -652,6 +725,7 @@ input {
   height: 0.9375rem;
   width: 0.9375rem;
   font-size: 0.9375rem;
+  cursor: pointer;
 }
 .tasks__edit:hover,
 .tasks__trash:hover,
@@ -665,6 +739,7 @@ input {
   padding-right: 1.4375rem;
 }
 .priority {
+  cursor: pointer;
   color: white;
   width: 5.5rem;
   height: 100%;
@@ -692,17 +767,19 @@ input {
   padding-bottom: 4.125rem;
 }
 .global-list__name {
+  cursor: pointer;
   display: block;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: 'PT Sans', sans-serif;
-  line-height: 1.5rem;
+  line-height: 1rem;
   font-weight: 700;
 }
 .global-list__arrow {
   font-size: 0.75rem;
   display: block;
   padding-top: 0.4375rem;
-  margin-left: 1.125rem;
+  cursor: pointer;
+  margin-left: 5px;
 }
 .task-type span:hover,
 .global-list__left-side:hover {
@@ -732,11 +809,11 @@ input {
   font-family: "PT Sans", sans-serif;
   font-weight: 400;
   font-size: 1.375rem;
-  line-height: 1.375rem;
+  height: 20px;
+  align-items: center;
 }
 .global-list__categories > *:not(:last-child) {
   padding: 0 1rem;
-  border-right: solid 0.0625rem #8DA5B8;
 }
 .global-list__categories > *:not(:last-child):hover {
   color: #82C7E0;
@@ -771,7 +848,7 @@ input {
 .tasks__add-task,
 .tasks__first-task,
 .tasks__noTasks-task {
-  margin-top: 15.75rem;
+  margin-top: 90px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -794,7 +871,7 @@ input {
   margin-top: 4rem;
 }
 .first-task__text {
-  width: 43.75rem;
+  width: 30.75rem;
 }
 .noTasks-task__text {
   max-width: 33.4375rem;
@@ -807,6 +884,10 @@ input {
   margin-bottom: 6.75rem;
   margin-top: 4.25rem;
 }
+.message__excellent {
+  margin-bottom: 156px;
+  margin-top: 96px;
+}
 .tasks__message-text {
   font-weight: 300;
   font-size: 2.25rem;
@@ -814,7 +895,7 @@ input {
 }
 .tasks__message-img {
   margin-top: 1.5rem;
-  font-size: 3rem;
+  font-size: 56px;
 }
 .done {
   background-color: #D4D9DC;
@@ -824,7 +905,6 @@ input {
 }
 .taskType__select-all {
   padding-right: 1rem;
-  border-right: solid 0.0625rem #8DA5B8;
 }
 .tasks__category-indicator--activate {
   display: flex;
@@ -844,20 +924,17 @@ input {
   height: 1rem;
   border-radius: 50%;
   color: white;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 2.9375rem;
+  transform: translate(80%, 90%);
 }
 .hobby-close {
   background-color: #9849B8;
 }
 .education-close {
   background-color: #368BC5;
-}
-.fixed {
-  position: fixed;
 }
 .tasks__buttons {
   display: flex;
@@ -871,9 +948,8 @@ input {
   line-height: 1.5rem;
   font-weight: 700;
   color: white;
-  width: 21.75rem;
+  width: 12.75rem;
   height: 4.5rem;
-  border: none;
 }
 .buttons__go-to-settings {
   background-color: #59ABE3;
@@ -883,35 +959,45 @@ input {
 }
 .tasks__notification {
   float: right;
+  display: flex;
   width: 100%;
   opacity: 0.9;
   margin-top: -6.875rem;
   height: 4.5rem;
   border-radius: 0.3125rem;
   border: solid white 0.0625rem;
-  display: flex;
-  justify-content: space-between;
 }
 .notification__icon {
   color: white;
   width: 5.5rem;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification__bg--left {
+  background: rgba(255, 255, 255, 0.2);
+}
+.notification__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .notification__close {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 5.5rem;
+  width: 88px;
   color: white;
   font-size: 2rem;
 }
 .notification__pomodoro {
-  position: absolute;
   font-size: 3rem;
   color: #FFFFFF;
-  padding: 0.625rem 1.25rem;
-  margin: auto;
+  position: absolute;
+  opacity: 1;
+  z-index: 10;
 }
 .notification__symbol {
   font-family: 'PT Sans', sans-serif;
@@ -923,10 +1009,10 @@ input {
 }
 .notification__text {
   font-weight: 700;
-  font-size: 1.375rem;
-  line-height: 1.5rem;
+  font-size: 16px;
+  line-height: 16px;
   color: white;
-  margin: 1.5rem 0.625rem;
+  padding: 1.1rem 0.625rem;
 }
 .modal-window {
   width: 100%;
@@ -1065,13 +1151,47 @@ input {
 .modal__remove {
   background: #F15A4A;
 }
+.tasks__not-today {
+  width: 62px;
+  height: 36px;
+  padding: 31px 5px;
+}
 @media (min-width: 48rem) {
+  .global-list__arrow {
+    font-size: 0.75rem;
+    margin-left: 1.125rem;
+  }
+  .notification__text {
+    font-size: 1.375rem;
+    line-height: 1.5rem;
+    padding: 1.5rem 0.625rem;
+  }
+  .global-list__name {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .tasks__info {
+    width: auto;
+  }
+  .first-task__text {
+    width: 43.75rem;
+  }
+  .buttons__go-to-settings,
+  .buttons__skip {
+    width: 21.75rem;
+    height: 4.5rem;
+  }
+  .tasks__not-today {
+    width: 62px;
+    height: 36px;
+    padding: 31px 16px;
+  }
   .tasks__description {
     font-size: 1rem;
     line-height: 1.25rem;
     margin-top: 0.25rem;
     width: 100%;
-    max-width: 26.25rem;
+    max-width: 396px;
     height: 100%;
   }
   .tasks__name {
@@ -1110,11 +1230,11 @@ input {
   }
 }
 @media (min-width: 64rem) {
+  .tasks__element {
+    height: 88px;
+  }
   .modal-estimations {
     width: 100%;
-  }
-  .tasks__element {
-    height: 6.25rem;
   }
   .modal__info {
     margin-top: 13.75rem;
@@ -1192,56 +1312,25 @@ input {
     font-size: 1.125rem;
     line-height: 1.25rem;
   }
-  .tasks__title-line {
-    width: 0.5rem;
-  }
   .tasks__description {
-    width: 40.625rem;
+    width: 604px;
     max-width: none;
-  }
-  .header {
-    height: 5.3125rem;
-    padding: 0 1.5rem 3.5rem 1.5rem;
-    justify-content: flex-end;
-  }
-  .space-between {
-    justify-content: space-between;
-  }
-  .header__title {
-    top: 3.125rem;
-    left: 41%;
-    position: absolute;
-  }
-  .main {
-    margin: auto;
-    width: 94%;
-    padding-top: 10.375rem;
-  }
-  .tasks__category-indicator {
-    padding-left: 0.3125rem;
-    width: 1.25rem;
-    height: 100%;
-  }
-  .header__logo {
-    padding-left: 0.625rem;
-  }
-  .tasks__title-line {
-    width: 0.8125rem;
   }
   .task-category__title > img {
     width: 1.25rem;
+    margin-left: -2px;
     margin-bottom: -0.125rem;
   }
   .tasks__notification {
-    width: 28.5rem;
+    width: 500px;
     height: 3.5rem;
   }
   .notification__text {
     font-weight: 700;
-    font-size: 0.9375rem;
+    font-size: 15px;
     line-height: 1rem;
     color: white;
-    margin: 1.25rem 0.125rem;
+    padding: 1.2rem 16px;
     width: 100%;
   }
   .notification__pomodoro {
@@ -1254,28 +1343,13 @@ input {
   }
 }
 @media (min-width: 90rem) {
-  .header__logo {
-    padding-left: 5.625rem;
-  }
   .tasks__category-indicator {
     width: 0.5rem;
     height: 100%;
   }
-  .main {
-    width: 76.5rem;
-  }
-  .header {
-    width: 81.875rem;
-  }
-  .header__title {
-    left: 38.75rem;
-  }
   .tasks__description {
     margin-top: 0.5rem;
     width: 56.25rem;
-  }
-  .tasks__date {
-    padding: 2.625rem 1.125rem;
   }
   .tasks__name {
     margin-top: 1.25rem;
@@ -1324,12 +1398,10 @@ input {
 }
 .reports-tabs__Pomodoros {
   padding-right: 1rem;
-  border-right: solid 0.0625rem #8DA5B8;
 }
 .reports-tabs__week,
 .reports-tabs__day {
   padding: 0 1rem;
-  border-right: solid 0.0625rem #8DA5B8;
 }
 .graph {
   display: flex;
@@ -1337,28 +1409,39 @@ input {
   margin-top: 13.75rem;
   margin-bottom: 11.875rem;
 }
+.reports-tabs__list {
+  display: flex;
+}
 .graph__image {
   min-width: 18.75rem;
 }
 .reports__arrow {
-  padding-top: 8.125rem;
-  padding-right: 90%;
+  background: none;
   position: absolute;
   font-size: 5rem;
   color: #8DA5B8;
+  transform: translate(-250%, 80%);
+}
+.reports__arrow:hover {
+  color: #82C7E0;
+}
+@media (min-width: 768px) {
+  .reports__arrow {
+    transform: translate(-360%, 80%);
+  }
 }
 @media (min-width: 64rem) {
   .reports-header__text {
-    left: 47%;
+    left: 46%;
   }
-}
-@media (min-width: 90rem) {
-  .reports-header__text {
-    left: 50%;
+  .reports__arrow {
+    transform: translate(-440%, 80%);
   }
 }
 .settings__right-side {
   float: right;
+  display: flex;
+  align-items: center;
 }
 .settings__Categories {
   padding-left: 1rem;
@@ -1373,7 +1456,6 @@ input {
 }
 .settings__pomodoros {
   padding-right: 1rem;
-  border-right: solid 0.0625rem #8DA5B8;
 }
 .settings__title {
   margin-top: 2.75rem;
@@ -1411,15 +1493,15 @@ input {
 .settings__name {
   padding-bottom: 0.75rem;
   border-bottom: solid #8DA5B8 0.0625rem;
-  width: 100%;
-  margin-left: 1.25rem;
+  width: 90%;
+  margin-left: 1rem;
   font-weight: 400;
   font-size: 1.375rem;
   line-height: 1.5rem;
   color: #8DA5B8;
 }
 .settings__buttons {
-  margin-top: 16.875rem;
+  margin-top: 8.875rem;
   display: flex;
   justify-content: center;
 }
@@ -1443,11 +1525,11 @@ input {
   background-color: #2380B5;
 }
 .settings-pomodoros__element {
-  margin-top: 2.5rem;
   display: flex;
   width: 100%;
   max-width: 32.25rem;
-  margin-left: 3.75rem;
+  justify-content: center;
+  margin-bottom: 48px;
 }
 .settings-pomodoros__name {
   padding-bottom: 0.75rem;
@@ -1460,11 +1542,11 @@ input {
   text-transform: uppercase;
 }
 .settings-pomodoros__elem-content {
-  margin-left: 1.25rem;
-  width: 23.125rem;
+  margin-left: 0.85rem;
+  width: 24.125rem;
 }
 .settings-pomodoros__counter {
-  width: 10rem;
+  width: 100px;
   display: flex;
   justify-content: space-between;
   color: #8DA5B8;
@@ -1486,11 +1568,16 @@ input {
   color: #8DA5B8;
   border: none;
   pointer-events: none;
+  -moz-appearance: textfield;
 }
 .counter__number::-webkit-outer-spin-button,
 .counter__number::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.counter__number:hover,
+.counter__number:focus {
+  -moz-appearance: number-input;
 }
 .counter__button {
   transform: translateY(50%);
@@ -1577,8 +1664,8 @@ input {
 }
 .settings-pomodoros__goToTasks,
 .settings-pomodoros__save {
-  width: 21.75rem;
-  height: 4.5rem;
+  width: 220px;
+  height: 4rem;
   color: white;
   font-size: 1.5rem;
   line-height: 1.5rem;
@@ -1591,6 +1678,19 @@ input {
 }
 .cycle__bottom-display {
   display: none;
+}
+@media (min-width: 768px) {
+  .settings__name {
+    margin-left: 1.25rem;
+  }
+  .settings__buttons {
+    margin-top: 16.875rem;
+  }
+  .settings-pomodoros__goToTasks,
+  .settings-pomodoros__save {
+    width: 21.75rem;
+    height: 4.5rem;
+  }
 }
 @media (min-width: 64rem) {
   .cycle__bottom-display {
@@ -1622,7 +1722,7 @@ input {
     justify-content: space-between;
   }
   .settings-pomodoros__element {
-    width: 22.25rem;
+    width: 425px;
     margin: 1.875rem 0;
   }
   .settings-pomodoros__buttons {
@@ -1688,7 +1788,8 @@ input {
   margin-top: 5.5625rem;
 }
 .timer__arrow {
-  padding-top: 9.375rem;
+  transform: translateY(150%);
+  background: none;
   left: 10%;
   position: absolute;
   font-size: 5rem;
@@ -1698,7 +1799,8 @@ input {
   color: #82C7E0;
 }
 .timer__arrow-right {
-  padding-top: 9.375rem;
+  transform: translateY(150%);
+  background: none;
   right: 10%;
   position: absolute;
   font-size: 5rem;

@@ -117,39 +117,58 @@ __webpack_require__(7)
 
 __webpack_require__(5); // example of including component's styles
 
-const title = document.querySelector('.header__title');
-const header = document.querySelector('.header');
-const menu = document.querySelector('.header__menu');
-let isTimerHeader = document.querySelector(".timer-header");
+let title;
+let header;
+let menu;
+let isTimerHeader;
 
-window.onscroll = () => {
-    if (window.pageYOffset > 110) {
+const createStickyHeader = () => {
+    if (window.pageYOffset > 100) {
         if (title) {
             title.style.display = 'none';
         }
         header.classList.add('fixed');
         header.classList.add('space-between');
-        if (isTimerHeader) {
+        if (isTimerHeader === null) {
             header.classList.remove('timer-header');
         }
-        document.querySelector('.header__logo').style.display = 'flex';
-        if (menu.ElementfirstChild == document.querySelector(".icon-add.menu__icon")) {
-            menu.insertAdjacentHTML('afterbegin', '<li class="icon-add menu__icon"></li>')
+        header.querySelector('.header__logo').style.display = 'flex';
+        if (menu.firstElementChild.firstElementChild.classList.contains('icon-add') !== true) {
+            menu.insertAdjacentHTML('afterbegin', '<li class="menu__icon"><button class="icon-add menu__button"></button></li>')
         }
     } else {
         if (title) {
             title.style.display = 'flex';
         }
-        document.querySelector('.header__logo').style.display = 'none';
+        header.querySelector('.header__logo').style.display = 'none';
         header.classList.remove('fixed');
         header.classList.remove('space-between');
-        if (isTimerHeader) {
+        if (isTimerHeader === null) {
             header.classList.add('timer-header');
         }
-        const addMenuIcon = document.querySelector(".icon-add.menu__icon");
-        addMenuIcon.parentNode.removeChild(addMenuIcon);
+
+        if (menu.querySelector(".icon-add.menu__button")) {
+            const addMenuIcon = menu.querySelector(".icon-add").parentNode;
+            addMenuIcon.parentNode.removeChild(addMenuIcon);
+        }
     }
 }
+
+let headers = Array.from(document.getElementsByClassName('header'));
+headers.forEach(h => {
+    if (h.parentNode.classList.contains('hidden')) {
+    } else {
+        title = h.querySelector('.header__title');
+        header = h;
+        menu = h.querySelector('.header__menu');
+        isTimerHeader = h.querySelector(".timer-header");
+        window.onscroll = createStickyHeader;
+    }
+})
+
+
+
+
 
 /***/ }),
 /* 5 */
