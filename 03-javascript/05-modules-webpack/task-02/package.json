@@ -1,0 +1,18 @@
+{
+  "name": "task-02",
+  "version": "1.0.0",
+  "description": "Using only ES5 language features create 3 Classes which describe Employee. \r One Abstract Class and two concrete implementations:",
+  "main": "src/js/EmployeeCollection.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "start": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "cross-env": "^7.0.3"
+  }
+}

@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header,
+main,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  height: 100vh;
+}
+
+.page-title,
+.footer-title {
+  display: none;
+}
+
+.awesome-button {
+  background: none;
+  border: 4px solid @color-black;
+  font: 35px Roboto, sans-serif;
+  cursor: pointer;
+  color: @color-black;
+  overflow: visible;
+  padding: 15px 30px;
+  transition: all .3s ease-out;
+  &:hover {
+    background: @color-black;
+    color: @color-white;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    background: @color-white;
+    color: @color-black;
+    border-color: @color-black;
+  }
+}
+
+.parallax-active {
+  .page-title,
+  .footer-title {
+    display: block;
+    font: 50px Roboto, sans-serif;
+    color: @color-white;
+    padding: 20px 40px;
+    border: 4px solid @color-white;
+  }
+
+  .awesome-button {
+    background: none;
+    color: @color-white;
+    border-color: @color-white;
+    &:hover {
+      background: @color-black;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      background: @color-white;
+      color: @color-black;
+      border-color: @color-black;
+    }
+  }
+}

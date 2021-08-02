@@ -1,0 +1,25 @@
+[{
+  "type": "per-hour",
+  "salary": 10,
+  "name": "Anna"
+},
+{
+  "type": "per-hour",
+  "salary": 8,
+  "name": "Bob"
+},
+{
+  "type": "fixed",
+  "salary": 8000,
+  "name": "Dany"
+},
+{
+  "type": "fixed",
+  "salary": 8000,
+  "name": "Clara"
+},
+{
+  "type": "fixed",
+  "salary": 1000,
+  "name": "Egor"
+}]

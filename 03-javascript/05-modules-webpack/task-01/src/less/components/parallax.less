@@ -1,0 +1,26 @@
+@base-url: "../../images";
+
+.parallax-active {
+  .parallax {
+    height: @prallax-height;
+    margin-bottom: @parallax-bottom-margin;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--header {
+      background-image: url("@{base-url}/background_parallax_1.jpg");
+    }
+
+    &--main {
+      background-image: url("@{base-url}/background_parallax_2.jpg");
+    }
+
+    &--footer {
+      background-image: url("@{base-url}/background_parallax_3.jpg");
+      margin-bottom: 0;
+    }
+  }
+}
