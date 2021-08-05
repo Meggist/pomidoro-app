@@ -1,4 +1,3 @@
-import ImageModel from './models'
 import {eventBus} from "../EventBus";
 
 class ImageView {

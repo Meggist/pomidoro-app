@@ -1,15 +1,10 @@
-import Observer from "../Observer";
+import {eventBus} from "../EventBus";
 
 class ListModel {
     constructor() {
         this.defaultContainersAmount = 6
         this.containers = []
         this.createContainers()
-        this.listChangedEvent = new Observer();
-    }
-
-    save(containers) {
-        this.listChangedEvent.notify(containers)
     }
 
     createContainers = () => {
@@ -22,7 +17,7 @@ class ListModel {
         this.containers = this.containers.map((item, index) => {
             return {id: likes[index].id}
         })
-        this.save(this.containers)
+        eventBus.publish('updateBlocks', this.containers)
     }
 
 }

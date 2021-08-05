@@ -1,17 +1,13 @@
 import {listController} from "../app";
-import Observer from "../Observer";
 import {eventBus} from "../EventBus";
 
 class LikeModel {
     constructor() {
         this.likes = []
         this.createLikes()
-        this.listChangedEvent = new Observer();
     }
 
-    save(likes) {
-        this.listChangedEvent.notify(likes)
-    }
+
 
     createLikes() {
         this.likes = listController.model.containers.map((item, index) => {
@@ -28,7 +24,7 @@ class LikeModel {
         this.likes.sort((a,b) => b.value - a.value)
         eventBus.publish('updateContainers', this.likes)
         eventBus.publish('updateImages')
-        this.save(this.likes)
+        eventBus.publish('updateLikes', this.likes)
         eventBus.publish('selectContainer')
     }
 

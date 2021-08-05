@@ -4,7 +4,7 @@ class LikeView {
     constructor(model) {
         this.model = model
         this.main = document.getElementsByClassName('main')[0]
-        this.model.listChangedEvent.subscribe(this.createLikeBlocks);
+        eventBus.subscribe('updateLikes',this.createLikeBlocks);
 
         this.main.addEventListener ('click', event => {
                 if (event.target.className === 'like-button'){

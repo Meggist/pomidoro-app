@@ -1,10 +1,12 @@
+import {eventBus} from "../EventBus";
+
 class ListView {
     constructor(model) {
         this.model = model
         this.root = document.getElementById('root')
         this.createMainBlock()
         this.main = document.getElementsByClassName('main')[0]
-        this.model.listChangedEvent.subscribe(this.createContainer)
+        eventBus.subscribe('updateBlocks', this.createContainer)
     }
 
     createMainBlock = () => {
