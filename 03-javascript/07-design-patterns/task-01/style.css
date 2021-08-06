@@ -1,0 +1,46 @@
+.main {
+    display: flex;
+    margin: auto;
+    width: 1024px;
+    flex-wrap: wrap;
+}
+
+#root {
+    margin: 0 auto;
+}
+
+.main>* {
+    width: 20%;
+    padding: 40px
+}
+
+.modal-window {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: solid black 1px;
+    top: 8%;
+    left: 36%;
+    background-color: #91F5FF;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#close {
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+
+#prev {
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+}
+
+#next {
+    position: absolute;
+    bottom: 5%;
+    right: 30%;
+}

@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>JS Template Engines</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- UUI & libs styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />
+    <!-- task styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <!-- Add required HTML here -->
+    <div id="root"></div>
+    <div id="root-modal"></div>
+
+    <script id="template" type="text/x-handlebars-template">
+        <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <img src="images/Logo_Epam_White.svg" class="navbar-brand p-2 bg-dark" alt="logo" width="80">
+                <div class="nav">
+                <img src="images/ic_logo_UUi.svg" class="navbar-brand p-1 "
+                     alt='logo'
+                     width="40">
+                    <h3 class="text-white">UNIFIED UI</h3>
+                </div>
+            <ul class="nav navbar-dark ">
+                {{#each navigation}}
+                <li class="nav-item"><a class="text-white nav-link" href="{{href}}">{{text}}</a></li>
+                {{/each}}
+            </ul>
+         </nav>
+        </header>
+            <main class="main row flex-wrap justify-content-center m-auto">
+                    {{#each students}}
+                        <div class="card m-3 worker-card">
+                            <div class="hover-wrapper"></div>
+                            <h5 class="text-center text-white position-static worker-title">PROFILE CARD</h5>
+                            <img class="worker-img mt-2 position-static" src="{{photoUrl}}" alt="card image">
+                            <h6 class="text-center mt-4 text-uppercase">{{firstName}} {{lastName}}</h6>
+                            <p class="card-text"><small>{{title}}</small></p>
+                            <button class="btn get-info">GET INFO</button>
+                        </div>
+                    {{/each}}
+
+        </div>
+        </main>
+        </div>
+    </script>
+
+    <script id="modalWindow" type="text/x-handlebars-template">
+    <div class="modal-wrapper">
+        <div class="modal" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-white text-uppercase">{{firstName}} {{lastName}} profile</h5>
+                        <button type="button" class="btn-close close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid d-flex flex-wrap">
+                            <div class="img-block ">
+                                <img src="{{photoUrl}}" class="modal-img" alt="profilepic">
+                            </div>
+                            <div class="text-info">
+                                <h2 class="moda-name">{{firstName}} {{lastName}}</h2>
+                                <span class="email"><i class="bi bi-envelope"></i> {{toLowerCase email}}</span>
+                                <h5 class="text-success">{{title}}</h5>
+                                <p class="adress">
+                                <div class="card-inner text-dark"><i class="bi bi-geo-alt-fill"></i>
+                                    {{toString location}}</p>
+                            </div>
+                        </div>
+                        <a href="{{makeLink employeeId }}"><div class="dude"><i class="bi bi-person-plus text-warning"></i></div></a>
+                        <div class="card-container container d-flex text-center" >
+                            <div class="card d-flex modal-card mx-2 unit-name-border">
+                                <div class="bg-div">
+                                    <div class="card-inner unit-name-bg">
+                                        <i class="bi bi-house-door-fill text-white fa-2x"></i>
+                                        <h6 class="text-white py-4">UNIT NAME</h6>
+                                    </div>
+                                    <p>{{unit.name}}</p>
+                                </div>
+                            </div>
+                            <div class="card d-flex modal-card skills-border">
+                                <div class="bg-div">
+                                    <div class="card-inner skills-bg"><i class="bi bi-star-fill text-white fa-2x"></i>
+                                        <h6 class="text-white py-4">Primary Skill</h6>
+                                    </div>
+                                    <p>{{primarySkill.name}}</p>
+                                </div>
+                            </div>
+                            <div class="card d-flex modal-card mx-2 head-unit-border">
+                                <div class="bg-div">
+                                    <div class="card-inner head-unit-bg"><i class="bi bi-headset text-white fa-2x""></i>
+                                        <h6 class="text-white py-4">HEAD OF UNIT</h6>
+                                    </div>
+                                    <p>{{manager.firstName}} {{manager.lastName}}</p>
+                                </div>
+                            </div>
+                            <div class="card d-flex modal-card work-days-border">
+                                <div class="bg-div">
+                                    <div class="card-inner work-days-bg"><i class="bi bi-calendar3 text-white fa-2x"></i>
+                                        <h6 class="text-white py-4">WORK DAYS</h6>
+                                    </div>
+                                    <p>{{calculateDiffDays hireDate}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button type="button" class="btn ok close">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="js/lib/handlebars-v4.0.11.js"></script>
+    <!-- task scripts -->
+    <script src="js/handlebars-helpers.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
