@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity app</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__title">
+            <h3 class="header__text">Daily Task List</h3>
+            <span class="icon-add title__add"></span>
+        </div>
+        <div class="header__logo">
+            <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        </div>
+        <ul class="header__menu">
+            <li class="menu__icon">
+                <button class="icon-list menu__button"></button>
+            </li>
+            <li class="menu__icon">
+                <button class="icon-statistics menu__button"></button>
+            </li>
+            <li class="menu__icon">
+                <button class="icon-settings menu__button"></button>
+            </li>
+        </ul>
+    </header>
+
+    <main class="main">
+        <div class="task-type">
+            <div class="task-type__right-side">
+                <button class="task-type__to-do tabs">To Do</button>
+                <div class="tabs__edge"></div>
+                <button class="task-type__done tabs">Done</button>
+            </div>
+        </div>
+        <div class="tasks__first-task">
+            <img src="../images/first-task.png" alt="add task" class="first-task__image">
+            <span class="first-task__text">As you visited site for a first time you can check and customize your default application settings</span>
+        </div>
+        <div class="tasks__buttons">
+            <button class="buttons__skip">Skip</button>
+            <button class="buttons__go-to-settings">Go to settings</button>
+        </div>
+    </main>
+
+    <script src="../bundle.js"></script>
+</body>
+
+</html>
