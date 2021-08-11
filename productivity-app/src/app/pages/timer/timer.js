@@ -1,9 +1,7 @@
-const minusButtons = Array.from(document.getElementsByClassName('icon-minus'))
-const plusButtons = Array.from(document.getElementsByClassName('icon-add'))
-const numbersButtons = Array.from(document.getElementsByClassName('counter__number'))
-const defaultValues = [25, 5, 5, 30]
-
-
+const minusButtons = Array.from(document.getElementsByClassName('icon-minus'));
+const plusButtons = Array.from(document.getElementsByClassName('icon-add'));
+const numbersButtons = Array.from(document.getElementsByClassName('counter__number'));
+const defaultValues = numbersButtons.map(e => Number(e.value));
 
 const counter = {
     changeNumber: (step, position, operation, edge) => {
@@ -15,7 +13,6 @@ const counter = {
             } else {
                 numbersButtons[position].value = Number(numbersButtons[position].value) + step
             }
-            numbersButtons.forEach((item, index) => {})
             createCycle();
         }
     },

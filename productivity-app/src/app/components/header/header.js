@@ -23,31 +23,43 @@ const createStickyHeader = () => {
         if (title) {
             title.style.display = 'flex';
         }
-        header.querySelector('.header__logo').style.display = 'none';
-        header.classList.remove('fixed');
-        header.classList.remove('space-between');
+        header.querySelector('.header__logo').style.display = 'none'
+        header.classList.remove('fixed')
+        header.classList.remove('space-between')
         if (isTimerHeader === null) {
-            header.classList.add('timer-header');
+            header.classList.add('timer-header')
         }
 
         if (menu.querySelector(".icon-add.menu__button")) {
-            const addMenuIcon = menu.querySelector(".icon-add").parentNode;
-            addMenuIcon.parentNode.removeChild(addMenuIcon);
+            const addMenuIcon = menu.querySelector(".icon-add").parentNode
+            addMenuIcon.parentNode.removeChild(addMenuIcon)
         }
     }
 }
 
-let headers = Array.from(document.getElementsByClassName('header'));
-headers.forEach(h => {
-    if (h.parentNode.classList.contains('hidden')) {
-    } else {
-        title = h.querySelector('.header__title');
-        header = h;
-        menu = h.querySelector('.header__menu');
-        isTimerHeader = h.querySelector(".timer-header");
-        window.onscroll = createStickyHeader;
+let headers = Array.from(document.getElementsByClassName('header'))
+headers.forEach(item => {
+    if (item.parentNode.classList.contains('hidden')) {} else {
+        title = item.querySelector('.header__title')
+        header = item
+        menu = item.querySelector('.header__menu')
+        isTimerHeader = item.querySelector(".timer-header")
+        window.onscroll = createStickyHeader
+
+        menu.addEventListener('click', ({ target }) => {
+            if (target.className === 'icon-list menu__button') {
+                window.location.href = "http://localhost:3000/task-list"
+            }
+
+            if (target.className === 'icon-settings menu__button') {
+                window.location.href = "http://localhost:3000/settings"
+            }
+
+            if (target.className === 'icon-statistics menu__button') {
+                window.location.href = "http://localhost:3000/reports"
+            }
+        })
     }
+
+
 })
-
-
-

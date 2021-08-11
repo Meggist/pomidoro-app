@@ -1,9 +1,10 @@
-/* root component starts here */
-require('assets/less/main.less'); // include general styles
+require("babel-polyfill");
 
-require('./router'); // include router
+require('assets/less/main.less');
 
-/* example of including header component */
-require('./components/header/header');
+require('./pages/reports/index');
+require('./pages/settings/index');
+require('./pages/tasks-list/index');
+require('./pages/timer/index');
 
-require('./pages/settings/settings')
+require('./router');
