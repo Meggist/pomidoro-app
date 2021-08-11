@@ -1,5 +1,7 @@
 require("babel-polyfill");
 
+import { deleteDBField } from './firebase'
+
 const Router = {
     routes: [],
     mode: null,
@@ -102,6 +104,7 @@ window.addEventListener('load', () => {
 })
 
 if (!sessionStorage.noFirstVisit) {
+    deleteDBField('cycleData')
     Router.add(function() {
         renderPage('firstPage')
     })

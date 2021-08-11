@@ -1,8 +1,10 @@
+import { db } from '../../firebase'
+
 const minusButtons = Array.from(document.getElementsByClassName('icon-minus'))
 const plusButtons = Array.from(document.getElementsByClassName('icon-add'))
 const numbersButtons = Array.from(document.getElementsByClassName('counter__number'))
 const defaultValues = [25, 5, 5, 30]
-
+let cycleDBData = []
 
 
 const counter = {
@@ -22,8 +24,15 @@ const counter = {
 
     returnToDefault: () => numbersButtons.forEach((elem, index) => {
         elem.value = defaultValues[index];
-        createCycle();
-    })
+        createCycle()
+    }),
+
+    changeValues: (valuesArray) => {
+        numbersButtons.forEach((item, index) => {
+            item.value = valuesArray[index]
+        })
+        createCycle()
+    }
 }
 
 for (let i = 0; i < 4; i++) {
@@ -79,7 +88,7 @@ const createCycle = () => {
         container.appendChild(text);
         point.classList.add('cycle__point');
         container.appendChild(point);
-        return arr = [container, text, point];
+        return [container, text, point];
     }
 
     firstRow.innerHTML = '';
@@ -141,4 +150,27 @@ const createCycle = () => {
         }
     }
 }
-createCycle();
+
+db.ref('cycleData').once('value', snapshot => {
+    if (snapshot.exists()) {
+        cycleDBData[0] = snapshot.val().workTime
+        cycleDBData[1] = snapshot.val().workIteration
+        cycleDBData[2] = snapshot.val().shortBreak
+        cycleDBData[3] = snapshot.val().longBreak
+        counter.changeValues(cycleDBData)
+    } else {
+        counter.returnToDefault()
+    }
+})
+
+const saveCycleDataButton = document.getElementById('saveCycleData')
+
+saveCycleDataButton.onclick = () => {
+    db.ref('cycleData').set({
+        'longBreak': numbersButtons[3].value,
+        'shortBreak': numbersButtons[2].value,
+        'workIteration': numbersButtons[1].value,
+        'workTime': numbersButtons[0].value,
+    })
+
+}
