@@ -17,6 +17,6 @@ firebase.initializeApp(firebaseConfig)
 
 export let db = firebase.database()
 db.ref('test').set({
-    test: 213
+    test: true
 })
 export const deleteDBField = field => db.ref(field).remove()
