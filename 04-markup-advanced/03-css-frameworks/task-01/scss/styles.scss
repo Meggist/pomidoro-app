@@ -1,0 +1,135 @@
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&family=MonteCarlo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Righteous&display=swap');
+.header__name{
+    font-family: 'Style Script', cursive;
+}
+.sponsors__name:nth-child(1){
+    font-family: 'MonteCarlo', cursive;
+}
+.sponsors__name:nth-child(2){
+    font-family: 'Karla', sans-serif;
+}
+.sponsors__name:nth-child(3){
+    font-family: 'Raleway', sans-serif;
+}
+.sponsors__name:nth-child(4){
+    font-family: 'Raleway', sans-serif;
+}
+.header__subquote{
+    font-family: 'PT Sans', sans-serif;
+}
+
+.header__logo {
+    font-family: 'Style Script', cursive !important;
+    font-size: 52px !important;
+    margin-top: 90px;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+}
+
+.header__button {
+    background-color: #50c3af;
+    font-family: 'PT Sans', sans-serif;
+    width: 235px;
+    height: 48px;
+    margin-top: 80px;
+}
+
+.nav__elem {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px !important;
+}
+
+.header__title {
+    font-size: 60px !important;
+    margin-top: 65px;
+}
+
+.header__description {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.header__description-line {
+    background-color: white;
+    height: 1px;
+    width: 100px;
+    display: inline-block;
+    content: ' ';
+    margin-top: 16px;
+}
+
+.header__description-wrapper {
+    display: flex
+}
+
+.benefits {
+    background-color: #eeeeef;
+}
+
+.benefits__container>* {
+    text-align: center;
+}
+
+.benefits__name {
+    font-size: 16px;
+    font-family: "PTSans", sans-serif;
+    color: rgb(56, 64, 72);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+.benefits__description {
+    font-size: 14px;
+    font-family: "PTSans", sans-serif;
+    color: rgb(120, 123, 128);
+    line-height: 1.714
+}
+
+.benefits {
+    background-color: #eeeeef;
+}
+
+.benefits__container {
+    max-width: 200px;
+}
+
+.benefits__line {
+    background-color: rgb(41, 49, 57);
+    opacity: 0.059;
+    width: 135px;
+    height: 2px;
+    margin: auto
+}
+
+i,.check-link{
+    color:#50c3af;
+}
+.header__subquote{
+    font-family: 'PT Sans', sans-serif;
+}
+button, .header__button, .btn, .sponsors{
+    background-color: #50c3af;
+}
+.header__description-line {
+    background-color: white;
+    height: 1px;
+    width: 100px;
+    display: inline-block;
+    content: ' ';
+    margin-top: 16px;
+}
+.header__description-wrapper {
+    display: flex
+}

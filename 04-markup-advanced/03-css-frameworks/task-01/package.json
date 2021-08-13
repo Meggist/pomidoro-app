@@ -1,0 +1,32 @@
+{
+    "name": "task-01",
+    "version": "1.0.0",
+    "description": "Impelement markup according to design and all requirements using Bootstrap v4 Sass version via NPM .",
+    "private": true,
+    "scripts": {
+        "build": "webpack",
+        "start": "webpack --watch"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bootstrap": "^5.1.0",
+        "bootstrap-icons": "^1.5.0",
+        "bootstrap-sass": "^3.4.1",
+        "style-loader": "^3.2.1",
+        "url-loader": "^4.1.1",
+        "webpack-icons-installer": "^2.0.0"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.2.2",
+        "babel-preset-env": "^1.7.0",
+        "css-loader": "^6.2.0",
+        "file-loader": "^6.2.0",
+        "mini-css-extract-plugin": "^2.2.0",
+        "node-sass": "^6.0.1",
+        "sass-loader": "^12.1.0",
+        "webpack": "^5.50.0",
+        "webpack-cli": "^4.7.2"
+    }
+}
