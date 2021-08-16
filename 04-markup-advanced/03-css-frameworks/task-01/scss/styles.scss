@@ -1,27 +1,83 @@
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&family=MonteCarlo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Righteous&display=swap');
+
+.white {
+    color: white !important;
+}
+
+.header {
+    background-repeat: no-repeat !important;
+    height: 680px !important;
+    background-size: cover !important;
+    color:white;
+}
+
+.text-info {
+    color: #50c3af !important;
+}
+
+.text-secondary {
+    color: #6c757d !important;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.benefits__second {
+    margin: 0 84px !important;
+}
+
+.event__title {
+    font-size: 20px
+}
+
+.bg-grey {
+    background-color: #eeeeef !important;
+}
+
+.support__text {
+    width: 756px;
+}
+
+.content__container{
+    width: 756px;
+    display: flex;
+    justify-content: center
+}
+
+.reports-info, .event {
+    height: 25rem !important
+}
+
+.articles__container, .event__column {
+    width: 340px;
+}
+
+.support__button {
+    background-color: #d2d5da;
+    border-radius: 25px !important;
+    width: 125px !important;
+}
+
 .header__name{
-    font-family: 'Style Script', cursive;
+    font-family: 'StyleScript-Regular', cursive !important;
 }
-.sponsors__name:nth-child(1){
-    font-family: 'MonteCarlo', cursive;
+.thechCrunch{
+    font-family: 'MonteCarlo', cursive !important;
 }
-.sponsors__name:nth-child(2){
-    font-family: 'Karla', sans-serif;
+.promail{
+    font-family: 'Karla', sans-serif !important;
 }
-.sponsors__name:nth-child(3){
-    font-family: 'Raleway', sans-serif;
+.mashable{
+    font-family: 'Raleway', sans-serif !important;
 }
-.sponsors__name:nth-child(4){
-    font-family: 'Raleway', sans-serif;
+.atlaspix{
+    font-family: 'Raleway', sans-serif !important;
 }
 .header__subquote{
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif !important;
 }
 
 .header__logo {
@@ -73,10 +129,6 @@ button {
     display: flex
 }
 
-.benefits {
-    background-color: #eeeeef;
-}
-
 .benefits__container>* {
     text-align: center;
 }
@@ -90,11 +142,11 @@ button {
     line-height: 1.5;
 }
 
-.benefits__description {
-    font-size: 14px;
-    font-family: "PTSans", sans-serif;
-    color: rgb(120, 123, 128);
-    line-height: 1.714
+.articles__description, .benefits__description  {
+    font-size: 16px !important;
+    font-family: "PTSans", sans-serif !important;
+    color: rgb(120, 123, 128) !important;
+    line-height: 1.714 !important
 }
 
 .benefits {
@@ -102,7 +154,7 @@ button {
 }
 
 .benefits__container {
-    max-width: 200px;
+    width: 200px;
 }
 
 .benefits__line {
@@ -113,17 +165,48 @@ button {
     margin: auto
 }
 
-i,.check-link{
-    color:#50c3af;
+.articles__line, .support__line, .news__line,  .template-item__border{
+    background-color: rgb(41, 49, 57);
+    opacity: 0.059;
+    height: 2px;
+}
+
+.reports-info__column {
+    width: 40%;
+}
+
+.articles__button {
+    border-radius: 25px !important;
+}
+
+.support,  {
+    height: 23rem;
+}
+
+.news {
+    height: 30rem;
+}
+
+.news__column {
+    width:30%;
+    max-width: 230px;
+}
+
+.news__img {
+    width:100%
+}
+
+.check-link{
+    color:#50c3af !important;
 }
 .header__subquote{
     font-family: 'PT Sans', sans-serif;
 }
-button, .header__button, .btn, .sponsors{
-    background-color: #50c3af;
+.header__button, .articles__button, .sponsors, .info-button{
+    background-color: #50c3af !important;
 }
 .header__description-line {
-    background-color: white;
+    background-color: #5c7677 !important;
     height: 1px;
     width: 100px;
     display: inline-block;
@@ -132,4 +215,12 @@ button, .header__button, .btn, .sponsors{
 }
 .header__description-wrapper {
     display: flex
+}
+
+.articles {
+    height: 30rem !important;
+}
+
+.articles__body {
+    height: 30rem !important;
 }

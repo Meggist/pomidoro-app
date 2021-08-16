@@ -14,7 +14,15 @@ module.exports = {
                 'css-loader',
                 'sass-loader',
             ]
-        }
+        },
+            {
+                test: /\.(ttf|eot|woff|woff2)$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'font/[name].[ext]'
+                }
+            }
+
         ]
     },
     plugins: [
