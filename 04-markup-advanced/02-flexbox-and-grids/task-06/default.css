@@ -1,0 +1,57 @@
+body {
+    padding: 0;
+    background-color: #fff;
+    font-family: 'PT Sans', sans-serif;
+}
+
+header {
+    height: 55px;
+    padding: 0 20px;
+    align-items: center;
+    background: #0f1723;
+    color: #fff;
+}
+
+.logo {
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: bold;
+    color: #7ad4ff;
+}
+
+nav {
+    padding: 0 10px;
+}
+
+.navigation {
+    list-style-type: none;
+}
+
+.nav-link {
+    padding: 0 5px;
+}
+
+main {
+    min-height: calc(100vh - 110px);
+    background: #eee;
+}
+
+aside {
+    box-shadow: -2px 2px 8px 0px #aaa;
+    background-color: #7ad4ff;
+}
+
+footer {
+    height: 55px;
+    padding: 0 20px;
+    background: #0f1723;
+    color: #aaa;
+}
+
+.footer-navigation {
+    list-style-type: none;
+}
+
+.nav-link:nth-child(2) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
