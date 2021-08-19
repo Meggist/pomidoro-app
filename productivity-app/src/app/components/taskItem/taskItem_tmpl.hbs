@@ -1,0 +1,25 @@
+<li class="tasks__element" id="{{id}}">
+    <div class="tasks__left-side">
+        <div class="tasks__category-indicator {{categoryId}}"></div>
+        <span class="tasks__date">{{deadlineDate}}
+            <span class="tasks__day">{{deadlineDay}}</span>
+                <span class="tasks__month">{{deadlineMonth}}</span>
+            </span>
+        <div class="tasks__info">
+            <span class="tasks__name name-urgent">{{title}}</span>
+            <span class="tasks__description">{{description}}</span>
+        </div>
+    </div>
+    <div class="tasks__right-side">
+        <div class="tasks__icons">
+            <span class="icon-edit tasks__edit"></span>
+            <span class="icon-trash tasks__trash"></span>
+        </div>
+        <div class="priority {{priority}}">
+            <span class="icon-tomato tasks__tomato"></span>
+            <span class="tasks__num">{{estimation}}</span>
+        </div>
+    </div>
+</li>
+
+
