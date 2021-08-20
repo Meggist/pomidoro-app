@@ -15,12 +15,17 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
+class DataBase{
+    constructor() {
+        this.db = firebase.database()
+    }
 
-export let db = firebase.database()
-export const deleteDBField = field => db.ref(field).remove()
-export const insertDataToDB = (path, data) => db.ref(path).update(data)
-export const getFieldFromDB = (path) => db.ref(path).get().then(doc => doc.val())
+    deleteDBField = field => this.db.ref(field).remove()
+    insertDataToDB = (path, data) => this.db.ref(path).update(data)
+    getFieldFromDB = (path) => this.db.ref(path).get().then(doc => doc.val())
+}
 
+export const dataBase = new DataBase()
 
 
 

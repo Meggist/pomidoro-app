@@ -1,7 +1,3 @@
-//export { TaskList } from './task-list';
-
-require("babel-polyfill")
-
 window.addEventListener('timer_render', async(event) => {
     event.detail.handler('timer', 'Timer').then(() => {
         require('../../components/header/header');

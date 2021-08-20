@@ -1,4 +1,4 @@
-import { db } from '../../firebase'
+import {dataBase} from "../../firebase";
 
 const minusButtons = Array.from(document.getElementsByClassName('icon-minus'))
 const plusButtons = Array.from(document.getElementsByClassName('icon-add'))
@@ -151,7 +151,7 @@ const createCycle = () => {
     }
 }
 
-db.ref('cycleData').once('value', snapshot => {
+dataBase.db.ref('cycleData').once('value', snapshot => {
     if (snapshot.exists()) {
         cycleDBData[0] = snapshot.val().workTime
         cycleDBData[1] = snapshot.val().workIteration

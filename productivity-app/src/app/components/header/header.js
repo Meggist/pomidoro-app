@@ -1,5 +1,3 @@
-require('./header.less'); // example of including component's styles
-
 let title;
 let header;
 let menu;
@@ -16,8 +14,8 @@ const createStickyHeader = () => {
             header.classList.remove('timer-header');
         }
         header.querySelector('.header__logo').style.display = 'flex';
-        if (menu.firstElementChild.firstElementChild.classList.contains('icon-add') !== true) {
-            menu.insertAdjacentHTML('afterbegin', '<li class="menu__icon"><button class="icon-add menu__button"></button></li>')
+        if (menu.firstElementChild.classList.contains('hidden')) {
+            menu.firstElementChild.classList.remove('hidden')
         }
     } else {
         if (title) {
@@ -30,9 +28,8 @@ const createStickyHeader = () => {
             header.classList.add('timer-header')
         }
 
-        if (menu.querySelector(".icon-add.menu__button")) {
-            const addMenuIcon = menu.querySelector(".icon-add").parentNode
-            addMenuIcon.parentNode.removeChild(addMenuIcon)
+        if (!menu.firstElementChild.classList.contains('hidden')) {
+            menu.firstElementChild.classList.add('hidden')
         }
     }
 }

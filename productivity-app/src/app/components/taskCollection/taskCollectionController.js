@@ -1,13 +1,17 @@
-import {taskItemController} from "../taskItem/taskItemController";
 import {eventBus} from "../../eventBus";
 
-let taskCollectionController
-
-eventBus.subscribe('loadTasks', () => taskCollectionController = new TaskCollectionController(taskItemController))
-
 class TaskCollectionController {
-    constructor(taskItems) {
+    constructor(model, view) {
+        this.model = model
+        this.view = view
         this.taskList = document.querySelector('.tasks__list')
-        taskItems.htmlTasks.forEach(item => this.taskList.innerHTML += item)
+        eventBus.subscribe('getTasksData', this.view.render)
+        eventBus.subscribe('renderTasks', this.render)
+    }
+
+    render = (tasks) => {
+        this.view.appendHtml(tasks, this.taskList)
     }
 }
+
+export default TaskCollectionController

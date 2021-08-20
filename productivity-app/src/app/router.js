@@ -1,17 +1,18 @@
-require("babel-polyfill");
+import {dataBase} from "./firebase";
 
-import { deleteDBField } from './firebase'
-alert(history.pushState)
-const Router = {
-    routes: [],
-    mode: null,
-    root: '/',
-    config: function(options) {
+class Router {
+    constructor() {
+        this.routes = []
+        this.mode = null
+        this.root = '/'
+    }
+
+    config(options) {
         this.mode = options && options.mode && options.mode == 'history' &&'history'
         this.root = options && options.root ? '/' + this.clearSlashes(options.root) + '/' : '/'
         return this
-    },
-    listen: function() {
+    }
+    listen() {
         var self = this
         var current = self.getFragment()
         var fn = function() {
@@ -23,8 +24,8 @@ const Router = {
         clearInterval(this.interval);
         this.interval = setInterval(fn, 50)
         return this
-    },
-    getFragment: function() {
+    }
+    getFragment() {
         let fragment = '';
         if (this.mode === 'history') {
             fragment = this.clearSlashes(decodeURI(location.pathname + location.search))
@@ -35,19 +36,19 @@ const Router = {
             fragment = match ? match[1] : ''
         }
         return this.clearSlashes(fragment)
-    },
-    clearSlashes: function(path) {
+    }
+    clearSlashes(path) {
         return path.toString().replace(/\\$/, '').replace(/^\\/, '');
-    },
-    add: function(re, handler) {
+    }
+    add(re, handler) {
         if (typeof re == 'function') {
             handler = re
             re = ''
         }
         this.routes.push({ re: re, handler: handler })
         return this
-    },
-    remove: function(param) {
+    }
+    remove(param) {
         for (let i = 0, r; i < this.routes.length, r = this.routes[i]; i++) {
             if (r.handler === param || r.re.toString() === param.toString()) {
                 this.routes.splice(i, 1)
@@ -55,14 +56,14 @@ const Router = {
             }
         }
         return this;
-    },
-    flush: function() {
+    }
+    flush() {
         this.routes = []
         this.mode = null
         this.root = '/'
         return this
-    },
-    check: function(f) {
+    }
+    check(f) {
         let fragment = f || this.getFragment();
         for (let i = 0; i < this.routes.length; i++) {
             let match = fragment.match(this.routes[i].re)
@@ -75,6 +76,9 @@ const Router = {
         return this
     }
 }
+
+const router = new Router()
+
 const loadPage = async(page, title) => {
     const response = await fetch(`static/${page}.html`);
     const resHtml = await response.text();
@@ -86,7 +90,6 @@ const loadPage = async(page, title) => {
             detail: { pageTitle: title }
         }))
     }, 500)
-    console.log(history);
 };
 const renderPage = (page, title) => {
     window.dispatchEvent(new CustomEvent(`${page}_render`, {
@@ -96,15 +99,14 @@ const renderPage = (page, title) => {
     }))
 }
 
-
 window.addEventListener('load', () => {
     const curUrl = window.location.pathname.split("/")[1]
-    Router.check(curUrl).listen()
+    router.check(curUrl).listen()
 })
 
 if (!sessionStorage.noFirstVisit) {
-    deleteDBField('cycleData')
-    Router.add(function() {
+    dataBase.deleteDBField('cycleData')
+    router.add(function() {
         renderPage('firstPage')
     })
     window.addEventListener('firstPage_render', async(event) => {
@@ -113,12 +115,9 @@ if (!sessionStorage.noFirstVisit) {
         })
     })
     sessionStorage.noFirstVisit = "1"
-    console.log('first visit')
-
 } else {
-    console.log('new_visits');
-    Router.config({ mode: 'history' })
-    Router
+    router.config({ mode: 'history' })
+    router
         .add(/settings/, function() {
             renderPage('settings')
         })

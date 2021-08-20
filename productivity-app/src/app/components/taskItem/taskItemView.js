@@ -5,7 +5,7 @@ class TaskItemView {
         this.priorityindex = task.priority
         task.priority = this.getPriorityClass(task.priority)
         task.deadlineDate = this.getDate(task)
-        this.htmltask = template(task)
+        this.task = template(task)
         task.priority = this.priorityindex
     }
 
