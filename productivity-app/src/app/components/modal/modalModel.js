@@ -6,6 +6,7 @@ class ModalModel {
         this.state = state
         this.render(this.state)
         eventBus.subscribe('acceptModal', this.updateDB)
+        this.startId = 1
     }
 
     render = (state) => {
@@ -17,12 +18,11 @@ class ModalModel {
             .then(snapshot => {
                 if (snapshot.exists()) {
                     this.taskCollection = Object.values(snapshot.val())
-                    this.taskId = this.taskCollection[this.taskCollection.length - 1].id
-                    ++this.taskId
-                    dataBase.insertDataToDB(`taskCollection/${this.taskId}`, data)
+                    data.id = this.taskCollection[this.taskCollection.length - 1].id + 1
+                    dataBase.insertDataToDB(`taskCollection/${data.id}`, data)
                 } else {
-                    dataBase.insertDataToDB(`taskCollection/${this.taskId}`, data)
-                    ++this.taskId
+                    data.id = this.startId
+                    dataBase.insertDataToDB(`taskCollection/${data.id}`, data)
                 }
             })
             .then(() => eventBus.publish('updateTaskCollection'))

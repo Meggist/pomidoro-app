@@ -4,7 +4,6 @@ import {eventBus} from "../../eventBus";
 class ModalView {
     constructor() {
         this.modalWrapper = document.querySelector('.modal-wrapper')
-        this.taskId = 1
     }
 
     append = (data) => {
@@ -34,6 +33,7 @@ class ModalView {
         document.querySelector('.modal-wrapper').classList.add('hidden')
         document.querySelector('.header').classList.remove('hidden')
         document.querySelector('.main').classList.remove('modal-display')
+        this.modalWrapper.innerHTML = ''
     }
 
     changePoint = (field, isSelected, type) => {
@@ -91,7 +91,6 @@ class ModalView {
 
     selectModalInputsValue = () => {
         return {
-            id: this.taskId.toString(),
             title: document.getElementById('modalInputTitle').value,
             description: document.getElementById('modalInputDescription').value,
             categoryId: this.categories.find(item => item.classList.contains('selected-category'))
