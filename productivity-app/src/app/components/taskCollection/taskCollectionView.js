@@ -38,6 +38,8 @@ class TaskCollectionView {
             }
         })
     }
+
+
 }
 
 export default TaskCollectionView
