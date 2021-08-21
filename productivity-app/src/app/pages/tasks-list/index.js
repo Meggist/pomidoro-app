@@ -1,10 +1,11 @@
-//export { TaskList } from './task-list';
-
-require("babel-polyfill")
+import TaskCollection from "../../components/taskCollection/taskCollection";
+import Header from "../../components/header/header";
 
 window.addEventListener('task-list_render', async(event) => {
     event.detail.handler('task-list', 'Daily task list').then(() => {
-        require('../../components/header/header');
-        console.log('render call')
+        const header = new Header('Daily Task List')
+        require('./tasks-list')
+        require('../../components/modal/modal')
+        const taskCollection = new TaskCollection()
     })
 })

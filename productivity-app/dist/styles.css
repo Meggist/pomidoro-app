@@ -571,12 +571,66 @@ ul {
 .white-color {
   color: white;
 }
+.work-hover:hover {
+  background-color: #FFB202;
+}
+.hobby-hover:hover {
+  background-color: #B470D0;
+}
+.education-hover:hover {
+  background-color: #59ABE3;
+}
+.sport-hover:hover {
+  background-color: #E16C65;
+}
+.other-hover:hover {
+  background-color: #00D4D9;
+}
+.work-border {
+  border-color: #FFB202;
+}
+.education-border {
+  border-color: #59ABE3;
+}
+.hobby-border {
+  border-color: #B470D0;
+}
+.sport-border {
+  border-color: #E16C65;
+}
+.other-border {
+  border-color: #00D4D9;
+}
+.urgent-border {
+  border-color: #F75C4C;
+}
+.high-border {
+  border-color: #FFA841;
+}
+.middle-border {
+  border-color: #FDDC43;
+}
+.low-border {
+  border-color: #1ABC9C;
+}
+.urgent-hover:hover {
+  background-color: #F75C4C;
+}
+.high-hover:hover {
+  background-color: #FFA841;
+}
+.middle-hover:hover {
+  background-color: #FDDC43;
+}
+.low-hover:hover {
+  background-color: #1ABC9C;
+}
 button,
 input {
   border: none;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 .logo__img {
   width: 12rem;
@@ -1089,12 +1143,14 @@ input {
   display: flex;
 }
 .modal-category,
+.modal-priority,
 .modal-estimations {
   display: flex;
   align-items: center;
   margin-right: 2rem;
   text-transform: none;
 }
+.modal-priority,
 .modal-category {
   margin-right: 1rem;
 }
@@ -1116,6 +1172,22 @@ input {
   width: 0.5rem;
   height: 0.5rem;
   background-color: #8DA5B8;
+  border-radius: 50%;
+}
+.modal__empty-cycle-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8px;
+  height: 8px;
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 50%;
+}
+.modal__cycle-category {
+  width: 4px;
+  height: 4px;
+  position: absolute;
   border-radius: 50%;
 }
 .modal__info {
@@ -1221,7 +1293,8 @@ input {
     font-size: 1.25rem;
     line-height: 1.5rem;
   }
-  .modal-category {
+  .modal-category,
+  .modal-priority {
     margin-right: 2rem;
   }
   .modal-point {

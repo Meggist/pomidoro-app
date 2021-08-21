@@ -1,8 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HandlebarsPlugin = require("handlebars-webpack-plugin");
-
+//const HandlebarsPlugin = require("handlebars-webpack-plugin");
 module.exports = {
     mode: 'none',
     entry: './src/app/app.js',
@@ -40,8 +39,7 @@ module.exports = {
         }, {
             test: /\.(woff|woff2|eot|ttf|otf)$/,
             use: ['file-loader']
-        }, {
-            test: /\.m?js$/,
+        },{  test: /\.m?js$/,
             exclude: /(node_modules|bower_components)/,
             use: {
                 loader: 'babel-loader',
@@ -49,7 +47,11 @@ module.exports = {
                     presets: ['@babel/preset-env']
                 }
             }
-        }]
+        },{ test: /\.hbs/,
+            loader: 'handlebars-loader',
+            exclude: /(node_modules|bower_components)/
+        }
+        ]
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -65,7 +67,7 @@ module.exports = {
                 from: 'src/assets/images',
                 to: 'images'
             }
-        ])
+        ]),
     ],
     devServer: {
         historyApiFallback: true,
@@ -73,3 +75,5 @@ module.exports = {
         port: 3000
     }
 };
+
+

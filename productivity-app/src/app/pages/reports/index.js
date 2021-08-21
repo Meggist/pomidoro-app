@@ -1,10 +1,7 @@
-//export { TaskList } from './task-list';
-
-require("babel-polyfill");
+import Header from "../../components/header/header";
 
 window.addEventListener('reports_render', async(event) => {
     event.detail.handler('reports', 'Reports').then(() => {
-        require('../../components/header/header');
-        console.log('render call')
+        const header = new Header('Reports')
     })
 })

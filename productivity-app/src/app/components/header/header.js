@@ -1,65 +1,13 @@
-require('./header.less'); // example of including component's styles
+import HeaderModel from "./headerModel";
+import HeaderView from "./headerView";
+import HeaderController from "./headerController";
 
-let title;
-let header;
-let menu;
-let isTimerHeader;
-
-const createStickyHeader = () => {
-    if (window.pageYOffset > 100) {
-        if (title) {
-            title.style.display = 'none';
-        }
-        header.classList.add('fixed');
-        header.classList.add('space-between');
-        if (isTimerHeader === null) {
-            header.classList.remove('timer-header');
-        }
-        header.querySelector('.header__logo').style.display = 'flex';
-        if (menu.firstElementChild.firstElementChild.classList.contains('icon-add') !== true) {
-            menu.insertAdjacentHTML('afterbegin', '<li class="menu__icon"><button class="icon-add menu__button"></button></li>')
-        }
-    } else {
-        if (title) {
-            title.style.display = 'flex';
-        }
-        header.querySelector('.header__logo').style.display = 'none'
-        header.classList.remove('fixed')
-        header.classList.remove('space-between')
-        if (isTimerHeader === null) {
-            header.classList.add('timer-header')
-        }
-
-        if (menu.querySelector(".icon-add.menu__button")) {
-            const addMenuIcon = menu.querySelector(".icon-add").parentNode
-            addMenuIcon.parentNode.removeChild(addMenuIcon)
-        }
+class Header {
+    constructor(title) {
+        this.model = new HeaderModel(title)
+        this.view = new HeaderView()
+        this.controller = new HeaderController(this.model, this.view)
     }
 }
 
-let headers = Array.from(document.getElementsByClassName('header'))
-headers.forEach(item => {
-    if (item.parentNode.classList.contains('hidden')) {} else {
-        title = item.querySelector('.header__title')
-        header = item
-        menu = item.querySelector('.header__menu')
-        isTimerHeader = item.querySelector(".timer-header")
-        window.onscroll = createStickyHeader
-
-        menu.addEventListener('click', ({ target }) => {
-            if (target.className === 'icon-list menu__button') {
-                window.location.href = "http://localhost:3000/task-list"
-            }
-
-            if (target.className === 'icon-settings menu__button') {
-                window.location.href = "http://localhost:3000/settings"
-            }
-
-            if (target.className === 'icon-statistics menu__button') {
-                window.location.href = "http://localhost:3000/reports"
-            }
-        })
-    }
-
-
-})
+export default Header
