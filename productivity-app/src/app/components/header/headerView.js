@@ -1,4 +1,5 @@
 import template from './header_tmpl.hbs'
+import Modal from "../modal/modal";
 
 class HeaderView {
 
@@ -20,9 +21,6 @@ class HeaderView {
             this.header.querySelector('.header__logo').style.display = 'none'
             this.header.classList.remove('fixed')
             this.header.classList.remove('space-between')
-            if (this.isTimerHeader === null) {
-                this.header.classList.add('timer-header')
-            }
 
             if (!this.menu.firstElementChild.classList.contains('hidden')) {
                 this.menu.firstElementChild.classList.add('hidden')
@@ -52,12 +50,23 @@ class HeaderView {
         })
 
         window.onscroll = this.makeStickyHeader
+
+        this.addTaskButtons.forEach(item => {
+            item.onclick = () => {
+                this.addTaskModal = new Modal('add')
+                document.querySelector('.modal-wrapper').classList.remove('hidden')
+                document.querySelector('.header').classList.add('hidden')
+                document.querySelector('.main').classList.add('modal-display')
+            }
+        })
+
     }
 
     getTargets = () => {
         this.header = document.querySelector('.header')
         this.title = document.querySelector('.header__title')
         this.menu = document.querySelector('.header__menu')
+        this.addTaskButtons = Array.from(document.querySelectorAll('.headerAddTaskButton'))
     }
 }
 

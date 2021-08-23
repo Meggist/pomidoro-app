@@ -1,5 +1,5 @@
 import template from './modal_tmpl.hbs'
-import {eventBus} from "../../eventBus";
+import {eventBus} from "../../eventBus"
 
 class ModalView {
     constructor() {
@@ -19,7 +19,7 @@ class ModalView {
         this.closeModalButton = document.getElementById('closeModalButton')
         this.createTaskButton = document.getElementById('createTaskButton')
         this.links = this.estimations.map(item => item.src)
-    }
+        }
 
     bindAllEvents = () => {
         this.bindCategoriesEvents()
@@ -33,6 +33,7 @@ class ModalView {
         document.querySelector('.modal-wrapper').classList.add('hidden')
         document.querySelector('.header').classList.remove('hidden')
         document.querySelector('.main').classList.remove('modal-display')
+        eventBus.findEventCallbacksPair('acceptModal').callbacks.pop()
         this.modalWrapper.innerHTML = ''
     }
 
@@ -61,6 +62,7 @@ class ModalView {
     }
 
     chooseEstimate = (item, index, nextItem) => {
+        this.links = this.estimations.map(item => item.src)
         this.estimations.slice(0, nextItem).forEach(item => item.src = "../images/fill tomato.svg")
         this.estimations.slice(nextItem, this.estimations.length).forEach(item => item.src = "../images/empty-tomato.svg")
     }
@@ -68,7 +70,8 @@ class ModalView {
     bindEstimationsEvents = () => {
         this.estimations.forEach((item, index) => {
             const nextItem = index + 1
-            item.onclick = item.onmouseover = () => this.chooseEstimate(item, index, nextItem)
+            item.onclick = () => this.chooseEstimate(item, index, nextItem)
+            item.onmouseover = () => this.chooseEstimate(item, index, nextItem)
             item.onmouseout = () => this.estimations.forEach((item, index) => item.src = this.links[index])
         })
     }

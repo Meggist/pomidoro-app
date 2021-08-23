@@ -1,4 +1,5 @@
 import {dataBase} from "./firebase";
+import Header from "./components/header/header";
 
 class Router {
     constructor() {
@@ -111,7 +112,7 @@ if (!sessionStorage.noFirstVisit) {
     })
     window.addEventListener('firstPage_render', async(event) => {
         event.detail.handler('firstPage', 'firstLoad').then(() => {
-            require('./components/header/header')
+             const header = new Header('Daily Task List')
         })
     })
     sessionStorage.noFirstVisit = "1"

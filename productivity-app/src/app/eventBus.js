@@ -20,7 +20,6 @@ class EventBus {
             console.error("no subscribers for event " + eventType);
             return;
         }
-
         eventCallbacksPair.callbacks.forEach(callback => callback(args));
     }
 

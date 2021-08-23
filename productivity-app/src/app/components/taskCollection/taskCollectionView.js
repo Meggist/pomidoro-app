@@ -6,14 +6,14 @@ class TaskCollectionView {
     }
 
     render = (tasks) => {
-        this.tasks = tasks.map(item => item.view.task)
-        eventBus.publish('renderTasks', this.tasks)
+        this.htmlTasks = tasks.map(item => item.view.task)
+        eventBus.publish('renderTasks')
     }
 
     appendHtml = (content, target) => {
         target.innerHTML = ''
         content.forEach(item => target.innerHTML += item)
-        this.bindEvents()
+        //this.bindEvents()
     }
 
     bindEvents = () => {

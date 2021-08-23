@@ -9,10 +9,16 @@ class TaskCollectionModel {
     }
 
     getTasksData = () => {
-        dataBase.getFieldFromDB('taskCollection').then(data => {
-            this.tasks = Object.values(data).map(item => new TaskItem(item))
-            eventBus.publish('getTasksData', this.tasks)
-        })
+        this.dataTasks = []
+        this.tasks = []
+        dataBase.db.ref('taskCollection').get().then(snapshot => {
+            snapshot.forEach(snapshotChild => {
+                const data = snapshotChild.val()
+                data.id = snapshotChild.key
+                this.tasks.push(new TaskItem(data))
+                this.dataTasks.push(data)
+            })
+        }).then(() => eventBus.publish('getTasksData', this.tasks))
     }
 }
 
