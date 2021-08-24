@@ -9,17 +9,23 @@ class ModalView {
     append = (data) => {
         this.modalWrapper.innerHTML = template(data)
         this.getTargets()
+        this.displayDate()
         this.bindAllEvents()
     }
 
     getTargets = () => {
         this.modalWindow = document.querySelector('.modal-window')
+        this.dateInput = document.getElementById('modalInputDate')
         this.estimations = Array.from(document.querySelectorAll('.modal-estimations > *'))
         this.categories = Array.from(document.querySelectorAll('.modal-category'))
         this.closeModalButton = document.getElementById('closeModalButton')
         this.createTaskButton = document.getElementById('createTaskButton')
         this.links = this.estimations.map(item => item.src)
-        }
+    }
+
+    displayDate = () => {
+        this.dateInput.valueAsDate = new Date()
+    }
 
     bindAllEvents = () => {
         this.bindCategoriesEvents()
@@ -104,14 +110,14 @@ class ModalView {
                 return imgNames[imgNames.length - 1]
             }).lastIndexOf('fill%20tomato.svg'),
 
-            deadlineDate: new Date(document.getElementById('modalInputDate').value),
+            deadlineDate: new Date(this.dateInput.value).toDateString(),
             status: {
                 GLOBAL_LIST: true,
                 DAILY_LIST: false,
                 ACTIVE: true,
                 COMPLETED: false
             },
-            createDate: new Date(Date.now()),
+            createDate: new Date(Date.now()).toDateString(),
             completedCount: 0,
             failedPomodoros: 0,
             completeDate: ''

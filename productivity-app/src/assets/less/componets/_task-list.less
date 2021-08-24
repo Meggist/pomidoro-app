@@ -174,7 +174,6 @@
 .global-list__arrow {
   font-size: 0.75rem;
   display: block;
-  padding-top: 0.4375rem;
   cursor: pointer;
   margin-left: 0.3125rem;
 }
@@ -245,11 +244,13 @@
   font-weight: 700;
   line-height: 1.25rem;
   text-transform: uppercase;
+  margin-left: 0.75rem;
 }
 
 .task-category__title {
   margin-left: -0.25rem;
   margin-bottom: -0.375rem;
+  display: flex;
 }
 
 .tasks-group__connect-line {
@@ -643,6 +644,7 @@
   .global-list__arrow {
     font-size: 0.75rem;
     margin-left: 1.125rem;
+    padding-top: 0.4375rem;
   }
 
   .notification__text {
@@ -832,12 +834,6 @@
   .tasks__description {
     width: 37.75rem;
     max-width: none;
-  }
-
-  .task-category__title > img {
-    width: 1.25rem;
-    margin-left: -0.125rem;
-    margin-bottom: -0.125rem;
   }
 
   .tasks__notification {

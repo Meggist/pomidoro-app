@@ -5,12 +5,21 @@ class GlobalListController {
         this.model = model
         this.view = view
         eventBus.subscribe('renderGlobalTasks', this.render)
-        this.filterCollection()
+        eventBus.subscribe('renderGlobalList', this.append)
+        this.filterTasks()
     }
 
-    render = tasks => this.view.render(tasks)
+    render = tasks => {
+        eventBus.findEventCallbacksPair('renderGlobalTasks').callbacks.pop()
+        this.view.render(tasks)
+    }
+    filterTasks = () => this.model.render()
+    append = (template) => {
+        eventBus.findEventCallbacksPair('renderGlobalList').callbacks.pop()
+        this.view.append(template)
+    }
 
-    filterCollection = () => this.model.render()
+
 }
 
 export default GlobalListController

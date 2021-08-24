@@ -14,7 +14,6 @@ class ModalModel {
     }
 
     updateDB = (taskData) => {
-
         dataBase.db.ref('taskCollection').push(taskData)
             .then(() => eventBus.publish('updateTaskCollection'))
     }

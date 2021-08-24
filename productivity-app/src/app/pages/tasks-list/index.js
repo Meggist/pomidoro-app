@@ -6,8 +6,9 @@ import {eventBus} from "../../eventBus";
 window.addEventListener('task-list_render', async(event) => {
     event.detail.handler('task-list', 'Daily task list').then(() => {
         const header = new Header('Daily Task List')
-        let globalList
-        eventBus.subscribe('finishCollectionRender', (taskCollection) => globalList = new GlobalList(taskCollection))
+        eventBus.subscribe('finishCollectionRender', (taskCollection) => {
+            let globalList = new GlobalList(taskCollection)
+        })
         const taskCollection = new TaskCollection()
     })
 })

@@ -5,16 +5,13 @@ class ModalController {
         this.model = model
         this.view = view
         eventBus.subscribe('renderAddModal',this.renderAdd)
-        //eventBus.subscribe('renderEditModal', this.renderEdit)
         this.getModalData()
     }
 
     renderAdd = (data) => {
+
+        eventBus.findEventCallbacksPair('renderAddModal').callbacks.pop()
         this.view.append(data)
-    }
-
-    renderEdit = () => {
-
     }
 
     getModalData = () => {

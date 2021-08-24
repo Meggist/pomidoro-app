@@ -7,7 +7,7 @@ class GlobalList {
     constructor(taskCollection) {
         this.taskCollection = taskCollection
         this.model = new GlobalListModel(this.taskCollection)
-        this.view = new GlobalListView(taskCollection)
+        this.view = new GlobalListView()
         this.controller = new GlobalListController(this.model, this.view)
     }
 
