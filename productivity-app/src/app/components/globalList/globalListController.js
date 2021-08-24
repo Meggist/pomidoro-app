@@ -1,4 +1,5 @@
 import {eventBus} from "../../eventBus";
+import Modal from "../modal/modal";
 
 class GlobalListController {
     constructor(model, view) {
@@ -6,19 +7,22 @@ class GlobalListController {
         this.view = view
         eventBus.subscribe('renderGlobalTasks', this.render)
         eventBus.subscribe('renderGlobalList', this.append)
+        eventBus.subscribe('editTask', this.editTask)
         this.filterTasks()
     }
 
-    render = tasks => {
-        eventBus.findEventCallbacksPair('renderGlobalTasks').callbacks.pop()
-        this.view.render(tasks)
-    }
-    filterTasks = () => this.model.render()
-    append = (template) => {
-        eventBus.findEventCallbacksPair('renderGlobalList').callbacks.pop()
-        this.view.append(template)
-    }
+    render = tasks => this.view.render(tasks)
 
+
+    filterTasks = () => this.model.render()
+
+    append = (template) => this.view.append(template)
+
+    editTask = (id) => {
+        console.log(this.model.filteredTasks)
+        const editedTask = Object.values(this.model.filteredTasks).map(item => item.find(item => item.model.id === id))[0]
+        this.editModal = new Modal('edit', editedTask)
+    }
 
 }
 

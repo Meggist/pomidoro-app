@@ -2,7 +2,7 @@ import {eventBus} from "../../eventBus";
 
 class GlobalListModel {
     constructor(taskCollection) {
-        this.taskCollection = taskCollection.model.tasks
+        this.taskCollection = taskCollection.tasks
         this.filteredTasks = {
             'work': [],
             'education': [],

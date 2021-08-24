@@ -10,7 +10,14 @@ class ModalView {
         this.modalWrapper.innerHTML = template(data)
         this.getTargets()
         this.displayDate()
-        this.bindAllEvents()
+        this.bindAllEvents(data)
+        this.displayModalWindow()
+    }
+
+    displayModalWindow = () => {
+        document.querySelector('.modal-wrapper').classList.remove('hidden')
+        document.querySelector('.header').classList.add('hidden')
+        document.querySelector('.main').classList.add('modal-display')
     }
 
     getTargets = () => {
@@ -27,19 +34,18 @@ class ModalView {
         this.dateInput.valueAsDate = new Date()
     }
 
-    bindAllEvents = () => {
+    bindAllEvents = (data) => {
         this.bindCategoriesEvents()
         this.bindEstimationsEvents()
         this.bindPrioritiesEvents()
         this.bindCloseEvent()
-        this.bindAcceptEvent()
+        this.bindAcceptEvent(data)
     }
 
-    closeModalWindow = () => {
+    closeModalWindow = (eventBusEvent) => {
         document.querySelector('.modal-wrapper').classList.add('hidden')
         document.querySelector('.header').classList.remove('hidden')
         document.querySelector('.main').classList.remove('modal-display')
-        eventBus.findEventCallbacksPair('acceptModal').callbacks.pop()
         this.modalWrapper.innerHTML = ''
     }
 
@@ -93,9 +99,19 @@ class ModalView {
 
     bindCloseEvent = () => this.closeModalButton.onclick = this.closeModalWindow
 
-    bindAcceptEvent = () => this.createTaskButton.onclick = () => {
-        eventBus.publish('acceptModal', this.selectModalInputsValue())
-        this.closeModalWindow()
+    bindAcceptEvent = (data) => this.createTaskButton.onclick = () => {
+        if (data === undefined) {
+            eventBus.publish('acceptAddModal', this.selectModalInputsValue())
+            this.closeModalWindow('acceptAddModal')
+        }
+
+        if (typeof data === 'object') {
+            const values = this.selectModalInputsValue()
+            values.id = data.id
+            eventBus.publish('acceptEditModal', values)
+            this.closeModalWindow('acceptEditModal')
+        }
+
     }
 
     selectModalInputsValue = () => {

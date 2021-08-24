@@ -2,19 +2,35 @@ import {eventBus} from "../../eventBus";
 import {dataBase} from "../../firebase";
 
 class ModalModel {
-    constructor(state) {
+    constructor(state, task) {
         this.state = state
-        eventBus.subscribe('acceptModal', this.updateDB)
+        this.task = task
+        eventBus.subscribe('acceptAddModal', this.pushTask)
+        eventBus.subscribe('acceptEditModal', this.editTask)
     }
 
-    render = (state) => {
-        if (state === 'add') {
-            eventBus.publish('renderAddModal')
+    render = () => {
+        if (this.state === 'add') {
+            eventBus.publish('renderModal')
+            console.log('add: ' + this.state)
+            return
+        }
+
+        if (this.state === 'edit') {
+            console.log('edit: ' + this.state)
+            eventBus.publish('renderModal', this.task.model)
         }
     }
 
-    updateDB = (taskData) => {
+    pushTask = (taskData) => {
         dataBase.db.ref('taskCollection').push(taskData)
+            .then(() => eventBus.publish('updateTaskCollection'))
+    }
+
+    editTask = (taskData) => {
+        const id = taskData.id
+        delete taskData.id
+        dataBase.db.ref(`taskCollection/${id}`).update(taskData)
             .then(() => eventBus.publish('updateTaskCollection'))
     }
 

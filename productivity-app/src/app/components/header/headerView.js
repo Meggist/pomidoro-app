@@ -50,13 +50,9 @@ class HeaderView {
         })
 
         window.onscroll = this.makeStickyHeader
-
         this.addTaskButtons.forEach(item => {
             item.onclick = () => {
                 this.addTaskModal = new Modal('add')
-                document.querySelector('.modal-wrapper').classList.remove('hidden')
-                document.querySelector('.header').classList.add('hidden')
-                document.querySelector('.main').classList.add('modal-display')
             }
         })
 

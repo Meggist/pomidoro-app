@@ -1,5 +1,6 @@
 import template from './globalList_tmpl.hbs'
 import {eventBus} from "../../eventBus";
+import Modal from "../modal/modal";
 
 class GlobalListView {
     constructor() {
@@ -19,8 +20,12 @@ class GlobalListView {
     }
 
     bindAllEvents = () => {
-        this.bindPriorityHover()
-        this.bindClicksEvent()
+        if (this.globalList.classList.contains('binded') !== true) {
+            this.bindPriorityHover()
+            this.bindShowHideEvent()
+            this.bindEditEvent()
+            this.globalList.classList.add('binded')
+        }
     }
 
     bindPriorityHover = () => {
@@ -61,26 +66,32 @@ class GlobalListView {
         })
     }
 
-    bindClicksEvent = () => {
-        if (this.globalList.classList.contains('binded') !== true) {
-            this.globalList.addEventListener('click', this.clicksEvent)
-            this.globalList.classList.add('binded')
-        }
-    }
+    bindShowHideEvent = () =>  this.globalList.addEventListener('click', this.showGlobalListEvent)
 
-    clicksEvent = ({target}) => {
+
+
+    showGlobalListEvent = ({target}) => {
         if (target.classList.contains('icon-global-list-arrow-down')) {
             target.className = 'icon-global-list-arrow-right global-list__arrow'
             this.globalList.querySelector('.global-list-groups').classList.add('hidden')
+            this.globalList.querySelector('.global-list__right-side').classList.add('hidden')
             return
         }
 
         if (target.classList.contains('icon-global-list-arrow-right')) {
             target.className = 'icon-global-list-arrow-down global-list__arrow'
             this.globalList.querySelector('.global-list-groups').classList.remove('hidden')
+            this.globalList.querySelector('.global-list__right-side').classList.remove('hidden')
         }
 
+    }
 
+    bindEditEvent = () => {
+        this.globalList.addEventListener('click', ({target}) => {
+            if (target.classList.contains('tasks__edit')) {
+                eventBus.publish('editTask', target.closest('.tasks__element').id)
+            }
+        })
     }
 }
 
