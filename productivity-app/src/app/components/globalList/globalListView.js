@@ -4,7 +4,6 @@ import Modal from "../modal/modal";
 
 class GlobalListView {
     constructor() {
-        this.isFirst = true
         this.globalList = document.querySelector('.global-list-section')
         this.globalGroupsList = document.querySelector('.global-list-groups')
     }
@@ -14,6 +13,7 @@ class GlobalListView {
     }
 
     append = template => {
+        this.globalGroupsList.innerHTML = ''
         this.globalGroupsList.innerHTML = template
         this.displayGroups()
         this.bindAllEvents()

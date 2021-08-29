@@ -11,17 +11,20 @@ class GlobalListController {
         this.filterTasks()
     }
 
-    render = tasks => this.view.render(tasks)
+    render = tasks => {
+        this.tasks = tasks
+        this.view.render(tasks)
+    }
 
 
     filterTasks = () => this.model.render()
 
-    append = (template) => this.view.append(template)
+    append = template => this.view.append(template)
 
-    editTask = (id) => {
-        console.log(this.model.filteredTasks)
-        const editedTask = Object.values(this.model.filteredTasks).map(item => item.find(item => item.model.id === id))[0]
-        this.editModal = new Modal('edit', editedTask)
+    editTask = id => {
+        const editedTask = Object.values(this.tasks)
+            .find(item => item.find(item => item.model.id === id))[0]
+        new Modal('edit', editedTask)
     }
 
 }

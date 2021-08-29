@@ -42,7 +42,7 @@ class ModalView {
         this.bindAcceptEvent(data)
     }
 
-    closeModalWindow = (eventBusEvent) => {
+    closeModalWindow = () => {
         document.querySelector('.modal-wrapper').classList.add('hidden')
         document.querySelector('.header').classList.remove('hidden')
         document.querySelector('.main').classList.remove('modal-display')
@@ -99,7 +99,7 @@ class ModalView {
 
     bindCloseEvent = () => this.closeModalButton.onclick = this.closeModalWindow
 
-    bindAcceptEvent = (data) => this.createTaskButton.onclick = () => {
+    bindAcceptEvent = data => this.createTaskButton.onclick = () => {
         if (data === undefined) {
             eventBus.publish('acceptAddModal', this.selectModalInputsValue())
             this.closeModalWindow('acceptAddModal')
@@ -109,9 +109,8 @@ class ModalView {
             const values = this.selectModalInputsValue()
             values.id = data.id
             eventBus.publish('acceptEditModal', values)
-            this.closeModalWindow('acceptEditModal')
+            this.closeModalWindow()
         }
-
     }
 
     selectModalInputsValue = () => {
