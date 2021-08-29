@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS API Part 2</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<nav>
+    <ul class="tabs">
+        <li data-tab="Default"><a class="link">Default</a></li>
+        <li data-tab="Geolocation"><a class=" link">Geolocation</a></li>
+        <li data-tab="Sync calculation"><a class="link">Sync calculation</a></li>
+        <li data-tab="Web Worker"><a class="link">WebWorker</a></li>
+    </ul>
+</nav>
+<section class="mytabs">
+    <input type="radio" id="/" name="mytabs" checked disabled="disabled" class="checkbox">
+    <label for="/">Default</label>
+    <div class="content-block" data-content="default">
+        This is default tab visible to user. Also all unresolved urls should point here.
+        <button class='toggle-button'>+</button>
+    </div>
+
+    <input type="radio" id="/geolocation" name="mytabs" disabled="disabled" class="checkbox">
+    <label for="/geolocation">Geolocation</label>
+    <div class="content-block" data-content="geolocation" id="geolocation-block">
+        <img id="map">
+        <button class='toggle-button'>+</button>
+    </div>
+
+    <input type="radio" id="/synccalculation" name="mytabs" disabled="disabled" class="checkbox">
+    <label for="/synccalculation">Sync calculation</label>
+    <div class="content-block" data-content="synccalculation">
+        <p>Example of long calculations that blocks page. This is example page.</p>
+        <button class='toggle-button'>+</button>
+        <p>Click on button and try to navigate to other tabs on the page or activate fullscreen.</p>
+        <button id="syncstart">Start sync calculation</button>
+        <p>Calculations result: <span id="syncresult">N/A</span></p>
+    </div>
+
+    <input type="radio" id="/webworker" name="mytabs" disabled="disabled" class="checkbox">
+    <label for="/webworker">Web Worker</label>
+    <div class="content-block" data-content="webworker" id="worker-block">
+        <div class="worker-content">
+            <div class="worker__title">
+                <p>This page should be updated normally</p>
+                <button class='toggle-button'>+</button>
+            </div>
+            <div class="webworker-inputs">
+                <input type="text" id="iterations" value="100000000">
+                <input type="text" id="results" value="1000000">
+                <button type="button" id="startCalculation">Start async calculation</button>
+            </div>
+        </div>
+        <div class="table-wrap">
+            <table id="webworker-table">
+                <thead>
+                <tr>
+                    <th>Iterations</th>
+                    <th>Results</th>
+                    <th>Delta</th>
+                </tr>
+                </thead>
+                <tbody id="worker-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+
+</section>
+<div></div>
+<script src="script.js"></script>
+<script src="web-worker.js"></script>
+</body>
+</html>
