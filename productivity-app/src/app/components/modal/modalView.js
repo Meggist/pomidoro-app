@@ -220,12 +220,14 @@ class ModalView {
             }
             eventBus.publish('acceptAddModal', values)
             this.closeModalWindow()
+            console.log("Task added successfully")
             return
         }
 
         if (data.deadlineDate) {
             values.id = data.id
             eventBus.publish('acceptEditModal', values)
+            console.log("Task edited successfully")
             this.closeModalWindow()
         }
     }

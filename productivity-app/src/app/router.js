@@ -14,9 +14,9 @@ class Router {
         return this
     }
     listen() {
-        var self = this
-        var current = self.getFragment()
-        var fn = function() {
+        let self = this
+        let current = self.getFragment()
+        let fn = function() {
             if (current !== self.getFragment()) {
                 current = self.getFragment()
                 self.check(current)
@@ -83,15 +83,8 @@ const router = new Router()
 const loadPage = async(page, title) => {
     const response = await fetch(`static/${page}.html`);
     const resHtml = await response.text();
-    document.write(resHtml);
-    setTimeout(() => {
-        window.dispatchEvent(new CustomEvent('header_render', {
-            bubbles: true,
-            cancelable: true,
-            detail: { pageTitle: title }
-        }))
-    }, 500)
-};
+    document.write(resHtml)
+}
 const renderPage = (page, title) => {
     window.dispatchEvent(new CustomEvent(`${page}_render`, {
         bubbles: true,

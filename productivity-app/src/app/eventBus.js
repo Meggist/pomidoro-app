@@ -7,7 +7,7 @@ class EventBus {
         const eventCallbacksPair = this.findEventCallbacksPair(eventType);
 
         if (eventCallbacksPair) {
-            eventCallbacksPair.callbacks.push(callback);
+            eventCallbacksPair.callback = callback
         } else {
             this.eventCallbacksPairs.push(new EventCallbacksPair(eventType, callback));
         }
@@ -20,7 +20,7 @@ class EventBus {
             console.error("no subscribers for event " + eventType);
             return;
         }
-        eventCallbacksPair.callbacks[0](args)
+        eventCallbacksPair.callback(args)
     }
 
     findEventCallbacksPair(eventType) {
@@ -30,8 +30,8 @@ class EventBus {
 
 class EventCallbacksPair {
     constructor(eventType, callback) {
-        this.eventType = eventType;
-        this.callbacks = [callback];
+        this.eventType = eventType
+        this.callback = callback
     }
 }
 
