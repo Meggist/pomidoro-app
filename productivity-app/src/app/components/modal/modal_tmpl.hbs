@@ -1,108 +1,103 @@
-<section class="modal-window">
-    <div class="modal-save-close">
-        <span class="icon-close" id="closeModalButton"></span>
-        <span class="icon-check" id="createTaskButton"></span>
-    </div>
-    <div class="modal-title">
-        <span>Add task</span>
-    </div>
+    <section class="modal-window">
+        <div class="modal-save-close">
+            <span class="icon-close" id="closeModalButton"></span>
+            <span class="icon-check" id="createTaskButton"></span>
+        </div>
+        <div class="modal-title">
+            <span>Add task</span>
+        </div>
     <form class="modal-form">
         <label class="model-label">Title
-            <span class="modal-placeholder">Add title here</span>
-            <input type="text" class="modal-input model-input__text" id="modalInputTitle">
+            <input type="text" class="modal-input model-input__text" id="modalInputTitle" value="{{title}}">
         </label>
 
         <label class="model-label">description
-            <span class="modal-placeholder">Add title here</span>
-            <input type="text" class="modal-input model-input__text" id="modalInputDescription">
+            <input type="text" class="modal-input model-input__text" id="modalInputDescription" value="{{description}}">
         </label>
 
         <label class="model-label">category
             <div class="modal-input modal-categories">
-                <div class="modal-category selected-category">
-                    <div class="modal__empty-cycle-category work-border ">
+                <div class="modal-category">
+                    <div class="modal__empty-cycle-category work-border {{categories.work.cycle}}">
                         <div class="modal__cycle-category work"></div>
                     </div>
-                    <div class="modal-point work-hover hidden"></div>
+                    <div class="modal-point work-hover {{categories.work.point}}"></div>
                     <span class="modal-category__text white-color">Work</span>
                 </div>
                 <div class="modal-category">
-                    <div class="modal__empty-cycle-category education-border hidden">
+                    <div class="modal__empty-cycle-category education-border {{categories.education.cycle}}">
                         <div class="modal__cycle-category education"></div>
                     </div>
-                    <div class="modal-point education-hover"></div>
+                    <div class="modal-point education-hover {{categories.education.point}}"></div>
                     <span class="modal-category__text">Education</span>
                 </div>
                 <div class="modal-category">
-                    <div class="modal__empty-cycle-category hobby-border hidden">
+                    <div class="modal__empty-cycle-category hobby-border {{categories.hobby.cycle}}">
                         <div class="modal__cycle-category hobby"></div>
                     </div>
-                    <div class="modal-point hobby-hover"></div>
+                    <div class="modal-point hobby-hover {{categories.hobby.point}}"></div>
                     <span class="modal-category__text">Hobby</span>
                 </div>
                 <div class="modal-category">
-                    <div class="modal__empty-cycle-category sport-border hidden">
+                    <div class="modal__empty-cycle-category sport-border {{categories.sport.cycle}}">
                         <div class="modal__cycle-category sport"></div>
                     </div>
-                    <div class="modal-point sport-hover"></div>
+                    <div class="modal-point sport-hover {{categories.sport.point}}"></div>
                     <span class="modal-category__text">Sport</span>
                 </div>
                 <div class="modal-category">
-                    <div class="modal__empty-cycle-category other-border hidden">
+                    <div class="modal__empty-cycle-category other-border {{categories.other.cycle}}">
                         <div class="modal__cycle-category other"></div>
                     </div>
-                    <div class="modal-point other-hover"></div>
+                    <div class="modal-point other-hover {{categories.other.point}}"></div>
                     <span class="modal-category__text">Other</span>
                 </div>
             </div>
         </label>
 
         <label class="model-label">DEADLINE
-            <span class="modal-placeholder">May 23, 2021</span>
-            <input type="date" class="modal-input model-input__text" id="modalInputDate">
+            <input type="date" class="modal-input model-input__text" id="modalInputDate" value="{{deadlineDate}}">
         </label>
 
-        <label class="model-label">Estimation
-            <div class="modal-input modal-estimations">
-                <img src="../images/fill tomato.svg">
-                <img src="../images/fill tomato.svg">
-                <img src="../images/fill tomato.svg">
-                <img src="../images/empty-tomato.svg">
-                <img src="../images/empty-tomato.svg">
-            </div>
+    <label class="model-label">Estimation
+    <div class="modal-input modal-estimations">
+    {{#each estimations}}
+            {{{this}}}
+        {{/each}}
+        </div>
         </label>
 
-        <label class="model-label">priority
-            <div class="modal-input modal-categories">
-                <div class="modal-priority selected-priority">
-                    <div class="modal__empty-cycle-category urgent-border">
-                        <div class="modal__cycle-category urgent"></div>
+            <label class="model-label">priority
+                <div class="modal-input modal-categories">
+                    <div class="modal-priority">
+                        <div class="modal__empty-cycle-category urgent-border {{priorities.urgent.cycle}}">
+                            <div class="modal__cycle-category urgent"></div>
+                        </div>
+                        <div class="modal-point urgent-hover {{priorities.urgent.point}}"></div>
+                        <span class="modal-category__text white-color">Urgent</span>
                     </div>
-                    <div class="modal-point urgent-hover hidden"></div>
-                    <span class="modal-category__text white-color">Urgent</span>
-                </div>
-                <div class="modal-priority">
-                    <div class="modal__empty-cycle-category high-border hidden">
-                        <div class="modal__cycle-category high"></div>
+                    <div class="modal-priority">
+                        <div class="modal__empty-cycle-category high-border {{priorities.high.cycle}}">
+                            <div class="modal__cycle-category high"></div>
+                        </div>
+                        <div class="modal-point high-hover {{priorities.high.point}}"></div>
+                        <span class="modal-category__text">High</span>
                     </div>
-                    <div class="modal-point high-hover"></div>
-                    <span class="modal-category__text">High</span>
-                </div>
-                <div class="modal-priority">
-                    <div class="modal__empty-cycle-category middle-border hidden">
-                        <div class="modal__cycle-category middle"></div>
+                    <div class="modal-priority">
+                        <div class="modal__empty-cycle-category middle-border {{priorities.middle.cycle}}">
+                            <div class="modal__cycle-category middle "></div>
+                        </div>
+                        <div class="modal-point middle-hover {{priorities.middle.point}}"></div>
+                        <span class="modal-category__text">Middle</span>
                     </div>
-                    <div class="modal-point middle-hover"></div>
-                    <span class="modal-category__text">Middle</span>
-                </div>
-                <div class="modal-priority">
-                    <div class="modal__empty-cycle-category low-border hidden">
-                        <div class="modal__cycle-category low"></div>
+                    <div class="modal-priority">
+                        <div class="modal__empty-cycle-category low-border {{priorities.low.cycle}}">
+                            <div class="modal__cycle-category low"></div>
+                        </div>
+                        <div class="modal-point low-hover {{priorities.low.point}}"></div>
+                        <span class="modal-category__text">Low</span>
                     </div>
-                    <div class="modal-point low-hover"></div>
-                    <span class="modal-category__text">Low</span>
                 </div>
-            </div>
-        </label>
-    </form>
-</section>
+            </label>
+        </form>
+        </section>

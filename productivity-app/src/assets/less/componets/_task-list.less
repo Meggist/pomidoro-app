@@ -224,19 +224,20 @@
   align-items: center;
 }
 
-.global-list__categories > *:not(:last-child) {
-  padding: 0 1rem;
+.global-list__tab {
+  color: @default;
+  background: none;
   &:hover {
     color: @icons-hover;
   }
 }
 
+.global-list__categories > *:not(:last-child) {
+  padding: 0 1rem;
+}
+
 .global-list__categories > *:last-child {
   padding-left: 1rem;
-
-  &:hover {
-    color: @icons-hover;
-  }
 }
 
 .task-category__name {

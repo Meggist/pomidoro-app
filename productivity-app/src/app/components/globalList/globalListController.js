@@ -1,5 +1,6 @@
 import {eventBus} from "../../eventBus";
 import Modal from "../modal/modal";
+import {dataBase} from "../../firebase";
 
 class GlobalListController {
     constructor(model, view) {
@@ -7,7 +8,8 @@ class GlobalListController {
         this.view = view
         eventBus.subscribe('renderGlobalTasks', this.render)
         eventBus.subscribe('renderGlobalList', this.append)
-        eventBus.subscribe('editTask', this.editTask)
+        eventBus.subscribe('editGlobalTask', this.editTask)
+        eventBus.subscribe('moveTaskToDailyTask', this.moveTask)
         this.filterTasks()
     }
 
@@ -19,14 +21,32 @@ class GlobalListController {
 
     filterTasks = () => this.model.render()
 
-    append = template => this.view.append(template)
+    append = () => this.view.append()
 
     editTask = id => {
-        const editedTask = Object.values(this.tasks)
-            .find(item => item.find(item => item.model.id === id))[0]
+        let editedTask
+        Object.values(this.tasks).forEach(item => item.forEach(item => {
+            if (item.model.id === id) {
+                editedTask = item
+            }
+        }))
         new Modal('edit', editedTask)
     }
 
+    moveTask = id => {
+        let editedTask
+        Object.values(this.tasks).forEach(item => item.forEach(item => {
+            if (item.model.id === id) {
+                editedTask = item
+            }
+        }))
+        editedTask.model.status.GLOBAL_LIST = false
+        editedTask.model.status.DAILY_LIST = true
+        const taskData = Object.assign({}, editedTask.model)
+        delete taskData.id
+            dataBase.updateField(`taskCollection/${id}`, taskData)
+                .then(() => eventBus.publish('updateTaskCollection'))
+    }
 }
 
 export default GlobalListController

@@ -11,7 +11,7 @@ class ModalModel {
 
     render = () => {
         if (this.state === 'add') {
-            eventBus.publish('renderModal')
+            eventBus.publish('renderModal', this.task)
             return
         }
 
@@ -28,7 +28,6 @@ class ModalModel {
     editTask = taskData => {
         const id = taskData.id
         delete taskData.id
-        console.log(id)
         dataBase.db.ref(`taskCollection/${id}`).update(taskData)
             .then(() => eventBus.publish('updateTaskCollection'))
     }

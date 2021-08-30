@@ -51102,7 +51102,7 @@ var chooseEstimate = function chooseEstimate(item, index, nextItem) {
     return item.src;
   });
   estimations.slice(0, nextItem).forEach(function (item) {
-    return item.src = "../images/fill tomato.svg";
+    return item.src = "../images/fill-tomato.svg";
   });
   estimations.slice(nextItem, estimations.length).forEach(function (item) {
     return item.src = "../images/empty-tomato.svg";

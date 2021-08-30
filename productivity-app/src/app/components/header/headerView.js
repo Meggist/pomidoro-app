@@ -35,7 +35,7 @@ class HeaderView {
     }
 
     bindEvents = () => {
-        this.menu.addEventListener('click', ({ target }) => {
+        this.menu.addEventListener('click', ({target}) => {
             if (target.className === 'icon-list menu__button') {
                 window.location.href = "http://localhost:3000/task-list"
             }
@@ -50,11 +50,7 @@ class HeaderView {
         })
 
         window.onscroll = this.makeStickyHeader
-        this.addTaskButtons.forEach(item => {
-            item.onclick = () => {
-                this.addTaskModal = new Modal('add')
-            }
-        })
+        this.addTaskButtons.forEach(item => item.onclick = () => new Modal('add', {}))
 
     }
 
