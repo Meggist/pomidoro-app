@@ -1,0 +1,80 @@
+/* Styles here */
+.content {
+    border: 1px solid gray;
+}
+.content-block {
+    min-height: 400px;
+    outline: 1px solid gray; /*remove this property*/
+}
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 25px;
+}
+.mytabs input[type="radio"] {
+    display: none;
+}
+.mytabs label {
+    padding: 25px;
+    background: #e2e2e2;
+    font-weight: bold;
+}
+.mytabs label:hover {
+    background: #ffead2;
+}
+.mytabs .content-block {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    order: 1;
+    display: none;
+}
+.mytabs input[type='radio']:checked + label + .content-block {
+    display: block;
+}
+
+.mytabs input[type="radio"]:checked + label {
+    background: #fdd8d8;
+}
+
+#map {
+    width: 70%;
+    height: 90%
+}
+
+#geolocation-block:fullscreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table * {
+    border: solid 1px black;
+}
+
+#webworker-table {
+    width: 90%;
+}
+
+.webworker-inputs {
+    margin: 30px 0;
+}
+
+.table-wrap {
+    height:60%;
+    overflow-y: auto;
+}
+
+#worker-block {
+    height: 250px;
+}
+
+#worker-block:fullscreen {
+    display: flex;
+    height:700px;
+}
+
+
+
