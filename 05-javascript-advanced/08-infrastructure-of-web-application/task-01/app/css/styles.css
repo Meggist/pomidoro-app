@@ -1,0 +1,64 @@
+.main {
+    display: flex;
+}
+
+.progress{
+    margin-top: 5px;
+    width: 99%;
+    height: 20px;
+    border: 2px solid black;
+}
+.progress-bar{
+    width: 0;
+    background-color: aquamarine;
+    height: 20px;
+}
+
+.container {
+    width: 100px;
+}
+
+.drop-zone, .results {
+    border: solid 2px black;
+}
+
+.side {
+    flex: 1 1 0;
+    padding: 0 40px;
+}
+
+.dropzone-side{
+    flex-direction: column;
+}
+
+.drop-zone  {
+    border: solid 2px black;
+}
+
+.drop-zone--dropped{
+    border: solid 2px aquamarine;
+}
+
+.results {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.drop-zone {
+    height: 500px
+}
+
+.drop-zone-button {
+    margin-top: 5px;
+    width: 400px;
+    height: 25px;
+    align-items: center;
+}
+
+.results__elem {
+    padding:5px;
+}
+
+
