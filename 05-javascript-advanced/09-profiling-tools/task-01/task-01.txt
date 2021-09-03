@@ -1,0 +1,21 @@
+1 List of problems
+ - slow hover animation
+ - slow render during scrolling the page
+ - disappearing info blocks during scroll
+ 
+2 Analyzing
+    
+    For the first I checked performance. I found out that callbacks of event listeners work slow. Also I figured out that painting is slow
+
+3 Solutions
+
+3.1 Optimize event listeners
+ - We should init const variables of scroll and coordinate block
+ - Optimize loop by using interpolation, prefix increment and creating extra edge variable  
+ - Replace 'InnerHTML' to 'textContent'
+ - Delete changing styles into callbacks and implement style only in <style> tag
+ - Use 'requestAnimationFrame' for optimize
+    
+3.2 Optimize painting
+  - Replace 'border-shadow' to 'border' properties because first one is expensive
+  - Replace 'border-radius' to clip-path property in hover class because first one is expensive
