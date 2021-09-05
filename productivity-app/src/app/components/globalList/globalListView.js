@@ -8,18 +8,20 @@ class GlobalListView {
     }
 
     render = tasks => {
-        this.startTasks = tasks
+        this.renderedTemplate = template(tasks)
         eventBus.publish('renderGlobalList')
     }
 
     append = () => {
+        this.globalGroupsList.innerHTML = this.renderedTemplate
+        this.displayGroups()
         this.filterGroups()
         this.bindAllEvents()
     }
 
     bindAllEvents = () => {
         if (this.globalList.classList.contains('binded') !== true) {
-            this.bindPriorityHover(this.globalList )
+            this.bindPriorityHover(this.globalList)
             this.bindShowHideEvent()
             this.bindEditEvent(this.globalList, 'Global')
             this.bindMoveToDailyListEvent()
@@ -30,6 +32,9 @@ class GlobalListView {
     filterGroups = () => {
         let priority
         const tabs = Array.from(document.querySelectorAll('.global-list__tab'))
+        const tabNames = tabs.map(item => item.textContent.toLowerCase())
+        const taskGroups = Array.from(document.querySelectorAll('.tasks-group'))
+            .filter(item => !item.classList.contains('hidden'))
 
         tabs.forEach(item => {
             if (item.classList.contains('active')) {
@@ -38,26 +43,27 @@ class GlobalListView {
         })
 
         if (priority !== 'all') {
-            let obj = Object.entries(this.startTasks).map(item => {
-                item[1] = item[1].filter(item => {
-                    return this.getPriorityByIndex(item.model.priority) === priority
+            taskGroups.forEach(taskGroup => {
+                let isEmpty = true
+                let taskElements = Array.from(taskGroup.querySelectorAll('.tasks__element'))
+                taskElements.forEach(task => {
+                    const priorityElement = task.querySelector('.priority')
+                    if (!priorityElement.classList.contains(priority)) {
+                        task.classList.add('hidden')
+                    } else {
+                        isEmpty = false
+                    }
                 })
-                return item
+                if (isEmpty) {
+                    taskGroup.classList.add('hidden')
+                } else {
+                    this.addConnectLine(taskGroup)
+                }
             })
-            obj = Object.fromEntries(obj)
-            this.globalGroupsList.innerHTML = template(obj)
         } else {
-            this.globalGroupsList.innerHTML = template(this.startTasks)
+            taskGroups.forEach(item => this.addConnectLine(item))
         }
-        this.displayGroups()
     }
-
-    getPriorityByIndex = index => ({
-        1: 'low',
-        2: 'middle',
-        3: 'high',
-        4: 'urgent'
-    })[index]
 
     bindPriorityHover = target => {
         target.addEventListener('mouseover', ({target}) => {
@@ -78,22 +84,24 @@ class GlobalListView {
     }
 
     displayGroups = () => {
-        this.groups = Array.from(this.globalGroupsList.querySelectorAll('.tasks-group'))
-        this.groups = this.groups.filter(item => {
-            if (item.querySelector('.tasks__list').innerHTML.includes('li')) {
+        let groups = Array.from(this.globalGroupsList.querySelectorAll('.tasks-group'))
+        groups = groups.filter(item => {
+            const taskElements = Array.from(item.querySelectorAll('.tasks__element'))
+            if (taskElements.find(item => !item.classList.contains('hidden'))) {
                 item.classList.remove('hidden')
                 return true
             }
         })
+    }
 
-        this.groups.forEach(item => {
-            const taskElems = Array.from(item.querySelectorAll('.tasks__element'))
-            if (taskElems.length > 1) {
-                taskElems
-                    .slice(0, taskElems.length - 1)
-                    .forEach(item => item.querySelector('.tasks__category-indicator').classList.add('connected'))
-            }
-        })
+    addConnectLine = item => {
+        const taskElems = Array.from(item.querySelectorAll('.tasks__element'))
+            .filter(item => !item.classList.contains('hidden'))
+        if (taskElems.length > 1) {
+            taskElems
+                .slice(0, taskElems.length - 1)
+                .forEach(item => item.querySelector('.tasks__category-indicator').classList.add('connected'))
+        }
     }
 
     bindShowHideEvent = () => this.globalList.addEventListener('click', this.showGlobalListEvent)
@@ -128,6 +136,7 @@ class GlobalListView {
             }
         })
     }
+
 }
 
 export default GlobalListView

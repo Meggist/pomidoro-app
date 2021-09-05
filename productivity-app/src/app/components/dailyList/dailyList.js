@@ -8,7 +8,6 @@ class DailyList {
         this.view = new DailyListView()
         this.controller = new DailyListController(this.model, this.view)
     }
-
 }
 
 export default DailyList

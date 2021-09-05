@@ -5,17 +5,19 @@ class DailyListController {
     constructor(model, view) {
         this.model = model
         this.view = view
+        this.bindTabsEvents()
         eventBus.subscribe('renderDailyTasks', this.render)
+        eventBus.subscribe('renderDailyList', this.append)
         eventBus.subscribe('editDailyTask', this.editTask)
         this.filterTasks()
     }
 
     render = tasks => {
-        this.bindTabsEvents()
         this.tasks = tasks
-        this.view.filterTasks(this.tasks)
-        this.view.render()
+        this.view.render(tasks)
     }
+
+    append = () => this.view.append()
 
     filterTasks = () => this.model.render()
 
@@ -26,17 +28,16 @@ class DailyListController {
                 editedTask = item
             }
         })
-        new Modal('edit', editedTask)
+        const modal = new Modal('edit', editedTask)
     }
 
     bindTabsEvents = () => {
         this.view.rightTabsContainer.addEventListener('click', event => {
             if (event.target.classList.contains('tabs')) {
-                event.stopImmediatePropagation()
                 const tabs = this.view.rightTabsContainer.querySelectorAll('.tabs')
                 tabs.forEach(item => item.classList.remove('active'))
                 event.target.classList.add('active')
-                this.filterTasks()
+                this.view.checkActiveTab()
             }
         })
     }

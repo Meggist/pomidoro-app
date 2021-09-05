@@ -20,7 +20,7 @@ class GlobalListController {
     }
 
 
-    filterTasks = isChangingTab => this.model.render(isChangingTab)
+    filterTasks = () => this.model.render()
 
     append = () => this.view.append()
 
@@ -55,7 +55,7 @@ class GlobalListController {
                 const tabs = document.querySelectorAll('.global-list__tab')
                 tabs.forEach(item => item.classList.remove('active'))
                 target.classList.add('active')
-                this.filterTasks(true)
+                this.view.render(this.tasks)
             }
         })
     }
