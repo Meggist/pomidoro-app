@@ -17,7 +17,6 @@ class DailyListView extends GlobalListView {
         if (this.dailyTaskList.classList.contains('binded') !== true) {
             this.bindEditEvent(this.dailyTaskList, 'Daily')
             this.bindPriorityHover(this.dailyTaskList)
-            this.bindTabsEvents()
             this.dailyTaskList.classList.add('binded')
         }
     }
@@ -25,7 +24,6 @@ class DailyListView extends GlobalListView {
     filterTasks = tasks => {
         let filteredTasks
         let isCompletedDisplay
-
         if (this.toDoTab.classList.contains('active')) {
             filteredTasks = tasks.filter(item => item.model.status.ACTIVE === true)
             isCompletedDisplay = false

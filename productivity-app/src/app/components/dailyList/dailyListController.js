@@ -11,10 +11,10 @@ class DailyListController {
     }
 
     render = tasks => {
+        this.bindTabsEvents()
         this.tasks = tasks
         this.view.filterTasks(this.tasks)
-        this.view.render(tasks)
-        this.bindTabsEvents()
+        this.view.render()
     }
 
     filterTasks = () => this.model.render()
@@ -30,12 +30,13 @@ class DailyListController {
     }
 
     bindTabsEvents = () => {
-        this.view.rightTabsContainer.addEventListener('click', ({target}) => {
-            if (target.classList.contains('tabs')) {
+        this.view.rightTabsContainer.addEventListener('click', event => {
+            if (event.target.classList.contains('tabs')) {
+                event.stopImmediatePropagation()
                 const tabs = this.view.rightTabsContainer.querySelectorAll('.tabs')
                 tabs.forEach(item => item.classList.remove('active'))
-                target.classList.add('active')
-                this.filterTasks(this.tasks)
+                event.target.classList.add('active')
+                this.filterTasks()
             }
         })
     }

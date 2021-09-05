@@ -22,7 +22,6 @@ class GlobalListView {
             this.bindPriorityHover(this.globalList )
             this.bindShowHideEvent()
             this.bindEditEvent(this.globalList, 'Global')
-            this.bindTabsEvents()
             this.bindMoveToDailyListEvent()
             this.globalList.classList.add('binded')
         }
@@ -59,17 +58,6 @@ class GlobalListView {
         3: 'high',
         4: 'urgent'
     })[index]
-
-    bindTabsEvents = () => {
-        this.globalList.addEventListener('click', ({target}) => {
-            if (target.className === 'global-list__tab') {
-                const tabs = document.querySelectorAll('.global-list__tab')
-                tabs.forEach(item => item.classList.remove('active'))
-                target.classList.add('active')
-                this.filterGroups()
-            }
-        })
-    }
 
     bindPriorityHover = target => {
         target.addEventListener('mouseover', ({target}) => {
