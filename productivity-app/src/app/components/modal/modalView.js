@@ -10,9 +10,11 @@ class ModalView {
         if (data.deadlineDate) {
             data.deadlineDate = this.convertDate(data.deadlineDate)
         }
-        this.insertCategories(data)
-        this.insertEstimations(data)
-        this.insertPriorities(data)
+        if (!data.isDeleting) {
+            this.insertCategories(data)
+            this.insertEstimations(data)
+            this.insertPriorities(data)
+        }
         this.modalWrapper.innerHTML = template(data)
         this.getTargets()
         this.displayModalWindow(data)
@@ -116,6 +118,15 @@ class ModalView {
         document.querySelector('.modal-wrapper').classList.remove('hidden')
         document.querySelector('.header').classList.add('hidden')
         document.querySelector('.main').classList.add('modal-display')
+
+
+        if (data.isDeleting) {
+            this.modalWrapper.querySelector('.icon-check').classList.add('hidden')
+            this.modalWrapper.querySelector('.modal-form').classList.add('hidden')
+            this.modalWrapper.querySelector('.modal__edit').classList.remove('hidden')
+            return
+        }
+
         if (data.deadlineDate) {
             this.categories.forEach(item => {
                 if (item.querySelector('.modal-category__text').textContent.toLowerCase() === data.categoryId) {
@@ -132,6 +143,8 @@ class ModalView {
     }
 
     getTargets = () => {
+        this.cancelButton = this.modalWrapper.querySelector('.modal__cancel')
+        this.removeButton = this.modalWrapper.querySelector('.modal__remove')
         this.modalWindow = document.querySelector('.modal-window')
         this.dateInput = document.getElementById('modalInputDate')
         this.estimations = Array.from(document.querySelectorAll('.modal-estimations > *'))
@@ -207,9 +220,14 @@ class ModalView {
         this.priorities.forEach(item => item.onclick = () => this.choosePoint(item, 'priority'))
     }
 
-    bindCloseEvent = () => this.closeModalButton.onclick = this.closeModalWindow
+    bindCloseEvent = () => this.closeModalButton.onclick = this.cancelButton.onclick= this.closeModalWindow
 
-    bindAcceptEvent = data => this.createTaskButton.onclick = () => {
+    bindAcceptEvent = data => this.createTaskButton.onclick = this.removeButton.onclick = () => {
+        if (data.isDeleting) {
+            eventBus.publish('acceptDeleteModal', data.ids)
+            this.closeModalWindow()
+            return
+        }
         const values = this.selectModalInputsValue()
         if (!data.deadlineDate) {
             values.status = {

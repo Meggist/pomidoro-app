@@ -7,6 +7,7 @@ class ModalModel {
         this.task = task
         eventBus.subscribe('acceptAddModal', this.pushTask)
         eventBus.subscribe('acceptEditModal', this.editTask)
+        eventBus.subscribe('acceptDeleteModal', this.deleteTask)
     }
 
     render = () => {
@@ -17,6 +18,15 @@ class ModalModel {
 
         if (this.state === 'edit') {
             eventBus.publish('renderModal', this.task.model)
+            return
+        }
+
+        if (this.state === 'delete') {
+            const ids = this.task
+            this.task = {}
+            this.task.isDeleting = true
+            typeof ids === 'string' ? this.task.ids = ids : this.task.ids = [...ids]
+            eventBus.publish('renderModal', this.task)
         }
     }
 
@@ -32,6 +42,12 @@ class ModalModel {
             .then(() => eventBus.publish('updateTaskCollection'))
     }
 
+    deleteTask = ids => {
+        if (typeof ids === 'string') {
+            dataBase.deleteDBField(`taskCollection/${ids}`)
+                .then(() => eventBus.publish('updateTaskCollection'))
+        }
+    }
 }
 
 export default ModalModel

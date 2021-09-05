@@ -24,6 +24,7 @@ class GlobalListView {
             this.bindPriorityHover(this.globalList)
             this.bindShowHideEvent()
             this.bindEditEvent(this.globalList, 'Global')
+            this.bindDeleteEvent(this.globalList, 'Global')
             this.bindMoveToDailyListEvent()
             this.globalList.classList.add('binded')
         }
@@ -83,9 +84,17 @@ class GlobalListView {
         })
     }
 
+    bindDeleteEvent = (target, type) => {
+        target.addEventListener('click', ({target}) => {
+            if (target.classList.contains('tasks__trash')) {
+                eventBus.publish(`delete${type}Task`, target.closest('.tasks__element').id)
+            }
+        })
+    }
+
     displayGroups = () => {
         let groups = Array.from(this.globalGroupsList.querySelectorAll('.tasks-group'))
-        groups = groups.filter(item => {
+        groups.filter(item => {
             const taskElements = Array.from(item.querySelectorAll('.tasks__element'))
             if (taskElements.find(item => !item.classList.contains('hidden'))) {
                 item.classList.remove('hidden')

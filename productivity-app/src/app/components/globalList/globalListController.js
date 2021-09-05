@@ -10,6 +10,7 @@ class GlobalListController {
         eventBus.subscribe('renderGlobalTasks', this.render)
         eventBus.subscribe('renderGlobalList', this.append)
         eventBus.subscribe('editGlobalTask', this.editTask)
+        eventBus.subscribe('deleteGlobalTask', this.deleteTask)
         eventBus.subscribe('moveTaskToDailyTask', this.moveTask)
         this.filterTasks()
     }
@@ -32,6 +33,10 @@ class GlobalListController {
             }
         }))
         new Modal('edit', editedTask)
+    }
+
+    deleteTask = id => {
+        new Modal('delete', id)
     }
 
     moveTask = id => {

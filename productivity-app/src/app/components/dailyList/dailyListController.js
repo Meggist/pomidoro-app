@@ -9,6 +9,7 @@ class DailyListController {
         eventBus.subscribe('renderDailyTasks', this.render)
         eventBus.subscribe('renderDailyList', this.append)
         eventBus.subscribe('editDailyTask', this.editTask)
+        eventBus.subscribe('deleteDailyTask', this.deleteTask)
         this.filterTasks()
     }
 
@@ -30,6 +31,8 @@ class DailyListController {
         })
         const modal = new Modal('edit', editedTask)
     }
+
+    deleteTask = id => new Modal('delete', id)
 
     bindTabsEvents = () => {
         this.view.rightTabsContainer.addEventListener('click', event => {
