@@ -1,6 +1,5 @@
 import template from './modal_tmpl.hbs'
 import {eventBus} from "../../eventBus"
-import {dataBase} from "../../firebase";
 
 class ModalView {
     constructor() {
@@ -123,9 +122,10 @@ class ModalView {
                     item.classList.add('selected-category')
                 }
             })
-            this.priorities.reverse()
+            this.priorities = this.priorities.reverse()
             this.priorities[data.priority - 1].classList.add('selected-priority')
         } else {
+            this.priorities = this.priorities.reverse()
             this.categories[0].classList.add('selected-category')
             this.priorities[3].classList.add('selected-priority')
         }
