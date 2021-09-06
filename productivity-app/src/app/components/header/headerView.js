@@ -1,7 +1,12 @@
 import template from './header_tmpl.hbs'
 import Modal from "../modal/modal";
+import {eventBus} from "../../eventBus";
 
 class HeaderView {
+    constructor() {
+        eventBus.subscribe('checkRemoveMode', this.handleRemoveMode)
+        this.isRemoveMode = false
+    }
 
     makeStickyHeader = () => {
         if (window.pageYOffset > 100) {
@@ -51,7 +56,6 @@ class HeaderView {
 
         window.onscroll = this.makeStickyHeader
         this.addTaskButtons.forEach(item => item.onclick = () => new Modal('add', {}))
-
     }
 
     getTargets = () => {
@@ -59,6 +63,31 @@ class HeaderView {
         this.title = document.querySelector('.header__title')
         this.menu = document.querySelector('.header__menu')
         this.addTaskButtons = Array.from(document.querySelectorAll('.headerAddTaskButton'))
+    }
+
+    handleRemoveMode = () => {
+        this.allTasks = Array.from(document.querySelectorAll('.tasks__element'))
+        this.allTasks.forEach(task => {
+            if (this.isRemoveMode) {
+                task.querySelector('.tasks__category-indicator').classList.add('hidden')
+                task.querySelector('.tasks__category-indicator--activate').classList.remove('hidden')
+                task.querySelector('.tasks__date').classList.add('hidden')
+            } else {
+                task.querySelector('.tasks__category-indicator').classList.remove('hidden')
+                task.querySelector('.tasks__category-indicator--activate').classList.add('hidden')
+                task.querySelector('.tasks__date').classList.remove('hidden')
+            }
+        })
+    }
+
+    displaySelectedTasks = amount => {
+        const selectedTasksBlock = this.menu.querySelector('.menu__amounts')
+        if (amount) {
+            selectedTasksBlock.className = 'menu__amounts urgent'
+            selectedTasksBlock.textContent = amount
+        } else {
+            selectedTasksBlock.className = 'menu__amounts urgent hidden'
+        }
     }
 }
 

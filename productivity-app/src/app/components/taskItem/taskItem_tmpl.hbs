@@ -1,6 +1,14 @@
 <li class="tasks__element" id="{{id}}">
     <div class="tasks__left-side">
-        <div class="tasks__category-indicator {{categoryId}}"></div>
+        <div class="tasks__category-indicator {{categoryId}}">
+        </div>
+        <div class="tasks__category-indicator--activate hidden {{categoryId}}">
+            <div class="{{categoryId}}"></div>
+            <div class="category-indicator__icon-container">
+                <span class="icon-trash remove-mode-trash"></span>
+                <span class="icon-close hidden remove-mode-cancel"></span>
+            </div>
+        </div>
         <span class="tasks__date">{{deadlineDateToday}}
             <span class="tasks__day">{{deadlineDay}}</span>
                 <span class="tasks__month">{{deadlineMonth}}</span>

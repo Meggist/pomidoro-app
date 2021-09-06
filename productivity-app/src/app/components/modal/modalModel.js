@@ -46,6 +46,19 @@ class ModalModel {
         if (typeof ids === 'string') {
             dataBase.deleteDBField(`taskCollection/${ids}`)
                 .then(() => eventBus.publish('updateTaskCollection'))
+        } else {
+            dataBase.getFieldFromDB('taskCollection').then((data) => {
+                const filtered = Object.keys(data)
+                    .filter(key => !ids.includes(key))
+                    .reduce((obj, key) => {
+                        obj[key] = data[key];
+                        return obj;
+                    }, {})
+                dataBase.deleteDBField('taskCollection').then(() => {
+                    dataBase.updateField('taskCollection', filtered)
+                        .then(() => eventBus.publish('updateTaskCollection'))
+                })
+            })
         }
     }
 }

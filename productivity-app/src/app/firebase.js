@@ -14,6 +14,7 @@ const firebaseConfig = {
 }
 
 firebase.initializeApp(firebaseConfig)
+localStorage.removeItem('firebase:previous_websocket_failure')
 
 class DataBase{
     constructor() {

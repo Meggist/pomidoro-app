@@ -224,6 +224,7 @@ class ModalView {
 
     bindAcceptEvent = data => this.createTaskButton.onclick = this.removeButton.onclick = () => {
         if (data.isDeleting) {
+            eventBus.publish('cleanBasket')
             eventBus.publish('acceptDeleteModal', data.ids)
             this.closeModalWindow()
             return

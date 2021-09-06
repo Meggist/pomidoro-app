@@ -17,6 +17,8 @@ class GlobalListView {
         this.displayGroups()
         this.filterGroups()
         this.bindAllEvents()
+        eventBus.publish('displayAllTasks')
+        eventBus.publish('checkRemoveMode')
     }
 
     bindAllEvents = () => {
@@ -88,6 +90,12 @@ class GlobalListView {
         target.addEventListener('click', ({target}) => {
             if (target.classList.contains('tasks__trash')) {
                 eventBus.publish(`delete${type}Task`, target.closest('.tasks__element').id)
+                return
+            }
+
+            if (target.classList.contains('tasks__trash')) {
+                eventBus.publish(`delete${type}Task`, target.closest('.tasks__element').id)
+
             }
         })
     }
@@ -109,7 +117,11 @@ class GlobalListView {
         if (taskElems.length > 1) {
             taskElems
                 .slice(0, taskElems.length - 1)
-                .forEach(item => item.querySelector('.tasks__category-indicator').classList.add('connected'))
+                .forEach(item => {
+                    item.querySelector('.tasks__category-indicator--activate').firstElementChild
+                        .classList.add('connected--activate')
+                    item.querySelector('.tasks__category-indicator').classList.add('connected')
+                })
         }
     }
 
