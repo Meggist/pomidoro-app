@@ -16,6 +16,37 @@ class HeaderController {
         this.allTasks = Array.from(document.querySelectorAll('.tasks__element'))
         this.bindRemoveModeEvent()
         this.bindRemoveModeClickEvent()
+        this.bindRemoveTabsEvent()
+    }
+
+    bindRemoveTabsEvent = () => {
+        const selectAllButtons = Array.from(document.querySelectorAll('.task-type__select-all'))
+        const deselectAllButtons = Array.from(document.querySelectorAll('.task-type__deselect-all'))
+
+        selectAllButtons.forEach(tab => tab.onclick = () => {
+            this.getCertainTasks(tab).forEach(item => {
+                const trashIcon = item.querySelector('.remove-mode-trash')
+                if (!trashIcon.classList.contains('hidden')) {
+                    trashIcon.click()
+                }
+            })
+        })
+
+        deselectAllButtons.forEach(tab => tab.onclick = () => {
+            this.getCertainTasks(tab).forEach(item => {
+                const trashIcon = item.querySelector('.remove-mode-cancel')
+                if (!trashIcon.classList.contains('hidden')) {
+                    trashIcon.click()
+                }
+            })
+        })
+    }
+
+    getCertainTasks = tab => {
+        return tab.classList.contains('daily') ?
+            Array.from(document.querySelector('.tasks__list').querySelectorAll('.tasks__element')) :
+            Array.from(document.querySelector('.global-list-groups').querySelectorAll('.tasks__element'))
+
     }
 
     bindRemoveModeEvent = () => {
@@ -30,7 +61,7 @@ class HeaderController {
     }
 
     cleanBasket = () => {
-        this.model.selectedTasks.length = []
+        this.model.selectedTasks = []
         this.view.displaySelectedTasks(this.model.selectedTasks.length)
     }
 

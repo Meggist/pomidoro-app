@@ -67,17 +67,24 @@ class HeaderView {
 
     handleRemoveMode = () => {
         this.allTasks = Array.from(document.querySelectorAll('.tasks__element'))
-        this.allTasks.forEach(task => {
-            if (this.isRemoveMode) {
-                task.querySelector('.tasks__category-indicator').classList.add('hidden')
-                task.querySelector('.tasks__category-indicator--activate').classList.remove('hidden')
-                task.querySelector('.tasks__date').classList.add('hidden')
-            } else {
-                task.querySelector('.tasks__category-indicator').classList.remove('hidden')
-                task.querySelector('.tasks__category-indicator--activate').classList.add('hidden')
-                task.querySelector('.tasks__date').classList.remove('hidden')
-            }
-        })
+        const removeTabs = Array.from(document.querySelectorAll('.remove-mode__tabs '))
+
+        this.isRemoveMode ? removeTabs.forEach(item => item.classList.remove('hidden')) :
+            removeTabs.forEach(item => item.classList.add('hidden'))
+
+        this.allTasks.forEach(task => this.changeTaskMode(task, this.isRemoveMode))
+    }
+
+    changeTaskMode = (task, state) => {
+        if (state) {
+            task.querySelector('.tasks__category-indicator').classList.add('hidden')
+            task.querySelector('.tasks__category-indicator--activate').classList.remove('hidden')
+            task.querySelector('.tasks__date').classList.add('hidden')
+        } else {
+            task.querySelector('.tasks__category-indicator').classList.remove('hidden')
+            task.querySelector('.tasks__category-indicator--activate').classList.add('hidden')
+            task.querySelector('.tasks__date').classList.remove('hidden')
+        }
     }
 
     displaySelectedTasks = amount => {
@@ -89,6 +96,7 @@ class HeaderView {
             selectedTasksBlock.className = 'menu__amounts urgent hidden'
         }
     }
+
 }
 
 export default HeaderView

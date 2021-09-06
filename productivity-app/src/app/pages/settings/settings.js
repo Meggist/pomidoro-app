@@ -1,13 +1,11 @@
-import {dataBase} from "../../firebase";
-import {numbersButtons} from "../../components/cycle/cycle";
+import Header from "../../components/header/header";
+import template from './settings.hbs';
 
-const saveCycleDataButton = document.getElementById('saveCycleData')
-
-saveCycleDataButton.onclick = () => {
-    dataBase.db.ref('cycleData').update({
-        'longBreak': numbersButtons[3].value,
-        'shortBreak': numbersButtons[2].value,
-        'workIteration': numbersButtons[1].value,
-        'workTime': numbersButtons[0].value,
-    })
+class Settings {
+    constructor() {
+        document.body.innerHTML = template()
+        const header = new Header('Settings')
+    }
 }
+
+export default Settings
