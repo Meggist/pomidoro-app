@@ -14,10 +14,11 @@ class TaskListView {
         this.firstPage = document.querySelector('.first-visit')
         this.addFirstTask = document.querySelector('.add-first-task')
         this.lists = document.querySelector('.lists')
+        this.dailyEmptyMessage = document.querySelector('.tasks__message')
+        this.dailyList = document.querySelector('.tasks__list')
     }
 
     displayPage = db => {
-        console.log(this.state === 'first' && !!db.tasks.length === false)
         if (this.state === 'first' && !db.tasks.length) {
             this.state = false
             const skipButton = document.querySelector('.buttons__skip')
@@ -41,14 +42,24 @@ class TaskListView {
     }
 
     displayLists = db => {
+        const headerTrash = document.querySelector('.header-remove')
         this.firstPage.className = 'first-visit hidden'
         if (!db.tasks.length) {
+            headerTrash.className = 'menu__icon header-remove hidden'
             this.lists.className = 'lists hidden'
             this.addFirstTask.className = 'add-first-task'
         } else {
             this.addFirstTask.className = 'add-first-task hidden'
             this.lists.classList.remove('hidden')
+            headerTrash.classList.remove('hidden')
         }
+        this.displayDailyList(db)
+    }
+
+    displayDailyList = db => {
+        db.tasks.filter(item => item.model.status.DAILY_LIST === true).length ?
+            this.dailyEmptyMessage.className = 'tasks__message hidden' :
+            this.dailyEmptyMessage.className = 'tasks__message'
     }
 }
 
