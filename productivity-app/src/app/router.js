@@ -1,7 +1,8 @@
-import TaskList from "./pages/tasks-list/tasks-list";
+import TaskList from "./pages/tasks-list/tasksList";
 import Reports from "./pages/reports/reports";
 import Timer from "./pages/timer/timer";
 import Settings from "./pages/settings/settings";
+import {dataBase} from "./firebase";
 
 class Router {
     constructor() {
@@ -11,15 +12,13 @@ class Router {
         this.listen()
     }
 
-    clearSlashes = path =>
-        path
-            .toString()
-            .replace(/\/$/, '')
-            .replace(/^\//, '')
+    clearSlashes = path => path
+        .toString()
+        .replace(/\/$/, '')
+        .replace(/^\//, '')
 
-    add = (path, callback) => {
-        this.routes.push({path, callback})
-    }
+    add = (path, callback) => this.routes.push({path, callback})
+
 
     getFragment = () => {
         let fragment = ''
@@ -48,12 +47,29 @@ class Router {
         })
     }
 
+    changeDefaultRoute = () => {
+        if (this.routes.find(item => item.callback === createFirstPage)) {
+            this.routes = this.routes.filter(item => item !== {path: '', callback: createFirstPage})
+            router.add('', () => new TaskList())
+        }
+    }
 }
+
 
 export const router = new Router()
 
-router.add('', () => new TaskList())
-router.add('task-list', () => new TaskList())
-router.add('reports', () => new Reports())
-router.add('settings', () => new Settings())
-router.add('timer', () => new Timer())
+const createFirstPage = () => new TaskList('first')
+
+if (!sessionStorage.isNoFirstVisit) {
+    dataBase.deleteDBField('cycleData')
+    router.add('', createFirstPage)
+    sessionStorage.isNoFirstVisit = true
+} else {
+    router.add('', () => new TaskList())
+    router.add('task-list', () => new TaskList())
+    router.add('reports', () => new Reports())
+    router.add('settings', () => new Settings())
+    router.add('timer', () => new Timer())
+}
+
+

@@ -1,52 +1,80 @@
 <div class="modal-wrapper hidden"></div>
 
 <main class="main">
+    <div class="lists hidden">
+        <div class="task-type daily-tabs">
+            <div class="task-type__right-side">
+                <button class="task-type__to-do tabs active">To Do</button>
+                <div class="tabs__edge"></div>
+                <button class="task-type__done tabs">Done</button>
+            </div>
 
-    <div class="task-type daily-tabs">
-        <div class="task-type__right-side">
-            <button class="task-type__to-do tabs active">To Do</button>
-            <div class="tabs__edge"></div>
-            <button class="task-type__done tabs">Done</button>
+            <div class="task-type__left-side remove-mode__tabs hidden">
+                <button class="task-type__select-all daily tabs">Select All</button>
+                <div class="tabs__edge"></div>
+                <button class="task-type__deselect-all daily tabs">Deselect All</button>
+            </div>
         </div>
 
-        <div class="task-type__left-side remove-mode__tabs hidden">
-            <button class="task-type__select-all daily tabs">Select All</button>
-            <div class="tabs__edge"></div>
-            <button class="task-type__deselect-all daily tabs">Deselect All</button>
-        </div>
+        <section class="tasks">
+            <ul class="tasks__list">
+            </ul>
+        </section>
+
+        <section class="global-list-section">
+            <div class="global-list">
+                <div class="global-list__left-side">
+                    <span class="global-list__name">Global List</span>
+                    <span class="icon-global-list-arrow-right global-list__arrow"></span>
+                </div>
+                <div class="global-list__right-side hidden">
+                    <ul class="global-list__categories">
+                        <li>
+                            <button class="global-list__tab active">All</button>
+                        </li>
+                        <li class="tabs__edge"></li>
+                        <li>
+                            <button class="global-list__tab">Urgent</button>
+                        </li>
+                        <li class="tabs__edge"></li>
+                        <li>
+                            <button class="global-list__tab">High</button>
+                        </li>
+                        <li class="tabs__edge"></li>
+                        <li>
+                            <button class="global-list__tab">Middle</button>
+                        </li>
+                        <li class="tabs__edge"></li>
+                        <li>
+                            <button class="global-list__tab">Low</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="global-list__selected-tasks remove-mode__tabs hidden">
+                <button class="task-type__select-all global tabs">Select All</button>
+                <div class="tabs__edge"></div>
+                <button class="task-type__deselect-all global tabs">Deselect All</button>
+            </div>
+            <div class="global-list-groups hidden"></div>
+        </section>
     </div>
 
-    <section class="tasks">
-        <ul class="tasks__list">
-        </ul>
+    <section class="first-visit hidden">
+        <div class="tasks__first-task">
+            <img src="../images/first-task.png" alt="add task" class="first-task__image">
+            <span class="first-task__text">As you visited site for a first time you can check and customize your default application settings</span>
+        </div>
+        <div class="tasks__buttons">
+            <button class="buttons__skip">Skip</button>
+            <button class="buttons__go-to-settings">Go to settings</button>
+        </div>
     </section>
 
-    <section class="global-list-section">
-        <div class="global-list">
-            <div class="global-list__left-side">
-                <span class="global-list__name">Global List</span>
-                <span class="icon-global-list-arrow-right global-list__arrow"></span>
-            </div>
-            <div class="global-list__right-side hidden">
-                <ul class="global-list__categories">
-                    <button class="global-list__tab active">All</button>
-                    <li class="tabs__edge"></li>
-                    <button class="global-list__tab">Urgent</button>
-                    <li class="tabs__edge"></li>
-                    <button class="global-list__tab">High</button>
-                    <li class="tabs__edge"></li>
-                    <button class="global-list__tab">Middle</button>
-                    <li class="tabs__edge"></li>
-                    <button class="global-list__tab">Low</button>
-                </ul>
-            </div>
+    <section class="add-first-task hidden">
+        <div class="tasks__noTasks-task">
+            <img src="../images/noTasks-task.png" alt="add task" class="noTasks-task__image">
+            <span class="noTasks-task__text">You don’t have any tasks left. Add new tasks to stay productive</span>
         </div>
-        <div class="global-list__selected-tasks remove-mode__tabs hidden">
-            <button class="task-type__select-all global tabs">Select All</button>
-            <div class="tabs__edge"></div>
-            <button class="task-type__deselect-all global tabs">Deselect All</button>
-        </div>
-        <div class="global-list-groups hidden"></div>
     </section>
-
 </main>

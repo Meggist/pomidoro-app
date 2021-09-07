@@ -60,6 +60,15 @@ class HeaderController {
         }
     }
 
+    clickSelectedTasks = ()=> this.allTasks.filter(item => this.model.selectedTasks.includes(item.id))
+        .forEach(item => {
+            const trashIcon = item.querySelector('.remove-mode-trash')
+            if (!trashIcon.classList.contains('hidden')) {
+                this.model.selectedTasks =  this.model.selectedTasks.filter(id => id !== item.id)
+                trashIcon.click()
+            }
+        })
+
     cleanBasket = () => {
         this.model.selectedTasks = []
         this.view.displaySelectedTasks(this.model.selectedTasks.length)
