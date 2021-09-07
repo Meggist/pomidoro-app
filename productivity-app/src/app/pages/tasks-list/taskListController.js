@@ -5,8 +5,7 @@ import DailyList from "../../components/dailyList/dailyList";
 import GlobalList from "../../components/globalList/globalList";
 
 class TaskListController {
-    constructor(model, view) {
-        this.model = model
+    constructor(view) {
         this.view = view
         eventBus.subscribe('finishCollectionRender', this.createLists)
         this.taskCollection = new TaskCollection()

@@ -46,7 +46,7 @@ class HeaderView {
             }
 
             if (target.className === 'icon-settings menu__button') {
-                window.location.href = "http://localhost:3000/settings"
+                window.location.href = "http://localhost:3000/settings/pomodoros"
             }
 
             if (target.className === 'icon-statistics menu__button') {

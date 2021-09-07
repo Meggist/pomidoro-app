@@ -68,7 +68,8 @@ if (!sessionStorage.isNoFirstVisit) {
     router.add('', () => new TaskList())
     router.add('task-list', () => new TaskList())
     router.add('reports', () => new Reports())
-    router.add('settings', () => new Settings())
+    router.add('settings/pomodoros', () => new Settings('pomodoros'))
+    router.add('settings/categories', () => new Settings('categories'))
     router.add('timer', () => new Timer())
 }
 
