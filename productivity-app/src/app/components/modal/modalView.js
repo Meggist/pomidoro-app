@@ -234,7 +234,7 @@ class ModalView {
             values.status = {
                 GLOBAL_LIST: true,
                 DAILY_LIST: false,
-                ACTIVE: true,
+                ACTIVE: false,
                 COMPLETED: false
             }
             eventBus.publish('acceptAddModal', values)

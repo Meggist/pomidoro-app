@@ -51063,7 +51063,7 @@ var selectModalInputsValue = function selectModalInputsValue() {
     status: {
       GLOBAL_LIST: true,
       DAILY_LIST: false,
-      ACTIVE: true,
+      ACTIVE: false,
       COMPLETED: false
     },
     createDate: new Date(Date.now()),

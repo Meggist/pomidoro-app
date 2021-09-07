@@ -44,7 +44,8 @@ class HeaderController {
 
     getCertainTasks = tab => {
         return tab.classList.contains('daily') ?
-            Array.from(document.querySelector('.tasks__list').querySelectorAll('.tasks__element')) :
+            Array.from(document.querySelector('.tasks__list').querySelectorAll('.tasks__element'))
+                .filter(item => !item.classList.contains('hidden')) :
             Array.from(document.querySelector('.global-list-groups').querySelectorAll('.tasks__element'))
 
     }
