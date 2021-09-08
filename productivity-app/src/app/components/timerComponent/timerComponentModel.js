@@ -1,3 +1,5 @@
+import {dataBase} from "../../firebase";
+
 class TimerComponentModel {
     constructor(taskCollection, cycleData) {
         this.taskCollection = taskCollection
@@ -6,7 +8,11 @@ class TimerComponentModel {
         this.correctCycleData = this.getTimerSettings()
     }
 
-    getActivetask = () => Object.values(this.taskCollection).find(item => item.status.ACTIVE === true)
+    getActivetask = () => {
+        this.activeTaskId = Object.keys(this.taskCollection)
+            .find(key => this.taskCollection[key].status.ACTIVE === true)
+        return Object.values(this.taskCollection).find(item => item.status.ACTIVE === true)
+    }
 
     getTimerSettings = () => this.cycleData
         ? this.cycleData
@@ -29,7 +35,10 @@ class TimerComponentModel {
     finishTask = () => {
         const restCompletedPomodoro = this.activeTask.estimation - (this.activeTask.failedPomodoros + this.activeTask.completedCount)
         this.activeTask.completedCount += restCompletedPomodoro
-        console.log(this.activeTask)
+        this.activeTask.status.COMPLETED = true
+        this.activeTask.status.ACTIVE = false
+        this.activeTask.completeDate = new Date(Date.now()).toDateString()
+        dataBase.updateField(`taskCollection/${this.activeTaskId}`, this.activeTask)
     }
 
 
