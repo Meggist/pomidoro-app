@@ -47,6 +47,7 @@ class DailyListView extends GlobalListView {
                     task.classList.add('done')
                     task.querySelector('.tasks__name').classList.add('crossed')
                     task.querySelector('.tasks__icons').classList.add('hidden')
+                    task.querySelector('.priority').classList.add('hidden')
                 }
             })
         })

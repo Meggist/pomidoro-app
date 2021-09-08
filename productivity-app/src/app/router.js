@@ -68,10 +68,16 @@ if (!sessionStorage.isNoFirstVisit) {
 } else {
     router.add('', () => new TaskList())
     router.add('task-list', () => new TaskList())
-    router.add('reports', () => new Reports())
     router.add('settings/pomodoros', () => new Settings('pomodoros'))
     router.add('settings/categories', () => new Settings('categories'))
     router.add('timer', () => new Timer())
+    router.add('reports/day/tasks ', () => new Reports())
+    router.add('reports/day/tasks ', () => new Reports())
+    router.add('reports/day/pomodoros ', () => new Reports())
+    router.add('reports/week/tasks ', () => new Reports())
+    router.add('reports/week/pomodoros ', () => new Reports())
+    router.add('reports/month/tasks ', () => new Reports())
+    router.add('reports/month/pomodoros ', () => new Reports())
 }
 
 

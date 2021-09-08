@@ -40,6 +40,9 @@ class GlobalListController {
     }
 
     moveTask = id => {
+        if (this.model.dailyTasksAmount >= 5) {
+            return
+        }
         let editedTask
         Object.values(this.tasks).forEach(item => item.forEach(item => {
             if (item.model.id === id) {
