@@ -6,7 +6,7 @@ class SettingsView {
     }
 
     append = () => {
-        document.body.innerHTML = template()
+        document.getElementById('root').innerHTML = template()
         this.getTargets()
     }
 

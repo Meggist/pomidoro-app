@@ -1,5 +1,8 @@
 import template from './globalList_tmpl.hbs'
 import {eventBus} from "../../eventBus"
+import {router} from "../../router";
+import Timer from "../../pages/timer/timer";
+import {dataBase} from "../../firebase";
 
 class GlobalListView {
     constructor() {
@@ -23,7 +26,6 @@ class GlobalListView {
 
     bindAllEvents = () => {
         if (this.globalList.classList.contains('binded') !== true) {
-            this.bindPriorityHover(this.globalList)
             this.bindShowHideEvent()
             this.bindEditEvent(this.globalList, 'Global')
             this.bindDeleteEvent(this.globalList, 'Global')
@@ -68,7 +70,7 @@ class GlobalListView {
         }
     }
 
-    bindPriorityHover = target => {
+    bindTimerEvent = target => {
         target.addEventListener('mouseover', ({target}) => {
             if (target.classList.contains('tasks__tomato')) {
                 target.parentNode.querySelector('.tasks__num').classList.add('hidden')
@@ -82,6 +84,14 @@ class GlobalListView {
                 target.parentNode.querySelector('.tasks__num').classList.remove('hidden')
                 target.parentNode.querySelector('.icon-timer').classList.add('hidden')
                 target.parentNode.querySelector('.icon-tomato').classList.remove('hidden')
+            }
+        })
+
+        target.addEventListener('click', ({target}) => {
+            if (target.classList.contains('tasks__tomato')) {
+                const id = target.closest('.tasks__element').id
+                dataBase.updateField(`taskCollection/${id}/status`, {ACTIVE: true})
+                    .then(() => window.location.href = 'http://localhost:3000/timer')
             }
         })
     }

@@ -19,10 +19,17 @@ class HeaderModel {
             this.titleState = 'hidden'
         }
 
+        if (title === 'Settings') {
+            this.titleState = 'settings-header__text'
+        }
+
+        if (title === 'Reports') {
+            this.titleState = 'reports-header__text'
+        }
+
     }
 
     addSelectedTask = id => this.selectedTasks.push(id)
-
     deleteSelectedTask = id => this.selectedTasks = this.selectedTasks.filter(item => item !== id)
 
 }

@@ -3,6 +3,7 @@ import Reports from "./pages/reports/reports";
 import Timer from "./pages/timer/timer";
 import Settings from "./pages/settings/settings";
 import {dataBase} from "./firebase";
+import {eventBus} from "./eventBus";
 
 class Router {
     constructor() {

@@ -121,6 +121,7 @@ class ModalView {
 
 
         if (data.isDeleting) {
+            this.modalWrapper.querySelector('.modal-title span').textContent = 'Remove Task'
             this.modalWrapper.querySelector('.icon-check').classList.add('hidden')
             this.modalWrapper.querySelector('.modal-form').classList.add('hidden')
             this.modalWrapper.querySelector('.modal__edit').classList.remove('hidden')
@@ -128,6 +129,7 @@ class ModalView {
         }
 
         if (data.deadlineDate) {
+            this.modalWrapper.querySelector('.modal-title span').textContent = 'Edit Task'
             this.categories.forEach(item => {
                 if (item.querySelector('.modal-category__text').textContent.toLowerCase() === data.categoryId) {
                     item.classList.add('selected-category')

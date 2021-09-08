@@ -22,6 +22,7 @@
 .global-list__selected-tasks {
   display: flex;
   margin-bottom: 1.625rem;
+  font-size: 1.375rem;
 }
 
 .task-type__done,
@@ -627,24 +628,25 @@
   color: @default;
   .defaul-font-size;
   line-height: 3rem;
+  margin: 18rem 1rem
 }
 
 .modal__info > * {
   text-align: center;
-  width: 33.4375rem;
   display: inline-block;
 }
 
 .modal-buttons {
-  .flex-spacebetween;
+  .flex-center-normal;
 }
 
 .modal__remove,
 .modal__cancel {
-  width: 21.75rem;
+  .button-font-default;
+  width: 12.75rem;
   height: 4.5rem;
   color: white;
-  .button-font-default;
+  margin: 0 1.5rem;
 }
 
 .modal__cancel {
@@ -663,6 +665,20 @@
 
 
 @media (min-width: 48rem) {
+  .modal__info {
+    margin: 20rem 0;
+  }
+
+  .modal__info > * {
+    width: 33.4375rem;
+  }
+
+  .modal__remove,
+  .modal__cancel {
+    width: 21.75rem;
+    margin: 0 1.5rem;
+  }
+
   .global-list__arrow {
     font-size: 0.75rem;
     margin-left: 1.125rem;
@@ -751,8 +767,16 @@
   }
 }
 
-
 @media (min-width: 64rem) {
+  .modal__info {
+    font-size: 1.875rem;
+    margin: 9.625rem 0;
+  }
+
+  .modal__info > * {
+    width: 19.5rem;
+  }
+
   .tasks__element {
     height: 5.5rem;
   }
@@ -763,13 +787,6 @@
 
   .modal-estimations {
     width: 100%;
-  }
-
-  .modal__info {
-  }
-
-  .modal__info > * {
-    width: 25rem;
   }
 
   .modal__remove,

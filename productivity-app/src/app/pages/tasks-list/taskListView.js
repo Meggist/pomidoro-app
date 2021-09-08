@@ -6,7 +6,7 @@ class TaskListView {
     }
 
     append = () => {
-        document.body.innerHTML = template()
+        document.getElementById('root').innerHTML = template()
         this.getTargets()
     }
 
@@ -15,7 +15,6 @@ class TaskListView {
         this.addFirstTask = document.querySelector('.add-first-task')
         this.lists = document.querySelector('.lists')
         this.dailyEmptyMessage = document.querySelector('.tasks__message')
-        this.dailyList = document.querySelector('.tasks__list')
     }
 
     displayPage = db => {
@@ -28,7 +27,7 @@ class TaskListView {
 
             this.firstPage.addEventListener('click', ({target}) => {
                 if (target === goToSettingsButton) {
-                    window.location.href = "http://localhost:3000/settings"
+                    window.location.href = "http://localhost:3000/settings/pomodoros"
                     return
                 }
 

@@ -5,7 +5,7 @@ class HeaderController {
     constructor(model, view) {
         this.model = model
         this.view = view
-        this.body = document.body
+        this.body = document.getElementById('root')
         this.render(this.model, this.body)
         eventBus.subscribe('displayAllTasks', this.bindRemoveModeEvents)
     }

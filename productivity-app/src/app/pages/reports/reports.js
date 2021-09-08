@@ -5,7 +5,7 @@ import {router} from "../../router";
 class Reports {
     constructor() {
         router.changeDefaultRoute()
-        document.body.innerHTML = template()
+        document.getElementById('root').innerHTML = template()
         const header = new Header('Reports')
     }
 }

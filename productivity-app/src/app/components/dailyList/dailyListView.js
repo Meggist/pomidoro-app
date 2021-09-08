@@ -64,7 +64,7 @@ class DailyListView extends GlobalListView {
         if (this.dailyTaskList.classList.contains('binded') !== true) {
             this.bindEditEvent(this.dailyTaskList, 'Daily')
             this.bindDeleteEvent(this.dailyTaskList, 'Daily')
-            this.bindPriorityHover(this.dailyTaskList)
+            this.bindTimerEvent(this.dailyTaskList)
             this.dailyTaskList.classList.add('binded')
         }
     }
