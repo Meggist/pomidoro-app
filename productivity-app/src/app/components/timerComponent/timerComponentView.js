@@ -1,5 +1,6 @@
 import componentTemplate from './timerComponent.hbs'
 import pomodoroIcon from './pomodoroIcon.hbs'
+import {eventBus} from "../../eventBus";
 
 
 class TimerComponentView {
@@ -18,18 +19,30 @@ class TimerComponentView {
         this.cycleData = cycleData
         const timerHtml = componentTemplate(task)
         this.append(timerHtml)
-        this.displayPomodoros(task)
+        this.addPomodoroButton = document.querySelector('.timer__add-icon')
+        this.bindAllEvents()
+        this.displayPomodoros(task.estimation)
     }
 
     append = content => this.timerSection.innerHTML = content
 
-    displayPomodoros = ({estimation}) => {
+    displayPomodoros = estimation => {
         let pomodoros = new Array(estimation)
         pomodoros = pomodoros.fill(pomodoroIcon(this.icons.empty), 0, estimation).join('')
-        this.addPomodoroButton = document.querySelector('.timer__add-icon')
-        this.addPomodoroButton.insertAdjacentHTML('beforebegin', pomodoros)
+        document.querySelector('.pomodors-icons').innerHTML = pomodoros
     }
 
+    bindAllEvents = () => {
+        this.bindStartEvent()
+        this.bindAddPomodoroEvent()
+    }
+
+    bindStartEvent = () => {
+
+    }
+
+    bindAddPomodoroEvent = () =>
+        this.addPomodoroButton.onclick = () => eventBus.publish('addPomodoro')
 }
 
 export default TimerComponentView
