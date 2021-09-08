@@ -51,9 +51,10 @@
 }
 
 .timer__meter {
-  display: flex;
-  justify-content: center;
-  margin-top: 5.5625rem;
+  margin-top: 8rem;
+  font-size: 4.5rem;
+  text-align: center;
+  color: white;
 }
 
 .timer__arrow {
@@ -112,7 +113,8 @@
 }
 
 .timer__fail--inProgress,
-.timer__finish--inProgress {
+.timer__finish--inProgress,
+.timer__finish-task{
   width: 21.75rem;
   height: 4.5rem;
   color: white;
@@ -123,7 +125,8 @@
   .button-font-default;
 }
 
-.timer__finish--inProgress {
+.timer__finish--inProgress,
+.timer__finish-task{
   background-color: #1ABC9C;
 }
 
@@ -152,7 +155,8 @@
     line-height: 1.25rem;
   }
 
-  .timer__finish--inProgress {
+  .timer__finish--inProgress,
+  .timer__finish-task{
     width: 12.0625rem;
   }
 
@@ -161,7 +165,8 @@
   }
 
   .timer__finish--inProgress,
-  .timer__fail--inProgress
+  .timer__fail--inProgress,
+  .timer__finish-task
   {
     height: 2.75rem;
     font-size: 1.125rem;
