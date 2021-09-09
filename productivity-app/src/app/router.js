@@ -1,134 +1,82 @@
+import TaskList from "./pages/tasks-list/tasksList";
+import Reports from "./pages/reports/reports";
+import Timer from "./pages/timer/timer";
+import Settings from "./pages/settings/settings";
 import {dataBase} from "./firebase";
+import {eventBus} from "./eventBus";
 
 class Router {
     constructor() {
         this.routes = []
-        this.mode = null
         this.root = '/'
+
+        this.listen()
     }
 
-    config(options) {
-        this.mode = options && options.mode && options.mode == 'history' &&'history'
-        this.root = options && options.root ? '/' + this.clearSlashes(options.root) + '/' : '/'
-        return this
-    }
-    listen() {
-        var self = this
-        var current = self.getFragment()
-        var fn = function() {
-            if (current !== self.getFragment()) {
-                current = self.getFragment()
-                self.check(current)
-            }
-        }
-        clearInterval(this.interval);
-        this.interval = setInterval(fn, 50)
-        return this
-    }
-    getFragment() {
-        let fragment = '';
-        if (this.mode === 'history') {
-            fragment = this.clearSlashes(decodeURI(location.pathname + location.search))
-            fragment = fragment.replace(/\\?(.*)$/, '');
-            fragment = this.root != '/' ? fragment.replace(this.root, '') : fragment
-        } else {
-            const match = window.location.href.match(/#(.*)$/)
-            fragment = match ? match[1] : ''
-        }
+    clearSlashes = path => path
+        .toString()
+        .replace(/\/$/, '')
+        .replace(/^\//, '')
+
+    add = (path, callback) => this.routes.push({path, callback})
+
+
+    getFragment = () => {
+        let fragment = ''
+
+        fragment = this.clearSlashes(decodeURI(window.location.pathname + window.location.search))
+        fragment = fragment.replace(/\?(.*)$/, '')
+        fragment = this.root !== '/' ? fragment.replace(this.root, '') : fragment
+
         return this.clearSlashes(fragment)
     }
-    clearSlashes(path) {
-        return path.toString().replace(/\\$/, '').replace(/^\\/, '');
+
+    listen = () => {
+        clearInterval(this.interval)
+        this.interval = setInterval(this.interval, 50)
     }
-    add(re, handler) {
-        if (typeof re == 'function') {
-            handler = re
-            re = ''
+
+    interval = () => {
+        if (this.current === this.getFragment()) {
+            return
         }
-        this.routes.push({ re: re, handler: handler })
-        return this
-    }
-    remove(param) {
-        for (let i = 0, r; i < this.routes.length, r = this.routes[i]; i++) {
-            if (r.handler === param || r.re.toString() === param.toString()) {
-                this.routes.splice(i, 1)
-                return this
+        this.current = this.getFragment()
+        this.routes.forEach(route => {
+            if (this.current === route.path) {
+                route.callback()
             }
-        }
-        return this;
+        })
     }
-    flush() {
-        this.routes = []
-        this.mode = null
-        this.root = '/'
-        return this
-    }
-    check(f) {
-        let fragment = f || this.getFragment();
-        for (let i = 0; i < this.routes.length; i++) {
-            let match = fragment.match(this.routes[i].re)
-            if (match) {
-                match.shift()
-                this.routes[i].handler.apply({}, match)
-                return this
-            }
+
+    changeDefaultRoute = () => {
+        if (this.routes.find(item => item.callback === createFirstPage)) {
+            this.routes = this.routes.filter(item => item !== {path: '', callback: createFirstPage})
+            router.add('', () => new TaskList())
         }
-        return this
     }
 }
 
-const router = new Router()
 
-const loadPage = async(page, title) => {
-    const response = await fetch(`static/${page}.html`);
-    const resHtml = await response.text();
-    document.write(resHtml);
-    setTimeout(() => {
-        window.dispatchEvent(new CustomEvent('header_render', {
-            bubbles: true,
-            cancelable: true,
-            detail: { pageTitle: title }
-        }))
-    }, 500)
-};
-const renderPage = (page, title) => {
-    window.dispatchEvent(new CustomEvent(`${page}_render`, {
-        bubbles: true,
-        cancelable: true,
-        detail: { handler: loadPage }
-    }))
-}
+export const router = new Router()
 
-window.addEventListener('load', () => {
-    const curUrl = window.location.pathname.split("/")[1]
-    router.check(curUrl).listen()
-})
+const createFirstPage = () => new TaskList('first')
 
-if (!sessionStorage.noFirstVisit) {
+if (!sessionStorage.isNoFirstVisit) {
     dataBase.deleteDBField('cycleData')
-    router.add(function() {
-        renderPage('firstPage')
-    })
-    window.addEventListener('firstPage_render', async(event) => {
-        event.detail.handler('firstPage', 'firstLoad').then(() => {
-            require('./components/header/header')
-        })
-    })
-    sessionStorage.noFirstVisit = "1"
+    router.add('', createFirstPage)
+    sessionStorage.isNoFirstVisit = true
 } else {
-    router.config({ mode: 'history' })
-    router
-        .add(/settings/, function() {
-            renderPage('settings')
-        })
-        .add(/reports/, function() {
-            renderPage('reports')
-        })
-        .add(/timer/, function() {
-            renderPage('timer')
-        })
-
-    .add(function() {
-        renderPage('task-list')
-    })
+    router.add('', () => new TaskList())
+    router.add('task-list', () => new TaskList())
+    router.add('settings/pomodoros', () => new Settings('pomodoros'))
+    router.add('settings/categories', () => new Settings('categories'))
+    router.add('timer', () => new Timer())
+    router.add('reports/day/tasks', () => new Reports('day', 'tasks'))
+    router.add('reports/day/pomodoros', () => new Reports('day', 'pomodoros'))
+    router.add('reports/week/tasks', () => new Reports('week', 'tasks'))
+    router.add('reports/week/pomodoros', () => new Reports('week', 'pomodoros'))
+    router.add('reports/month/tasks', () => new Reports('month', 'tasks'))
+    router.add('reports/month/pomodoros', () => new Reports('month', 'pomodoros'))
 }
+
+

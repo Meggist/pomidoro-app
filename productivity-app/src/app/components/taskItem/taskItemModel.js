@@ -9,6 +9,8 @@ class TaskItemModel {
         this.deadlineDate = taskData.deadlineDate
         this.status = taskData.status
         this.createDate = taskData.createDate
+        this.completedCount = 0
+        this.failedPomodoros = 0
     }
 }
 

@@ -1,17 +1,26 @@
 <li class="tasks__element" id="{{id}}">
     <div class="tasks__left-side">
-        <div class="tasks__category-indicator {{categoryId}}"></div>
-        <span class="tasks__date">{{deadlineDate}}
+        <div class="tasks__category-indicator {{categoryId}}">
+        </div>
+        <div class="tasks__category-indicator--activate hidden {{categoryId}}">
+            <div class="{{categoryId}}"></div>
+            <div class="category-indicator__icon-container">
+                <span class="icon-trash remove-mode-trash"></span>
+                <span class="icon-close hidden remove-mode-cancel"></span>
+            </div>
+        </div>
+        <span class="tasks__date">{{deadlineDateToday}}
             <span class="tasks__day">{{deadlineDay}}</span>
                 <span class="tasks__month">{{deadlineMonth}}</span>
             </span>
         <div class="tasks__info">
-            <span class="tasks__name name-urgent">{{title}}</span>
+            <span class="tasks__name name-{{priority}}">{{title}}</span>
             <span class="tasks__description">{{description}}</span>
         </div>
     </div>
     <div class="tasks__right-side">
         <div class="tasks__icons">
+            <span class="icon-arrows-up tasks__arrows"></span>
             <span class="icon-edit tasks__edit"></span>
             <span class="icon-trash tasks__trash"></span>
         </div>

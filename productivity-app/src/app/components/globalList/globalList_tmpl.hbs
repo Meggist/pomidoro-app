@@ -1,0 +1,81 @@
+  <div class="tasks-group hidden">
+            <div class="task-category__title">
+                <div class="modal__empty-cycle-category work-border">
+                    <div class="modal__cycle-category work"></div>
+                </div>
+                <span class="task-category__name work-color">Work</span>
+            </div>
+            <div class="tasks__title-line work"></div>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    {{#each work}}
+                        {{{this.view.task}}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="tasks-group hidden">
+            <div class="task-category__title">
+                <div class="modal__empty-cycle-category education-border">
+                    <div class="modal__cycle-category education"></div>
+                </div>
+                <span class="task-category__name education-color">Education</span>
+            </div>
+            <div class="tasks__title-line education"></div>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    {{#each education}}
+                        {{{this.view.task}}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="tasks-group hidden">
+            <div class="task-category__title">
+                <div class="modal__empty-cycle-category hobby-border">
+                    <div class="modal__cycle-category hobby"></div>
+                </div>
+                <span class="task-category__name hobby-color">hobby</span>
+            </div>
+            <div class="tasks__title-line hobby"></div>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    {{#each hobby}}
+                        {{{this.view.task}}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="tasks-group hidden">
+            <div class="task-category__title">
+                <div class="modal__empty-cycle-category sport-border">
+                    <div class="modal__cycle-category sport"></div>
+                </div>
+                <span class="task-category__name sport-color">Sport</span>
+            </div>
+            <div class="tasks__title-line sport"></div>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    {{#each sport}}
+                        {{{this.view.task}}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="tasks-group hidden">
+            <div class="task-category__title">
+                <div class="modal__empty-cycle-category other-border">
+                    <div class="modal__cycle-category other"></div>
+                </div>
+                <span class="task-category__name other-color">Other</span>
+            </div>
+            <div class="tasks__title-line other"></div>
+            <div class="tasks">
+                <ul class="tasks__list">
+                    {{#each other}}
+                        {{{this.view.task}}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+

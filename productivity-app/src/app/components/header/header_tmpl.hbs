@@ -4,14 +4,15 @@
         <span class="icon-add title__add headerAddTaskButton {{addTaskButton}}"></span>
     </div>
     <div class="header__logo">
-        <img src="../images/Logo.svg" alt="logo" class="logo__img">
+        <img src="../../images/Logo.svg" alt="logo" class="logo__img">
     </div>
     <ul class="header__menu">
         <li class="menu__icon hidden">
             <button class="icon-add menu__button headerAddTaskButton {{addTaskButton}}"></button>
         </li>
-        <li class="menu__icon">
+        <li class="menu__icon header-remove hidden">
             <button class="icon-trash menu__button {{trash}}"></button>
+            <div class="menu__amounts urgent hidden"></div>
         </li>
         <li class="menu__icon">
             <button class="icon-list menu__button"></button>

@@ -4,11 +4,16 @@ class ModalController {
     constructor(model, view) {
         this.model = model
         this.view = view
-        this.render(this.model.data)
+        eventBus.subscribe('renderModal', this.render)
+        this.getModalData()
     }
 
-    render = (data) => {
+    render = data => {
         this.view.append(data)
+    }
+
+    getModalData = () => {
+        this.model.render()
     }
 }
 

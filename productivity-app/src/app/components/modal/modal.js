@@ -3,8 +3,8 @@ import ModalView from "./modalView";
 import ModalController from "./modalController";
 
 class Modal {
-    constructor(state) {
-        this.model = new ModalModel(state)
+    constructor(state, task) {
+        this.model = new ModalModel(state, task)
         this.view = new ModalView()
         this.controller = new ModalController(this.model, this.view)
     }

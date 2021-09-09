@@ -4,7 +4,7 @@ class TaskItemView {
     constructor(task) {
         this.priorityindex = task.priority
         task.priority = this.getPriorityClass(task.priority)
-        task.deadlineDate = this.getDate(task)
+        this.getDate(task)
         this.task = template(task)
         task.priority = this.priorityindex
     }
@@ -35,7 +35,7 @@ class TaskItemView {
         let deadlineDate = new Date(task.deadlineDate)
         let currentDate = new Date(Date.now())
         if (deadlineDate.getDate() === currentDate.getDate()) {
-            return 'Today'
+            task.deadlineDateToday = 'Today'
         } else {
             task.deadlineDay = deadlineDate.getDate()
             task.deadlineMonth = this.getMonth(deadlineDate.getMonth())

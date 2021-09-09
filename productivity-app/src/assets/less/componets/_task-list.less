@@ -19,6 +19,12 @@
   align-items: center;
 }
 
+.global-list__selected-tasks {
+  display: flex;
+  margin-bottom: 1.625rem;
+  font-size: 1.375rem;
+}
+
 .task-type__done,
 .task-type__deselect-all {
   padding-left: 1rem;
@@ -61,13 +67,14 @@
 }
 
 .tasks__date {
-  width: 4rem;
+  width: 6rem;
   text-align: center;
   color: #9F9F9F;
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 2.625rem 1rem;
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
 }
@@ -158,7 +165,7 @@
   margin-top: 5rem;
   display: flex;
   color: @default;
-  padding-bottom: 4.125rem;
+  margin-bottom: 1.625rem;
 }
 
 .global-list__name {
@@ -173,7 +180,6 @@
 .global-list__arrow {
   font-size: 0.75rem;
   display: block;
-  padding-top: 0.4375rem;
   cursor: pointer;
   margin-left: 0.3125rem;
 }
@@ -224,19 +230,21 @@
   align-items: center;
 }
 
-.global-list__categories > *:not(:last-child) {
-  padding: 0 1rem;
+.global-list__tab {
+  color: @default;
+  background: none;
+
   &:hover {
     color: @icons-hover;
   }
 }
 
+.global-list__categories > *:not(:last-child) {
+  padding: 0 1rem;
+}
+
 .global-list__categories > *:last-child {
   padding-left: 1rem;
-
-  &:hover {
-    color: @icons-hover;
-  }
 }
 
 .task-category__name {
@@ -244,11 +252,13 @@
   font-weight: 700;
   line-height: 1.25rem;
   text-transform: uppercase;
+  margin-left: 0.75rem;
 }
 
 .task-category__title {
   margin-left: -0.25rem;
   margin-bottom: -0.375rem;
+  display: flex;
 }
 
 .tasks-group__connect-line {
@@ -273,6 +283,34 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 10rem;
+}
+
+.connected--activate {
+  width: 0.5rem;
+  height: 6.25rem;
+  position: absolute;
+  padding-bottom: 2.5rem;
+}
+
+.tasks__category-indicator--activate {
+  color: white;
+  width: 5.5rem;
+  height: 100%;
+  margin-right: 1rem;
+}
+
+.global-list-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-indicator__icon-container {
+  .flex-center-center;
+  height: 100%;
+}
+
+.category-indicator__icon-container > * {
+  .defaul-font-size;
 }
 
 .add-task__image,
@@ -334,19 +372,8 @@
   text-decoration: line-through;
 }
 
-.taskType__select-all {
+.task-type__select-all {
   padding-right: 1rem;
-}
-
-.tasks__category-indicator--activate {
-  .flex-center-center;
-  color: white;
-  width: 5.5rem;
-  margin-right: 1rem;
-}
-
-.tasks__category-indicator--activate > * {
-  .defaul-font-size;
 }
 
 .menu__amounts {
@@ -358,7 +385,7 @@
   color: white;
   font-size: 0.65rem;
   .flex-center-center;
-  transform: translate(80%,90%);
+  transform: translate(80%, 90%);
 }
 
 .hobby-close {
@@ -597,30 +624,29 @@
 
 
 .modal__info {
-  margin-top: 19.75rem;
   .flex-center-center;
   color: @default;
   .defaul-font-size;
   line-height: 3rem;
+  margin: 18rem 1rem
 }
 
 .modal__info > * {
   text-align: center;
-  width: 33.4375rem;
   display: inline-block;
 }
 
 .modal-buttons {
-  .flex-spacebetween;
-  margin: 21.5rem 1.5rem 0 1.5rem;
+  .flex-center-normal;
 }
 
 .modal__remove,
 .modal__cancel {
-  width: 21.75rem;
+  .button-font-default;
+  width: 12.75rem;
   height: 4.5rem;
   color: white;
-  .button-font-default;
+  margin: 0 1.5rem;
 }
 
 .modal__cancel {
@@ -639,9 +665,24 @@
 
 
 @media (min-width: 48rem) {
+  .modal__info {
+    margin: 20rem 0;
+  }
+
+  .modal__info > * {
+    width: 33.4375rem;
+  }
+
+  .modal__remove,
+  .modal__cancel {
+    width: 21.75rem;
+    margin: 0 1.5rem;
+  }
+
   .global-list__arrow {
     font-size: 0.75rem;
     margin-left: 1.125rem;
+    padding-top: 0.4375rem;
   }
 
   .notification__text {
@@ -716,7 +757,7 @@
   }
 
   .modal-category,
-  .modal-priority{
+  .modal-priority {
     margin-right: 2rem;
   }
 
@@ -726,22 +767,26 @@
   }
 }
 
-
 @media (min-width: 64rem) {
+  .modal__info {
+    font-size: 1.875rem;
+    margin: 9.625rem 0;
+  }
+
+  .modal__info > * {
+    width: 19.5rem;
+  }
+
   .tasks__element {
+    height: 5.5rem;
+  }
+
+  .connected--activate {
     height: 5.5rem;
   }
 
   .modal-estimations {
     width: 100%;
-  }
-
-  .modal__info {
-    margin-top: 13.75rem;
-  }
-
-  .modal__info > * {
-    width: 25rem;
   }
 
   .modal__remove,
@@ -759,7 +804,6 @@
 
   .modal-buttons {
     justify-content: center;
-    margin-top: 15.625rem;
   }
 
   .model-label {
@@ -831,12 +875,6 @@
   .tasks__description {
     width: 37.75rem;
     max-width: none;
-  }
-
-  .task-category__title > img {
-    width: 1.25rem;
-    margin-left: -0.125rem;
-    margin-bottom: -0.125rem;
   }
 
   .tasks__notification {

@@ -1,13 +1,13 @@
-import {dataBase} from "../../firebase";
-import {numbersButtons} from "../../components/cycle/cycle";
+import {router} from "../../router";
+import SettingsView from "./settingsView";
+import SettingsController from "./settingsController";
 
-const saveCycleDataButton = document.getElementById('saveCycleData')
-
-saveCycleDataButton.onclick = () => {
-    dataBase.db.ref('cycleData').update({
-        'longBreak': numbersButtons[3].value,
-        'shortBreak': numbersButtons[2].value,
-        'workIteration': numbersButtons[1].value,
-        'workTime': numbersButtons[0].value,
-    })
+class Settings {
+    constructor(state) {
+        router.changeDefaultRoute()
+        this.view = new SettingsView(state)
+        this.controller = new SettingsController(this.view)
+    }
 }
+
+export default Settings

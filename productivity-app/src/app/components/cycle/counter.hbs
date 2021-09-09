@@ -1,0 +1,16 @@
+<li class="settings-pomodoros__element"  id="{{title}}">
+    <div class="settings__point {{type}}"></div>
+    <div class="settings-pomodoros__elem-content">
+        <div class="settings-pomodoros__first-row">
+            <span class="settings-pomodoros__name">{{title}}</span>
+            <div class="settings-pomodoros__counter">
+                <button class="icon-minus counter__button"></button>
+                <input class="counter__number" type="number" value="{{value}}">
+                <button class="icon-add counter__button"></button>
+            </div>
+        </div>
+        <div class="settings-pomodoros__second-row">
+            <span class="settings-pomodoros__tip">Please select a value between {{min}} and {{max}} <span class="white-color">minutes</span></span>
+        </div>
+    </div>
+</li>

@@ -9,9 +9,24 @@ class TaskCollectionModel {
     }
 
     getTasksData = () => {
-        dataBase.getFieldFromDB('taskCollection').then(data => {
-            this.tasks = Object.values(data).map(item => new TaskItem(item))
-            eventBus.publish('getTasksData', this.tasks)
+        this.tasks = []
+        dataBase.db.ref('taskCollection').get()
+            .then(collection => {
+                const correctCollection = collection.val()
+                if (correctCollection) {
+                    Object.keys(correctCollection).forEach(key => correctCollection[key].status.ACTIVE = false)
+                    dataBase.updateField('taskCollection', correctCollection)
+                    return correctCollection
+                }
+            }).then(collection => {
+            if (collection) {
+                Object.keys(collection).forEach(key => {
+                    collection[key].id = key
+                    this.tasks.push(new TaskItem(collection[key]))
+                })
+            }
+        }).then(() => {
+            eventBus.publish('renderTasks')
         })
     }
 }

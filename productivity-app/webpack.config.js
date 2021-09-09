@@ -60,10 +60,6 @@ module.exports = {
         new CopyWebpackPlugin([
             'src/index.html', // will copy to root of outDir (./dist folder)
             {
-                from: 'src/static/',
-                to: 'static'
-            },
-            {
                 from: 'src/assets/images',
                 to: 'images'
             }

@@ -14,6 +14,7 @@ const firebaseConfig = {
 }
 
 firebase.initializeApp(firebaseConfig)
+localStorage.removeItem('firebase:previous_websocket_failure')
 
 class DataBase{
     constructor() {
@@ -21,6 +22,7 @@ class DataBase{
     }
 
     deleteDBField = field => this.db.ref(field).remove()
+    updateField = (path, data) => this.db.ref(path).update(data)
     insertDataToDB = (path, data) => this.db.ref(path).update(data)
     getFieldFromDB = (path) => this.db.ref(path).get().then(doc => doc.val())
 }
