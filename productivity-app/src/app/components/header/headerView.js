@@ -50,7 +50,7 @@ class HeaderView {
             }
 
             if (target.className === 'icon-statistics menu__button') {
-                window.location.href = "http://localhost:3000/reports"
+                window.location.href = "http://localhost:3000/reports/day/tasks"
             }
         })
 

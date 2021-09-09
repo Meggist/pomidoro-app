@@ -117,7 +117,7 @@ class TimerComponentView {
         .onclick = () => window.location.href = window.location.href = "http://localhost:3000/task-list"
 
     bindReportsRouteEvent = () => this.routeReportsButton
-        .onclick = () => window.location.href = window.location.href = "http://localhost:3000/reports"
+        .onclick = () => window.location.href = window.location.href = "http://localhost:3000/reports/day/tasks"
 
     bindFailEvent = () => this.failButton.onclick = () => eventBus.publish('failPomodoro')
     bindFinishPomodoroEvent = () => this.finishPomodoroButton.onclick = () => eventBus.publish('finishPomodoro')
