@@ -20,15 +20,8 @@ class TimerComponentView {
                 alt: "failed pomodoro"
             }
         }
-        this.timerData = {
-            states: {
-                isWorkTime: false,
-                isShortBreak: false,
-                isLongBreak: false
-            },
-            pastedWorkIterations: 0,
-            isPastedLongBreak: false
-        }
+        this.pastedWorkIterations = 0
+
     }
 
     render = (task, cycleData) => {
@@ -125,7 +118,7 @@ class TimerComponentView {
 
 
     startWorkTime = () => {
-        ++this.timerData.pastedWorkIterations
+        ++this.pastedWorkIterations
         this.changeNavigationAvailability(false)
         this.timerValue.textContent = 'Work Time: ' + this.cycleData.workTime + 'min'
         this.startButton.classList.add('hidden')
@@ -142,7 +135,6 @@ class TimerComponentView {
     }
 
     startLongBreak = () => {
-        this.timerData.isPastedLongBreak = true
         this.timerValue.textContent = 'Long Break Time: ' + this.cycleData.longBreak + 'min'
         this.startButton.classList.remove('hidden')
         this.failButton.classList.add('hidden')

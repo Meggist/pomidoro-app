@@ -56,10 +56,10 @@ class TimerComponentController {
         (this.model.activeTask.failedPomodoros + this.model.activeTask.completedCount)
 
     startBreak = () => {
-        if (this.view.timerData.pastedWorkIterations < this.view.cycleData.workIteration) {
+        if (this.view.pastedWorkIterations < this.view.cycleData.workIteration) {
             this.view.startShortBreak()
         } else {
-            this.view.timerData.pastedWorkIterations = 0
+            this.view.pastedWorkIterations = 0
             this.view.startLongBreak()
         }
     }
