@@ -1,0 +1,21 @@
+<h2>My List</h2>
+<ul class="resultList" *ngIf="myListService.myBooks.length">
+  <li *ngFor="let bookCard of myListService.myBooks">
+    <div class="bookCard">
+      <h3 class="cardTitle">{{bookCard.volumeInfo.title}}</h3>
+      <h4 class="subtitle">{{bookCard.volumeInfo.subtitle}}</h4>
+      <p class="description">{{bookCard.volumeInfo.description | filterBookDescription}}</p>
+      <div class="bottomContainer">
+        <img class="bookImg" src="{{bookCard.volumeInfo.imageLinks.smallThumbnail}}">
+        <div class="buttonContainer">
+          <p>{{bookCard.volumeInfo.publishedDate}}</p>
+          <p>{{bookCard.volumeInfo.authors}}</p>
+          <button (click)="removeBook(bookCard)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+
