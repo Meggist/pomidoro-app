@@ -8,6 +8,7 @@ class TaskList {
         router.changeDefaultRoute()
         this.view = new TaskListView(state)
         this.controller = new TaskListController(this.view)
+        $('#root').notifyTest().checkChain()
     }
 }
 

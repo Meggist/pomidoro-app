@@ -1506,7 +1506,19 @@ input {
 .reports-tabs__tasks {
   padding-left: 1rem;
 }
-.reports-tabs__Pomodoros {
+.reports__table {
+  border: solid white 1px;
+  font-size: 1.5rem;
+  color: white;
+}
+.reports__title {
+  font-size: 1.5rem;
+  color: white;
+}
+.reports__table * {
+  border: solid white 1px;
+}
+.reports-tabs__pomodoros {
   padding-right: 1rem;
 }
 .reports-tabs__week,

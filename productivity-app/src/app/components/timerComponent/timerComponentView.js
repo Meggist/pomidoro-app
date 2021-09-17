@@ -12,7 +12,7 @@ class TimerComponentView {
                 alt: 'empty pomodoro'
             },
             fill: {
-                name: 'fill tomato',
+                name: 'fill-tomato',
                 alt: "fill pomodoro"
             },
             failed: {
@@ -45,7 +45,6 @@ class TimerComponentView {
         this.pomodorsIconsContainer = document.querySelector('.pomodors-icons')
         this.routeTaskListButton = document.querySelector('.timer__arrow')
         this.routeReportsButton = document.querySelector('.timer__arrow-right')
-        this.timerValue = document.querySelector('.meter__image')
     }
 
     append = content => this.timerSection.innerHTML = content
@@ -120,7 +119,6 @@ class TimerComponentView {
     startWorkTime = () => {
         ++this.pastedWorkIterations
         this.changeNavigationAvailability(false)
-        this.timerValue.textContent = 'Work Time: ' + this.cycleData.workTime + 'min'
         this.startButton.classList.add('hidden')
         this.failButton.classList.remove('hidden')
         this.finishPomodoroButton.classList.remove('hidden')
@@ -128,14 +126,12 @@ class TimerComponentView {
         this.routeTaskListButton.className = 'icon-arrow-left timer__arrow hidden'
     }
     startShortBreak = () => {
-        this.timerValue.textContent = 'Short Break Time: ' + this.cycleData.shortBreak + 'min'
         this.startButton.classList.remove('hidden')
         this.failButton.classList.add('hidden')
         this.finishPomodoroButton.classList.add('hidden')
     }
 
     startLongBreak = () => {
-        this.timerValue.textContent = 'Long Break Time: ' + this.cycleData.longBreak + 'min'
         this.startButton.classList.remove('hidden')
         this.failButton.classList.add('hidden')
         this.finishPomodoroButton.classList.add('hidden')
@@ -148,7 +144,6 @@ class TimerComponentView {
         this.routeReportsButton.classList.remove('hidden')
         this.addPomodoroButton.className = 'icon-add timer__add-icon hidden'
         this.timerButtonsContainer.className = 'timer__buttons hidden'
-        this.timerValue.textContent = 'Task is completed'
         this.changeNavigationAvailability(true)
     }
 
