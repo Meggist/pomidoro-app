@@ -32,6 +32,8 @@ class TimerComponentView {
         this.getTargets()
         this.bindAllEvents()
         this.displayEmptyPomodoros(task.estimation)
+        this.outerCycle.classList.add(`${this.task.categoryId}-border`)
+        $(".timer__cycle").radialTimer({content: 'Let`s do It!', showFull: false})
     }
 
     getTargets = () => {
@@ -45,6 +47,7 @@ class TimerComponentView {
         this.pomodorsIconsContainer = document.querySelector('.pomodors-icons')
         this.routeTaskListButton = document.querySelector('.timer__arrow')
         this.routeReportsButton = document.querySelector('.timer__arrow-right')
+        this.outerCycle = document.querySelector('.timer__cycle')
     }
 
     append = content => this.timerSection.innerHTML = content
@@ -124,17 +127,34 @@ class TimerComponentView {
         this.finishPomodoroButton.classList.remove('hidden')
         this.finishTaskButton.className = 'timer__finish-task hidden'
         this.routeTaskListButton.className = 'icon-arrow-left timer__arrow hidden'
+        $(".timer__cycle").radialTimer(
+            {
+                time: this.cycleData.workTime,
+                onTimeout: () => eventBus.publish('finishPomodoro')
+            }
+        )
+
     }
     startShortBreak = () => {
         this.startButton.classList.remove('hidden')
         this.failButton.classList.add('hidden')
         this.finishPomodoroButton.classList.add('hidden')
+        $(".timer__cycle").radialTimer(
+            {
+                time: this.cycleData.shortBreak,
+                onTimeout: () => eventBus.publish('startTimer')
+            }
+        )
     }
 
     startLongBreak = () => {
         this.startButton.classList.remove('hidden')
         this.failButton.classList.add('hidden')
         this.finishPomodoroButton.classList.add('hidden')
+        $(".timer__cycle").radialTimer({
+            time: this.cycleData.longBreak,
+            onTimeout: () => eventBus.publish('startTimer')
+        })
     }
 
     hidePlusButton = () => this.addPomodoroButton.classList.add('hidden')

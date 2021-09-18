@@ -1,12 +1,45 @@
 .timer__cycle {
+  .flex-center-center;
   margin: auto;
-  border: solid red 1px;
+  border-width: 0.3125rem;
+  border-style: solid;
+  box-shadow: 0 0.25rem 3.5rem rgba(21, 43, 59, 0.6);
   border-radius: 50%;
-  width: 15.875rem;
-  height: 15.875rem;
+  width: 16.1875rem;
+  height: 16.1875rem;
 }
 
+.timer__cycle--inside {
+  .flex-center-center;
+  position: absolute;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  width: 14.875rem;
+  height: 14.875rem
+}
 
+.timer__content {
+  .flex-center-center;
+  position: absolute;
+  border-radius: 50%;
+  background:#2a3f50;
+  width: 10rem;
+  height: 10rem;
+  color: white;
+  font-size: 26px;
+  line-height: 32px;
+  font-family: PT Sans, sans-serif;
+  text-align: center
+}
+
+.timer__line {
+  fill:none;
+  stroke-width: 4.4375rem;
+  stroke: @default;
+  stroke-dasharray: 46.7075rem;
+  stroke-dashoffset: 46.7075rem;
+  transition: all 1s linear;
+}
 
 .timer__frame {
   display: flex;

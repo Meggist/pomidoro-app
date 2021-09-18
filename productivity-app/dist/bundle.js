@@ -9978,7 +9978,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		// Only deal with non-null/undefined values
 		if ( ( options = arguments[ i ] ) != null ) {
 
-			// Extend the base object
+			// Extend the components object
 			for ( name in options ) {
 				copy = options[ name ];
 
@@ -15362,7 +15362,7 @@ function leverageNative( el, type, expectSync ) {
 				// (focus or blur), assume that the surrogate already propagated from triggering the
 				// native event and prevent that from happening again here.
 				// This technically gets the ordering wrong w.r.t. to `.trigger()` (in which the
-				// bubbling surrogate propagates *after* the non-bubbling base), but that seems
+				// bubbling surrogate propagates *after* the non-bubbling components), but that seems
 				// less bad than duplication.
 				} else if ( ( jQuery.event.special[ type ] || {} ).delegateType ) {
 					event.stopPropagation();
@@ -20017,7 +20017,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 		if ( support.createHTMLDocument ) {
 			context = document.implementation.createHTMLDocument( "" );
 
-			// Set the base href for the created document
+			// Set the components href for the created document
 			// so any parsed elements with URLs
 			// are based on the document's URL (gh-2965)
 			base = context.createElement( "base" );
@@ -24038,7 +24038,7 @@ var base64 = {
     /**
      * Base64-decode a string.
      *
-     * In base-64 decoding, groups of four characters are converted into three
+     * In components-64 decoding, groups of four characters are converted into three
      * bytes.  If the encoder did not apply padding, the input length may not
      * be a multiple of 4.
      *
@@ -28990,7 +28990,7 @@ var Nt = /** @class */ function() {
         this.key = t, this.documentType = e, this.version = n, this.data = r, this.documentState = i
         /**
      * Creates a document with no known version or data, but which can serve as
-     * base document for mutations.
+     * components document for mutations.
      */;
     }
     return t.newInvalidDocument = function(e) {
@@ -29009,7 +29009,7 @@ var Nt = /** @class */ function() {
     /**
      * Creates a new document that is known to exist at the given version but
      * whose data is not known (e.g. a document that was updated without a known
-     * base document).
+     * components document).
      */
     t.newUnknownDocument = function(e, n) {
         return new t(e, 3 /* UNKNOWN_DOCUMENT */ , n, _t.empty(), 2 /* HAS_COMMITTED_MUTATIONS */);
@@ -29033,7 +29033,7 @@ var Nt = /** @class */ function() {
     /**
      * Changes the document type to indicate that it exists at a given version but
      * that its data is not known (e.g. a document that was updated without a known
-     * base document).
+     * components document).
      */
     t.prototype.convertToUnknownDocument = function(t) {
         return this.version = t, this.documentType = 3 /* UNKNOWN_DOCUMENT */ , this.data = _t.empty(), 
@@ -29642,18 +29642,18 @@ function ce(t, e, n) {
 }
 
 /**
- * If this transform operation is not idempotent, returns the base value to
- * persist for this transform. If a base value is returned, the transform
- * operation is always applied to this base value, even if document has
+ * If this transform operation is not idempotent, returns the components value to
+ * persist for this transform. If a components value is returned, the transform
+ * operation is always applied to this components value, even if document has
  * already been updated.
  *
  * Base values provide consistent behavior for non-idempotent transforms and
  * allow us to return the same latency-compensated value even if the backend
- * has already applied the transform operation. The base value is null for
+ * has already applied the transform operation. The components value is null for
  * idempotent transforms, as they can be re-played even if the backend has
  * already applied them.
  *
- * @returns a base value to store along with the mutation, or null for
+ * @returns a components value to store along with the mutation, or null for
  * idempotent transforms.
  */ function ve(t, e) {
     return t instanceof Te ? gt(n = e) || function(t) {
@@ -29918,19 +29918,19 @@ e) {
 }
 
 /**
- * If this mutation is not idempotent, returns the base value to persist with
- * this mutation. If a base value is returned, the mutation is always applied
- * to this base value, even if document has already been updated.
+ * If this mutation is not idempotent, returns the components value to persist with
+ * this mutation. If a components value is returned, the mutation is always applied
+ * to this components value, even if document has already been updated.
  *
- * The base value is a sparse object that consists of only the document
+ * The components value is a sparse object that consists of only the document
  * fields for which this mutation contains a non-idempotent transformation
  * (e.g. a numeric increment). The provided value guarantees consistent
  * behavior for non-idempotent transforms and allow us to return the same
  * latency-compensated value even if the backend has already applied the
- * mutation. The base value is null for idempotent mutations, as they can be
+ * mutation. The components value is null for idempotent mutations, as they can be
  * re-played even if the backend has already applied them.
  *
- * @returns a base value to store along with the mutation, or null for
+ * @returns a components value to store along with the mutation, or null for
  * idempotent mutations.
  */ function Re(t, e) {
     for (var n = null, r = 0, i = t.fieldTransforms; r < i.length; r++) {
@@ -29954,7 +29954,7 @@ function Le(t, e) {
 
 /**
  * Returns the version from the given document for use as the result of a
- * mutation. Mutations are defined to return the version of the base document
+ * mutation. Mutations are defined to return the version of the components document
  * only if it is an existing document. Deleted and unknown documents have a
  * post-mutation version of SnapshotVersion.min().
  */ function Oe(t) {
@@ -31841,7 +31841,7 @@ e,
      */
 n, 
 /**
-     * A list of "mutations" that represent a partial base state from when this
+     * A list of "mutations" that represent a partial components state from when this
      * write batch was initially created. During local application of the write
      * batch, these baseMutations are applied prior to the real writes in order
      * to override certain document fields from the remote document cache. This
@@ -32630,7 +32630,7 @@ var mr = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spreadArray"])(Object(tsli
 // V2 is no longer usable (see comment at top of file)
 // Visible for testing
 /**
- * A base class representing a persistence transaction, encapsulating both the
+ * A components class representing a persistence transaction, encapsulating both the
  * transaction's sequence numbers as well as a list of onCommitted listeners.
  *
  * When you call Persistence.runTransaction(), it will create a transaction and
@@ -32862,7 +32862,7 @@ function Rr(t, e) {
     /**
      * @param batchId - The unique ID of this mutation batch.
      * @param localWriteTime - The original write time of this mutation.
-     * @param baseMutations - Mutations that are used to populate the base
+     * @param baseMutations - Mutations that are used to populate the components
      * values when this mutation is applied locally. This can be used to locally
      * overwrite values that are persisted in the remote document cache. Base
      * mutations are never sent to the backend.
@@ -32894,7 +32894,7 @@ function Rr(t, e) {
      * @param document - The document to apply mutations to.
      */
     t.prototype.applyToLocalView = function(t) {
-        // First, apply the base state. This allows us to apply non-idempotent
+        // First, apply the components state. This allows us to apply non-idempotent
         // transform against a consistent set of values.
         for (var e = 0, n = this.baseMutations; e < n.length; e++) {
             (o = n[e]).key.isEqual(t.key) && xe(o, t, this.localWriteTime);
@@ -37647,9 +37647,9 @@ function Ao() {
  * A helper for running delayed tasks following an exponential backoff curve
  * between attempts.
  *
- * Each delay is made up of a "base" delay which follows the exponential
+ * Each delay is made up of a "components" delay which follows the exponential
  * backoff curve, and a +/- 50% "jitter" that is calculated and added to the
- * base delay. This prevents clients from accidentally synchronizing their
+ * components delay. This prevents clients from accidentally synchronizing their
  * delays causing spikes of load to the backend.
  */ var xo = /** @class */ function() {
     function t(
@@ -37662,17 +37662,17 @@ function Ao() {
      */
     e, 
     /**
-     * The initial delay (used as the base delay on the first retry attempt).
+     * The initial delay (used as the components delay on the first retry attempt).
      * Note that jitter will still be applied, so the actual delay could be as
      * little as 0.5*initialDelayMs.
      */
     n
     /**
-     * The multiplier to use to determine the extended base delay after each
+     * The multiplier to use to determine the extended components delay after each
      * attempt.
      */ , r
     /**
-     * The maximum base delay after which no further backoff is performed.
+     * The maximum components delay after which no further backoff is performed.
      * Note that jitter will still be applied, so the actual delay could be as
      * much as 1.5*maxDelayMs.
      */ , i) {
@@ -37707,11 +37707,11 @@ function Ao() {
         var e = this;
         // Cancel any pending backoff operation.
                 this.cancel();
-        // First schedule using the current base (which may be 0 and should be
+        // First schedule using the current components (which may be 0 and should be
         // honored as such).
         var n = Math.floor(this.qi + this.Wi()), r = Math.max(0, Date.now() - this.Ki), i = Math.max(0, n - r);
         // Guard against lastAttemptTime being in the future due to a clock change.
-                i > 0 && C("ExponentialBackoff", "Backing off for " + i + " ms (base delay: " + this.qi + " ms, delay with jitter: " + n + " ms, last attempt: " + r + " ms ago)"), 
+                i > 0 && C("ExponentialBackoff", "Backing off for " + i + " ms (components delay: " + this.qi + " ms, delay with jitter: " + n + " ms, last attempt: " + r + " ms ago)"),
         this.Ui = this.Se.enqueueAfterDelay(this.timerId, i, (function() {
             return e.Ki = Date.now(), t();
         })), 
@@ -38328,7 +38328,7 @@ e, i, o, s) {
  * limitations under the License.
  */
 /**
- * A PersistentStream is an abstract base class that represents a streaming RPC
+ * A PersistentStream is an abstract components class that represents a streaming RPC
  * to the Firestore backend. It's built on top of the connections own support
  * for streaming RPCs, and adds several critical features for our clients:
  *
@@ -39981,14 +39981,14 @@ function Rs(t, e) {
                             n = o;
                             for (
                             // For non-idempotent mutations (such as `FieldValue.increment()`),
-                            // we record the base state in a separate patch mutation. This is
+                            // we record the components state in a separate patch mutation. This is
                             // later used to guarantee consistent values and prevents flicker
                             // even if the backend sends us an update that already includes our
                             // transform.
                             var s = [], u = 0, a = e; u < a.length; u++) {
                                 var c = a[u], h = Re(c, n.get(c.key));
                                 null != h && 
-                                // NOTE: The base state should only be applied if there's some
+                                // NOTE: The components state should only be applied if there's some
                                 // existing document to override, so use a Precondition of
                                 // exists=true
                                 s.push(new Fe(c.key, h, St(h.value.mapValue), De.exists(!0)));
@@ -41587,7 +41587,7 @@ function pu(t, e) {
             // Note: this can change once we can send separate verify writes in the
             // transaction.
             throw new D(N.INVALID_ARGUMENT, "Can't update a document that doesn't exist.");
-            // Document exists, base precondition on document update time.
+            // Document exists, components precondition on document update time.
                         return De.updateTime(e);
         }
         // Document was not read, so we just use the preconditions for a blind
@@ -44134,7 +44134,7 @@ function Qa(t, e) {
  * Creates a new immutable instance of `Query` that is extended to also include
  * additional query constraints.
  *
- * @param query - The Query instance to use as a base for the new constraints.
+ * @param query - The Query instance to use as a components for the new constraints.
  * @param queryConstraints - The list of `QueryConstraint`s to apply.
  * @throws if any of the provided query constraints cannot be combined with the
  * existing or new constraints.
@@ -44604,7 +44604,7 @@ var fc = /** @class */ function(e) {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// TODO(mrschmidt) Consider using `BaseTransaction` as the base class in the
+// TODO(mrschmidt) Consider using `BaseTransaction` as the components class in the
 // legacy SDK.
 /**
  * A reference to a transaction.
@@ -54355,7 +54355,7 @@ var predecessor = function (key) {
     // `key[0:key.length - 2] + (key[key.length - 1] - 1) + \
     //   { MAX_PUSH_CHAR repeated MAX_KEY_LEN - (key.length - 1) times }
     //
-    // analogous to increment/decrement for base-10 integers.
+    // analogous to increment/decrement for components-10 integers.
     //
     // This works because lexigographic comparison works character-by-character,
     // using length as a tie-breaker if one key is a prefix of the other.
@@ -62009,7 +62009,7 @@ function equalTo(value, key) {
  * Creates a new immutable instance of `Query` that is extended to also include
  * additional query constraints.
  *
- * @param query - The Query instance to use as a base for the new constraints.
+ * @param query - The Query instance to use as a components for the new constraints.
  * @param queryConstraints - The list of `QueryConstraint`s to apply.
  * @throws if any of the provided query constraints cannot be combined with the
  * existing or new constraints.

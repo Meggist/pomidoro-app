@@ -1,1 +1,3 @@
-require('./base/radialTimer')
+require('./components/radialTimer')
+
+
