@@ -1,0 +1,21 @@
+<h2 class="resultTitle">Search Result</h2>
+<ul class="resultList" *ngIf="searchResultService.bookCards.length">
+  <li *ngFor="let bookCard of searchResultService.bookCards">
+    <div class="bookCard">
+      <h3 class="cardTitle">{{bookCard.volumeInfo.title}}</h3>
+      <h4 class="subtitle">{{bookCard.volumeInfo.subtitle}}</h4>
+      <p class="description">{{bookCard.volumeInfo.description | filterBookDescription}}</p>
+      <div class="bottomContainer">
+        <img class="bookImg" src="{{bookCard.volumeInfo.imageLinks.smallThumbnail}}">
+        <div class="buttonContainer">
+          <p>{{bookCard.volumeInfo.publishedDate}}</p>
+          <p>{{bookCard.volumeInfo.authors}}</p>
+          <button (click)="addBook(bookCard)">Add</button>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+
