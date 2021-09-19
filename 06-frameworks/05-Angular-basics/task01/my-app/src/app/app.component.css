@@ -1,0 +1,14 @@
+.title {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+}
+
+.list {
+  margin: 40px;
+  width: 50%
+}
+
+
