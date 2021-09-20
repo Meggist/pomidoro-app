@@ -64,11 +64,22 @@ class DailyListView extends GlobalListView {
     }
 
     displayTasks = state => {
-        state === 'done' ?
+        const addTaskMessage = document.querySelector('.add-task')
+        const taskMessage = document.querySelector('.tasks__message')
+        if (state === 'done') {
+            addTaskMessage.className = 'add-task hidden'
+            taskMessage.className = 'tasks__message hidden'
             this.taskElements.forEach(item => item.classList.contains('done') ?
                 item.classList.remove('hidden') : item.classList.add('hidden'))
-            : this.taskElements.forEach(item => item.classList.contains('done') ?
-            item.classList.add('hidden') : item.classList.remove('hidden'))
+        } else {
+            const activeDailyTasks = Array.from(this.dailyTaskList.querySelectorAll('.tasks__element'))
+                .filter(item => !item.classList.contains('done'))
+            if (!this.globalList.querySelectorAll('.tasks__element').length && !activeDailyTasks.length) {
+                addTaskMessage.classList.remove('hidden')
+            }
+            this.taskElements.forEach(item => item.classList.contains('done') ?
+                item.classList.add('hidden') : item.classList.remove('hidden'))
+        }
     }
 
     bindAllEvents = () => {

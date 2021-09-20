@@ -79,3 +79,8 @@ if (!sessionStorage.isNoFirstVisit) {
     router.add('reports/month/pomodoros', () => new Reports('month', 'pomodoros'))
 }
 
+setTimeout(() => {
+    if (document.getElementById('root').innerHTML === '') {
+        location.reload()
+    }
+},6000)

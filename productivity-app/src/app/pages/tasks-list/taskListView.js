@@ -12,9 +12,11 @@ class TaskListView {
 
     getTargets = () => {
         this.firstPage = document.querySelector('.first-visit')
+        this.addTask = document.querySelector('.add-task')
         this.addFirstTask = document.querySelector('.add-first-task')
         this.lists = document.querySelector('.lists')
         this.dailyEmptyMessage = document.querySelector('.tasks__message')
+        this.globalList = document.querySelector('.global-list-section')
     }
 
     displayPage = db => {
@@ -40,14 +42,34 @@ class TaskListView {
         }
     }
 
+    displayAddFirstTask = () => {
+        this.firstPage.classList.add('hidden')
+        this.addFirstTask.classList.remove('hidden')
+        this.dailyEmptyMessage.className = 'tasks__message hidden'
+        this.globalList.classList.add('hidden')
+        this.lists.className = 'lists hidden'
+        this.addTask.className = 'add-task hidden'
+    }
+
     displayLists = db => {
+        if (!db.tasks.length) {
+            this.displayAddFirstTask()
+            return
+        }
+        const tasks = db.tasks.filter(item => item.model.isRemoved === false)
         const headerTrash = document.querySelector('.header-remove')
         this.firstPage.className = 'first-visit hidden'
-        if (!db.tasks.length) {
+        this.addFirstTask.className = 'add-first-task hidden'
+        this.addTask.className = 'add-task hidden'
+        this.dailyEmptyMessage.className = 'tasks__message hidden'
+        if (!tasks.length) {
+            console.log('asd')
             headerTrash.className = 'menu__icon header-remove hidden'
             this.lists.className = 'lists hidden'
-            this.addFirstTask.className = 'add-first-task'
+            this.addTask.className = 'add-task hidden'
+            this.dailyEmptyMessage.className = 'tasks__message hidden'
         } else {
+            this.globalList.classList.remove('hidden')
             this.addFirstTask.className = 'add-first-task hidden'
             this.lists.classList.remove('hidden')
             headerTrash.classList.remove('hidden')
@@ -56,10 +78,24 @@ class TaskListView {
     }
 
     displayDailyList = db => {
-        db.tasks.filter(item => item.model.status.DAILY_LIST === true).length ?
-            this.dailyEmptyMessage.className = 'tasks__message hidden' :
-            this.dailyEmptyMessage.className = 'tasks__message'
+        const globalTasks = db.tasks.filter(item => item.model.status.GLOBAL_LIST === true)
+        const activeDailyTasks = db.tasks
+            .filter(item => item.model.isRemoved === false)
+            .filter(item => item.model.status.DAILY_LIST === true && item.model.status.COMPLETED === false)
+        if (activeDailyTasks.length) {
+            this.dailyEmptyMessage.className = 'tasks__message hidden'
+        } else {
+            if (globalTasks.length) {
+                this.dailyEmptyMessage.className = 'tasks__message'
+            } else {
+                this.globalList.className = 'global-list-section hidden'
+                this.addTask.classList.remove('hidden')
+            }
+        }
+
+
     }
+
 }
 
 export default TaskListView
