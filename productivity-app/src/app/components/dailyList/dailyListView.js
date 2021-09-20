@@ -1,5 +1,6 @@
 import GlobalListView from "../globalList/globalListView";
 import {eventBus} from "../../eventBus";
+import Modal from "../modal/modal";
 
 class DailyListView extends GlobalListView {
     constructor() {
@@ -66,6 +67,8 @@ class DailyListView extends GlobalListView {
     displayTasks = state => {
         const addTaskMessage = document.querySelector('.add-task')
         const taskMessage = document.querySelector('.tasks__message')
+        const addFirstTask = document.querySelector('.add-first-task')
+
         if (state === 'done') {
             addTaskMessage.className = 'add-task hidden'
             taskMessage.className = 'tasks__message hidden'
@@ -77,6 +80,11 @@ class DailyListView extends GlobalListView {
             if (!this.globalList.querySelectorAll('.tasks__element').length && !activeDailyTasks.length) {
                 addTaskMessage.classList.remove('hidden')
             }
+
+            if (!addFirstTask.classList.contains('hidden') || !this.globalList.classList.contains('hidden')) {
+                addTaskMessage.className = 'add-task hidden'
+            }
+
             this.taskElements.forEach(item => item.classList.contains('done') ?
                 item.classList.add('hidden') : item.classList.remove('hidden'))
         }
@@ -87,9 +95,14 @@ class DailyListView extends GlobalListView {
             this.bindEditEvent(this.dailyTaskList, 'Daily')
             this.bindDeleteEvent(this.dailyTaskList, 'Daily')
             this.bindTimerEvent(this.dailyTaskList)
+            this.bindAddEvent()
             this.dailyTaskList.classList.add('binded')
         }
     }
+
+    bindAddEvent = () => Array.from(document.querySelectorAll('.add-image'))
+        .forEach(item => item.onclick = () => new Modal('add', {}))
+
 
     hideArrowIcons = () => Array.from(this.dailyTaskList.querySelectorAll('.icon-arrows-up'))
         .forEach(item => item.classList.add('hidden'))

@@ -63,7 +63,6 @@ class TaskListView {
         this.addTask.className = 'add-task hidden'
         this.dailyEmptyMessage.className = 'tasks__message hidden'
         if (!tasks.length) {
-            console.log('asd')
             headerTrash.className = 'menu__icon header-remove hidden'
             this.lists.className = 'lists hidden'
             this.addTask.className = 'add-task hidden'

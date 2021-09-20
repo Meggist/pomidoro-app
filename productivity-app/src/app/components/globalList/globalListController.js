@@ -53,19 +53,22 @@ class GlobalListController {
         editedTask.model.status.DAILY_LIST = true
         const taskData = Object.assign({}, editedTask.model)
         delete taskData.id
-            dataBase.updateField(`taskCollection/${id}`, taskData)
-                .then(() => eventBus.publish('updateTaskCollection'))
+        dataBase.updateField(`taskCollection/${id}`, taskData)
+            .then(() => eventBus.publish('updateTaskCollection'))
     }
 
     bindTabsEvents = () => {
-        this.view.globalList.addEventListener('click', ({target}) => {
-            if (target.className === 'global-list__tab') {
-                const tabs = document.querySelectorAll('.global-list__tab')
-                tabs.forEach(item => item.classList.remove('active'))
-                target.classList.add('active')
-                this.view.render(this.tasks)
-            }
-        })
+        if (this.view.globalList.classList.contains('tabBind') !== true) {
+            this.view.globalList.addEventListener('click', ({target}) => {
+                if (target.className === 'global-list__tab') {
+                    const tabs = document.querySelectorAll('.global-list__tab')
+                    tabs.forEach(item => item.classList.remove('active'))
+                    target.classList.add('active')
+                    this.view.render(this.tasks)
+                }
+            })
+            this.view.globalList.classList.add('tabBind')
+        }
     }
 }
 
