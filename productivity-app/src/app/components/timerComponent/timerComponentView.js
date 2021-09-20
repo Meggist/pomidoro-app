@@ -21,7 +21,6 @@ class TimerComponentView {
             }
         }
         this.pastedWorkIterations = 0
-
     }
 
     render = (task, cycleData) => {
@@ -37,7 +36,7 @@ class TimerComponentView {
     }
 
     getTargets = () => {
-        this.headerMenu = document.querySelector('.header__menu')
+        this.header = document.querySelector('.header')
         this.timerButtonsContainer = document.querySelector('.timer__buttons')
         this.addPomodoroButton = document.querySelector('.timer__add-icon')
         this.startButton = document.querySelector('.timer__start')
@@ -48,6 +47,8 @@ class TimerComponentView {
         this.routeTaskListButton = document.querySelector('.timer__arrow')
         this.routeReportsButton = document.querySelector('.timer__arrow-right')
         this.outerCycle = document.querySelector('.timer__cycle')
+        this.insideCircle = document.querySelector('.timer__cycle--inside')
+        this.timerContent = document.querySelector('.timer__content')
     }
 
     append = content => this.timerSection.innerHTML = content
@@ -130,36 +131,82 @@ class TimerComponentView {
         $(".timer__cycle").radialTimer(
             {
                 time: this.cycleData.workTime,
-                onTimeout: () => eventBus.publish('finishPomodoro')
+                onTimeout: () => eventBus.publish('finishPomodoro'),
+                content: this.returnTimerContentCallback('work'),
+                renderInterval: 60
             }
         )
 
     }
-    startShortBreak = () => {
-        this.startButton.classList.remove('hidden')
-        this.failButton.classList.add('hidden')
-        this.finishPomodoroButton.classList.add('hidden')
-        $(".timer__cycle").radialTimer(
-            {
-                time: this.cycleData.shortBreak,
-                onTimeout: () => eventBus.publish('startTimer')
-            }
-        )
+
+    returnTimerContentCallback = state => (element, time, i) => {
+        if (state === 'break') {
+            element.find('.timer__break-state').removeClass('hidden')
+        }
+
+        if (state === 'work') {
+            element.find('.timer__break-state').addClass('hidden')
+        }
+
+        if (element.find('.timer__cycle--inside').hasClass('hidden')) {
+            element.find('.timer__cycle--inside').removeClass('hidden')
+        }
+
+        if (!element.find('.timer_text').hasClass('hidden')) {
+            element.find('.timer__text').addClass('hidden')
+        }
+
+        if (element.find('.timer__left-time').hasClass('hidden')) {
+            element.find('.timer__left-time').removeClass('hidden')
+        }
+
+
+        if (element.find('.timer__minutes').hasClass('hidden')) {
+            element.find('.timer__minutes').removeClass('hidden')
+        }
+
+        const leftMinutes = Math.floor((time - i) / 60)
+        element.find('.timer__left-time').text(leftMinutes)
     }
 
-    startLongBreak = () => {
+    displayTimerText = state => {
+        this.timerContent.querySelectorAll('.timer__content > *')
+            .forEach(item => item.classList.add('hidden'))
+        this.timerContent.querySelector('.timer__text').classList.remove('hidden')
+        this.insideCircle.classList.add('hidden')
+        if (state === 'break') {
+            return 'Break is over'
+        }
+
+        if (state === 'finish') {
+            return 'You completed Task'
+        }
+    }
+
+    displayBreakFinish = () => {
+        this.finishTaskButton.classList.remove('hidden')
+        $(".timer__cycle").radialTimer({content: () => this.displayTimerText('break'), showFull: false})
+    }
+
+    startBreak = (type, state) => {
         this.startButton.classList.remove('hidden')
         this.failButton.classList.add('hidden')
         this.finishPomodoroButton.classList.add('hidden')
+        if (state === 'fail') {
+            this.finishTaskButton.classList.add('hidden')
+        }
         $(".timer__cycle").radialTimer({
-            time: this.cycleData.longBreak,
-            onTimeout: () => eventBus.publish('startTimer')
+            time: this.cycleData[`${type}Break`],
+            onTimeout: this.displayBreakFinish,
+            content: this.returnTimerContentCallback('break'),
+            renderInterval: 60
         })
     }
 
     hidePlusButton = () => this.addPomodoroButton.classList.add('hidden')
 
     displayFinishedTask = () => {
+        $(".timer__cycle").radialTimer({content: () => this.displayTimerText('finish'), showFull: false})
         this.routeTaskListButton.classList.remove('hidden')
         this.routeReportsButton.classList.remove('hidden')
         this.addPomodoroButton.className = 'icon-add timer__add-icon hidden'
@@ -167,8 +214,8 @@ class TimerComponentView {
         this.changeNavigationAvailability(true)
     }
 
-    changeNavigationAvailability = isAble => isAble ? this.headerMenu.classList.remove('hidden')
-        : this.headerMenu.className = 'header__menu hidden'
+    changeNavigationAvailability = isAble => isAble ? this.header.classList.remove('hidden')
+        : this.header.classList.add('hidden')
 }
 
 export default TimerComponentView

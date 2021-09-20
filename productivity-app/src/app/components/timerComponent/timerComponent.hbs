@@ -10,9 +10,10 @@
     <button class="icon-arrow-left timer__arrow"></button>
     <div class="timer__cycle">
         <div class="timer__content">
-            <span class="timer__state"></span>
+            <span class="timer__break-state hidden">Break</span>
             <span class="timer__text"></span>
-            <span class="timer__minutes"></span>
+            <span class="timer__left-time"></span>
+            <span class="timer__minutes hidden">min</span>
         </div>
         <svg class="timer__cycle--inside">
         </svg>
@@ -21,7 +22,7 @@
 </div>
 
 <div class="timer__buttons">
-    <button class="timer__start">Start</button>
+    <button class="timer__start">Start Pomodoro</button>
     <button class="timer__fail--inProgress hidden">Fail Pomodora</button>
     <button class="timer__finish--inProgress hidden">Finish Pomodora</button>
     <button class="timer__finish-task hidden">Finish Task</button>

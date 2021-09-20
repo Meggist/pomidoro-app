@@ -19,17 +19,42 @@
 }
 
 .timer__content {
-  .flex-center-center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   border-radius: 50%;
   background:#2a3f50;
   width: 10rem;
   height: 10rem;
   color: white;
-  font-size: 26px;
-  line-height: 32px;
   font-family: PT Sans, sans-serif;
   text-align: center
+}
+
+.timer__text {
+  font-size: 1.625rem;
+  line-height: 2rem;
+  text-align: center
+}
+
+.timer__minutes {
+  font-size: 1.5rem;
+  line-height: 1.5rem
+}
+
+.timer__left-time{
+  margin: 0.5rem 0;
+  font-size: 6.25rem;
+  line-height: 4.875rem;
+}
+
+.timer__break-state {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-family: 'Roboto Light', sans-serif;
+  text-align: center;
 }
 
 .timer__line {
@@ -191,7 +216,7 @@
   }
 
   .timer__start {
-    width: 6.375rem;
+    width: 11.8125rem;
     height: 2.75rem;
     font-size: 1.125rem;
     line-height: 1.25rem;
