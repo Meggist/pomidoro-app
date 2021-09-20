@@ -12,6 +12,7 @@ class DailyListView extends GlobalListView {
             completed: []
         }
         this.completedTaskIds = []
+        this.removedTaskIds = []
     }
 
     render = tasks => {
@@ -24,6 +25,10 @@ class DailyListView extends GlobalListView {
             if (item.model.status.COMPLETED === true) {
                 this.completedTaskIds.push(item.model.id)
             }
+
+            if (item.model.isRemoved === true) {
+                this.removedTaskIds.push(item.model.id)
+            }
             return item.view.task
         }).join('')
         this.addCompletedClasses()
@@ -34,7 +39,7 @@ class DailyListView extends GlobalListView {
 
     checkActiveTab = () => {
         const isToDo = Array.from(this.rightTabsContainer.querySelectorAll('.tabs'))
-            .filter(item=>item.classList.contains('active'))
+            .filter(item => item.classList.contains('active'))
             .includes(this.toDoTab)
         isToDo ? this.displayTasks('toDo') : this.displayTasks('done')
     }
@@ -42,6 +47,11 @@ class DailyListView extends GlobalListView {
     addCompletedClasses = () => {
         this.taskElements = Array.from(this.dailyTaskList.querySelectorAll('.tasks__element'))
         this.taskElements.forEach(task => {
+            this.removedTaskIds.forEach(id => {
+                if (task.id === id) {
+                    task.parentNode.removeChild(task)
+                }
+            })
             this.completedTaskIds.forEach(id => {
                 if (task.id === id) {
                     task.classList.add('done')

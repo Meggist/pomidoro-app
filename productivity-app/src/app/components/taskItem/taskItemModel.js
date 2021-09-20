@@ -11,6 +11,7 @@ class TaskItemModel {
         this.createDate = taskData.createDate
         this.completedCount = 0
         this.failedPomodoros = 0
+        this.isRemoved = taskData.isRemoved
     }
 }
 

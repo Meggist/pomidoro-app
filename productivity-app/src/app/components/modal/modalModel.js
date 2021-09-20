@@ -22,10 +22,18 @@ class ModalModel {
         }
 
         if (this.state === 'delete') {
-            const ids = this.task
-            this.task = {}
+            const allDoneTasks = Array.from(document.querySelectorAll('.done')).map(task => task.id)
+            if (typeof this.task === 'string') {
+                const id = this.task
+                this.task = {}
+                this.task.isDeleting = true
+                this.task.id = id
+                eventBus.publish('renderModal', this.task)
+                return
+            }
+            this.task.doneTaskIds = this.task.filter(id => allDoneTasks.includes(id))
+            this.task.toDoTaskIds = this.task.filter(id => !allDoneTasks.includes(id))
             this.task.isDeleting = true
-            typeof ids === 'string' ? this.task.ids = ids : this.task.ids = [...ids]
             eventBus.publish('renderModal', this.task)
         }
     }
@@ -42,16 +50,19 @@ class ModalModel {
             .then(() => eventBus.publish('updateTaskCollection'))
     }
 
-    deleteTask = ids => {
-        if (typeof ids === 'string') {
-            dataBase.deleteDBField(`taskCollection/${ids}`)
+    deleteTask = tasks => {
+        if (typeof tasks.id === 'string') {
+            dataBase.deleteDBField(`taskCollection/${tasks.id}`)
                 .then(() => eventBus.publish('updateTaskCollection'))
         } else {
-            dataBase.getFieldFromDB('taskCollection').then((data) => {
+            dataBase.getFieldFromDB('taskCollection').then(data => {
                 const filtered = Object.keys(data)
-                    .filter(key => !ids.includes(key))
+                    .filter(key => !tasks.toDoTaskIds.includes(key))
                     .reduce((obj, key) => {
                         obj[key] = data[key];
+                        if (tasks.doneTaskIds.includes(key)) {
+                            obj[key].isRemoved = true
+                        }
                         return obj;
                     }, {})
                 dataBase.deleteDBField('taskCollection').then(() => {
