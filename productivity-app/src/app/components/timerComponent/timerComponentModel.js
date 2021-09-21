@@ -33,8 +33,6 @@ class TimerComponentModel {
     addCompletedPomodoro = () => ++this.activeTask.completedCount
 
     finishTask = () => {
-        const restCompletedPomodoro = this.activeTask.estimation - (this.activeTask.failedPomodoros + this.activeTask.completedCount)
-        this.activeTask.completedCount += restCompletedPomodoro
         this.activeTask.status.COMPLETED = true
         this.activeTask.status.ACTIVE = false
         this.activeTask.completeDate = new Date(Date.now()).toDateString()

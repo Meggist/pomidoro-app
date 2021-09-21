@@ -138,17 +138,17 @@ class GlobalListView {
     bindShowHideEvent = () => this.globalList.addEventListener('click', this.showGlobalListEvent)
 
     showGlobalListEvent = ({target}) => {
-        if (target.classList.contains('icon-global-list-arrow-down')) {
-            target.className = 'icon-global-list-arrow-right global-list__arrow'
-            this.globalList.querySelector('.global-list-groups').classList.add('hidden')
-            this.globalList.querySelector('.global-list__right-side').classList.add('hidden')
-            return
-        }
-
-        if (target.classList.contains('icon-global-list-arrow-right')) {
-            target.className = 'icon-global-list-arrow-down global-list__arrow'
-            this.globalList.querySelector('.global-list-groups').classList.remove('hidden')
-            this.globalList.querySelector('.global-list__right-side').classList.remove('hidden')
+        if (target.classList.contains('global-list__arrow') || target.classList.contains('global-list__name')) {
+            const arrow = document.querySelector('.global-list__arrow')
+            if (arrow.classList.contains('icon-global-list-arrow-down')) {
+                arrow.className = 'icon-global-list-arrow-right global-list__arrow'
+                this.globalList.querySelector('.global-list-groups').classList.add('hidden')
+                this.globalList.querySelector('.global-list__right-side').classList.add('hidden')
+            } else {
+                arrow.className = 'icon-global-list-arrow-down global-list__arrow'
+                this.globalList.querySelector('.global-list-groups').classList.remove('hidden')
+                this.globalList.querySelector('.global-list__right-side').classList.remove('hidden')
+            }
         }
     }
 

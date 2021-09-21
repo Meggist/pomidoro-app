@@ -2,22 +2,27 @@
     <span class="timer-title__h">{{title}}</span>
     <span class="timer-title__p">{{description}}</span>
     <div class="timer-title__icons">
-        <div class="pomodors-icons">
-
-        </div>
+        <div class="pomodors-icons"></div>
         <button class="icon-add timer__add-icon"></button>
     </div>
 </div>
-<div class="timer__meter">
-    <section>
-        <button class="icon-arrow-left timer__arrow"></button>
-        <span class="meter__image">Start Timer</span>
-        <button class="icon-arrow-right timer__arrow-right hidden"></button>
-    </section>
+<div class="timer__frame">
+    <button class="icon-arrow-left timer__arrow"></button>
+    <div class="timer__cycle">
+        <div class="timer__content">
+            <span class="timer__break-state hidden">Break</span>
+            <span class="timer__text"></span>
+            <span class="timer__left-time"></span>
+            <span class="timer__minutes hidden">min</span>
+        </div>
+        <svg class="timer__cycle--inside">
+        </svg>
+    </div>
+    <button class="icon-arrow-right timer__arrow-right hidden"></button>
 </div>
 
 <div class="timer__buttons">
-    <button class="timer__start">Start</button>
+    <button class="timer__start">Start Pomodoro</button>
     <button class="timer__fail--inProgress hidden">Fail Pomodora</button>
     <button class="timer__finish--inProgress hidden">Finish Pomodora</button>
     <button class="timer__finish-task hidden">Finish Task</button>

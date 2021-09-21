@@ -1,5 +1,6 @@
 import GlobalListView from "../globalList/globalListView";
 import {eventBus} from "../../eventBus";
+import Modal from "../modal/modal";
 
 class DailyListView extends GlobalListView {
     constructor() {
@@ -12,6 +13,7 @@ class DailyListView extends GlobalListView {
             completed: []
         }
         this.completedTaskIds = []
+        this.removedTaskIds = []
     }
 
     render = tasks => {
@@ -24,6 +26,10 @@ class DailyListView extends GlobalListView {
             if (item.model.status.COMPLETED === true) {
                 this.completedTaskIds.push(item.model.id)
             }
+
+            if (item.model.isRemoved === true) {
+                this.removedTaskIds.push(item.model.id)
+            }
             return item.view.task
         }).join('')
         this.addCompletedClasses()
@@ -34,7 +40,7 @@ class DailyListView extends GlobalListView {
 
     checkActiveTab = () => {
         const isToDo = Array.from(this.rightTabsContainer.querySelectorAll('.tabs'))
-            .filter(item=>item.classList.contains('active'))
+            .filter(item => item.classList.contains('active'))
             .includes(this.toDoTab)
         isToDo ? this.displayTasks('toDo') : this.displayTasks('done')
     }
@@ -42,6 +48,11 @@ class DailyListView extends GlobalListView {
     addCompletedClasses = () => {
         this.taskElements = Array.from(this.dailyTaskList.querySelectorAll('.tasks__element'))
         this.taskElements.forEach(task => {
+            this.removedTaskIds.forEach(id => {
+                if (task.id === id) {
+                    task.parentNode.removeChild(task)
+                }
+            })
             this.completedTaskIds.forEach(id => {
                 if (task.id === id) {
                     task.classList.add('done')
@@ -54,11 +65,29 @@ class DailyListView extends GlobalListView {
     }
 
     displayTasks = state => {
-        state === 'done' ?
+        const addTaskMessage = document.querySelector('.add-task')
+        const taskMessage = document.querySelector('.tasks__message')
+        const addFirstTask = document.querySelector('.add-first-task')
+
+        if (state === 'done') {
+            addTaskMessage.className = 'add-task hidden'
+            taskMessage.className = 'tasks__message hidden'
             this.taskElements.forEach(item => item.classList.contains('done') ?
                 item.classList.remove('hidden') : item.classList.add('hidden'))
-            : this.taskElements.forEach(item => item.classList.contains('done') ?
-            item.classList.add('hidden') : item.classList.remove('hidden'))
+        } else {
+            const activeDailyTasks = Array.from(this.dailyTaskList.querySelectorAll('.tasks__element'))
+                .filter(item => !item.classList.contains('done'))
+            if (!this.globalList.querySelectorAll('.tasks__element').length && !activeDailyTasks.length) {
+                addTaskMessage.classList.remove('hidden')
+            }
+
+            if (!addFirstTask.classList.contains('hidden') || !this.globalList.classList.contains('hidden')) {
+                addTaskMessage.className = 'add-task hidden'
+            }
+
+            this.taskElements.forEach(item => item.classList.contains('done') ?
+                item.classList.add('hidden') : item.classList.remove('hidden'))
+        }
     }
 
     bindAllEvents = () => {
@@ -66,9 +95,14 @@ class DailyListView extends GlobalListView {
             this.bindEditEvent(this.dailyTaskList, 'Daily')
             this.bindDeleteEvent(this.dailyTaskList, 'Daily')
             this.bindTimerEvent(this.dailyTaskList)
+            this.bindAddEvent()
             this.dailyTaskList.classList.add('binded')
         }
     }
+
+    bindAddEvent = () => Array.from(document.querySelectorAll('.add-image'))
+        .forEach(item => item.onclick = () => new Modal('add', {}))
+
 
     hideArrowIcons = () => Array.from(this.dailyTaskList.querySelectorAll('.icon-arrows-up'))
         .forEach(item => item.classList.add('hidden'))

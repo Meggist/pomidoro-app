@@ -16,7 +16,7 @@ class TimerComponentController {
 
     finishTask = () => {
         this.view.displayFinishedTask()
-        this.view.displayCompletedPomodorosIcons()
+        //this.view.displayCompletedPomodorosIcons()
         this.model.finishTask()
     }
 
@@ -28,7 +28,7 @@ class TimerComponentController {
             this.finishTask()
             return
         }
-        this.startBreak()
+        this.startBreak('finish')
     }
 
     addPomodoro = () => {
@@ -49,18 +49,18 @@ class TimerComponentController {
             this.finishTask()
             return
         }
-        this.startBreak()
+        this.startBreak('fail')
     }
 
     checkTaskFinish = () => this.model.activeTask.estimation ===
         (this.model.activeTask.failedPomodoros + this.model.activeTask.completedCount)
 
-    startBreak = () => {
+    startBreak = state => {
         if (this.view.pastedWorkIterations < this.view.cycleData.workIteration) {
-            this.view.startShortBreak()
+            this.view.startBreak('short', state)
         } else {
             this.view.pastedWorkIterations = 0
-            this.view.startLongBreak()
+            this.view.startBreak('long', state)
         }
     }
 }

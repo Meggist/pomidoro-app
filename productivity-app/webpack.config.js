@@ -1,7 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-//const HandlebarsPlugin = require("handlebars-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const webpack = require('webpack')
+
 module.exports = {
     mode: 'none',
     entry: './src/app/app.js',
@@ -64,6 +65,10 @@ module.exports = {
                 to: 'images'
             }
         ]),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
     ],
     devServer: {
         historyApiFallback: true,

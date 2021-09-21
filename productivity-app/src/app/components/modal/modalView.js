@@ -227,7 +227,7 @@ class ModalView {
     bindAcceptEvent = data => this.createTaskButton.onclick = this.removeButton.onclick = () => {
         if (data.isDeleting) {
             eventBus.publish('cleanBasket')
-            eventBus.publish('acceptDeleteModal', data.ids)
+            eventBus.publish('acceptDeleteModal', data)
             this.closeModalWindow()
             return
         }
@@ -268,7 +268,8 @@ class ModalView {
             createDate: new Date(Date.now()).toDateString(),
             completedCount: 0,
             failedPomodoros: 0,
-            completeDate: ''
+            completeDate: '',
+            isRemoved: false
         }
     }
 
