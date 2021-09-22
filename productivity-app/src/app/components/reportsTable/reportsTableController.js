@@ -9,7 +9,10 @@ class ReportsTableController {
         this.filterData()
     }
 
-    render = data => this.view.append(data)
+    render = data => {
+        this.view.append(data)
+        this.view.test()
+    }
     filterData = () => this.model.getData()
 }
 

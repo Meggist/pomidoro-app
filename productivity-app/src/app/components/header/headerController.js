@@ -55,22 +55,25 @@ class HeaderController {
             if (this.model.selectedTasks.length) {
                 eventBus.subscribe('cleanBasket', this.cleanBasket)
                 new Modal('delete', this.model.selectedTasks)
+                return
             }
             this.view.isRemoveMode = !this.view.isRemoveMode
             this.view.handleRemoveMode()
         }
     }
 
-    clickSelectedTasks = ()=> this.allTasks.filter(item => this.model.selectedTasks.includes(item.id))
+    clickSelectedTasks = () => this.allTasks.filter(item => this.model.selectedTasks.includes(item.id))
         .forEach(item => {
             const trashIcon = item.querySelector('.remove-mode-trash')
             if (!trashIcon.classList.contains('hidden')) {
-                this.model.selectedTasks =  this.model.selectedTasks.filter(id => id !== item.id)
+                this.model.selectedTasks = this.model.selectedTasks.filter(id => id !== item.id)
                 trashIcon.click()
             }
         })
 
     cleanBasket = () => {
+        this.view.isRemoveMode = !this.view.isRemoveMode
+        this.view.handleRemoveMode()
         this.model.selectedTasks = []
         this.view.displaySelectedTasks(this.model.selectedTasks.length)
     }

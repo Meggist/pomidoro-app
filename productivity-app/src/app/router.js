@@ -83,4 +83,4 @@ setTimeout(() => {
     if (document.getElementById('root').innerHTML === '') {
         location.reload()
     }
-},6000)
+},10000)
