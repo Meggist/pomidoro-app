@@ -9,6 +9,7 @@ class TaskListController {
         this.view = view
         eventBus.subscribe('finishCollectionRender', this.createLists)
         this.taskCollection = new TaskCollection()
+        this.isBinded = false
     }
 
     createLists = taskCollection => {
@@ -16,6 +17,10 @@ class TaskListController {
         const dailyList = new DailyList(taskCollection)
         const globalList = new GlobalList(taskCollection)
         this.header.controller.clickSelectedTasks()
+        if (!this.isBinded) {
+            globalList.controller.bindAllEvents()
+            this.isBinded = true
+        }
     }
 
     render = taskCollection => {

@@ -8,6 +8,7 @@ class GlobalListView {
     constructor() {
         this.globalList = document.querySelector('.global-list-section')
         this.globalGroupsList = document.querySelector('.global-list-groups')
+        this.lists = document.querySelector('.lists')
     }
 
     render = tasks => {
@@ -19,19 +20,15 @@ class GlobalListView {
         this.globalGroupsList.innerHTML = this.renderedTemplate
         this.displayGroups()
         this.filterGroups()
-        this.bindAllEvents()
         eventBus.publish('displayAllTasks')
         eventBus.publish('checkRemoveMode')
     }
 
     bindAllEvents = () => {
-        if (this.globalList.classList.contains('binded') !== true) {
             this.bindShowHideEvent()
             this.bindEditEvent(this.globalList, 'Global')
             this.bindDeleteEvent(this.globalList, 'Global')
             this.bindMoveToDailyListEvent()
-            this.globalList.classList.add('binded')
-        }
     }
 
     filterGroups = () => {

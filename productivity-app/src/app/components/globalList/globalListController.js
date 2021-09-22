@@ -6,7 +6,6 @@ class GlobalListController {
     constructor(model, view) {
         this.model = model
         this.view = view
-        this.bindTabsEvents()
         eventBus.subscribe('renderGlobalTasks', this.render)
         eventBus.subscribe('renderGlobalList', this.append)
         eventBus.subscribe('editGlobalTask', this.editTask)
@@ -57,19 +56,20 @@ class GlobalListController {
             .then(() => eventBus.publish('updateTaskCollection'))
     }
 
-    bindTabsEvents = () => {
-        if (this.view.globalList.classList.contains('tabBind') !== true) {
-            this.view.globalList.addEventListener('click', ({target}) => {
-                if (target.className === 'global-list__tab') {
-                    const tabs = document.querySelectorAll('.global-list__tab')
-                    tabs.forEach(item => item.classList.remove('active'))
-                    target.classList.add('active')
-                    this.view.render(this.tasks)
-                }
-            })
-            this.view.globalList.classList.add('tabBind')
+    bindAllEvents = () => {
+        this.view.globalList.addEventListener('click', this.tabHandler)
+        this.view.bindAllEvents()
+    }
+
+    tabHandler = ({target}) => {
+        if (target.className === 'global-list__tab') {
+            const tabs = document.querySelectorAll('.global-list__tab')
+            tabs.forEach(item => item.classList.remove('active'))
+            target.classList.add('active')
+            this.view.render(this.tasks)
         }
     }
+
 }
 
 export default GlobalListController
