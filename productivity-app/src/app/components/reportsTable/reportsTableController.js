@@ -10,8 +10,8 @@ class ReportsTableController {
     }
 
     render = data => {
-        this.view.append(data)
-        this.view.test()
+        this.view.append()
+        this.view.appendHighChart(data)
     }
     filterData = () => this.model.getData()
 }

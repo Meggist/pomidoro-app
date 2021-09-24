@@ -8,75 +8,136 @@ class ReportsTableView {
         this.reportsContainer = document.querySelector('.graph__content')
     }
 
-    append = data => this.reportsContainer.innerHTML = template(data)
+    append = () => this.reportsContainer.innerHTML = template()
 
-    test = () => {
+    appendHighChart = ({date, data}) => {
+        let highChartCategories = []
+        let highChartData = {}
+        let failStack = 'succeed'
+        if (date === 'day') {
+            highChartCategories = ['URGENT', 'HIGH', 'MIDDLE', 'LOW', 'FAILED']
+            highChartData = {
+                urgent: [data.urgent, 0, 0, 0, 0],
+                high: [0, data.high, 0, 0, 0],
+                middle: [0, 0, data.middle, 0, 0],
+                low: [0, 0, 0, data.low, 0],
+                failed: [0, 0, 0, 0, data.failed]
+            }
+        }
+
+        if (date === 'week') {
+            highChartCategories = ['MON', 'TUE', 'WED', 'THU', 'FRI']
+            highChartData = {
+                urgent: data.urgent,
+                high: data.high,
+                middle: data.middle,
+                low: data.low,
+                failed: data.failed
+            }
+            failStack = 'failed'
+        }
+
+        console.log(highChartData)
         highChart.chart('highChart', {
             chart: {
-                type: 'column'
+                type: 'column',
+                backgroundColor: '#2a3f50'
             },
-            title: {
-                text: 'Monthly Average Rainfall'
-            },
-            subtitle: {
-                text: 'Source: WorldClimate.com'
-            },
+            credits: {enabled: false},
             xAxis: {
-                categories: [
-                    'Jan',
-                    'Feb',
-                    'Mar',
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec'
-                ],
-                crosshair: true
+                categories: highChartCategories,
+                min: 0,
+                labels: {
+                    style: {
+                        color: 'white'
+                    }
+                },
+                minorScale: 1
             },
+            plotOptions: {
+                column: {/*
+                    minPointLength: 0,
+                    borderWidth: 0,
+                    pointWidth: 40,
+                    dataLabels: {
+                        align: 'center'
+                    },
+                    */
+                    stacking: 'normal'
+                },
+                /*
+                series: {
+                    groupPadding: 0.5
+                },
+                 */
+                legend: {
+                    color: 'rgba(141, 165, 184, 1)',
+                }
+            },
+            /*
+            tooltip: {
+                className: 'tool-tip',
+                backgroundColor: 'rgba(219, 234, 245, 0.9)',
+                borderColor: 'none',
+                useHTML: true,
+                borderRadius: 6,
+                formatter: function () {
+                    const columnValue = this.points.find(item => item.y !== 0).y
+                    return `<span style="font-size:12px">${this.x}</span><br>
+                        <span>${data.title[0].toUpperCase() + data.title.slice(1)}: ${columnValue}</span>`
+                },
+                shared: true
+            },
+
+             */
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Rainfall (mm)'
+                    text: ''
+                },
+                lineWidth: 1,
+                gridLineColor: '#345168',
+                labels: {
+                    style: {
+                        color: 'white'
+                    }
                 }
             },
-            tooltip: {
-                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
+            title: {
+                text: ''
             },
-            plotOptions: {
-                column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
-                }
-            },
-            series: [{
-                name: 'Tokyo',
-                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-
-            }, {
-                name: 'New York',
-                data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
-
-            }, {
-                name: 'London',
-                data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-
-            }, {
-                name: 'Berlin',
-                data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
-
-            }]
+            series: [
+                {
+                    name: 'Urgent',
+                    data: highChartData.urgent,
+                    color: '#E74C3C',
+                    stack: 'succeed'
+                },
+                {
+                    name: 'High',
+                    data: highChartData.high,
+                    color: '#E67E22',
+                    stack: 'succeed'
+                },
+                {
+                    name: 'Middle',
+                    data: highChartData.middle,
+                    color: '#DFB500',
+                    stack: 'succeed'
+                }, {
+                    name: 'Low',
+                    data: highChartData.low,
+                    color: '#16A085',
+                    stack: 'succeed'
+                }, {
+                    name: 'Failed',
+                    data: highChartData.failed,
+                    color: '#8DA5B8',
+                    stack: failStack
+                }]
         });
     }
+
 }
 
 export default ReportsTableView
