@@ -63,9 +63,10 @@ class ReportsTableModel {
                     : ++dataObj[this.getPriority(item.priority)][completeDay]
             }
         })
-        //const obj = Object.assign({}, dataObj.weekDays)
-        //dataObj.weekDays = Object.keys(obj).forEach(dataObj[]);
-        console.log(dataObj)
+        const finalWeekDays = []
+        Object.keys(dataObj.weekDays).forEach(key => arr[dataObj.weekDays[key]] = key)
+        dataObj.weekDays = finalWeekDays
+
         return dataObj
     }
 
@@ -129,19 +130,16 @@ class ReportsTableModel {
     }
 
     getStartWeekDate = () => {
-        let now = new Date();
-        let dayOfWeek = now.getDay()
-        let numDay = now.getDate();
+        const date = new Date();
+        date.setDate(date.getDate() - 6)
+        date.setHours(0)
+        date.setMinutes(0)
+        date.setSeconds(0)
 
-        let start = new Date(now)
-        start.setDate(numDay - dayOfWeek);
-        start.setHours(0, 0, 0, 0)
-
-        return start
+        return date
     }
 
     isLastWeek = date => this.getStartWeekDate() < date
-
 
     isLastMonth = date => {
         const monthAgoDate = new Date(new Date().setDate(new Date().getDate() - 30))
