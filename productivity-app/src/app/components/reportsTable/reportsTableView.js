@@ -26,7 +26,7 @@ class ReportsTableView {
         }
 
         if (date === 'week') {
-            highChartCategories = ['MON', 'TUE', 'WED', 'THU', 'FRI']
+            highChartCategories = data.weekDays
             highChartData = {
                 urgent: data.urgent,
                 high: data.high,
@@ -37,7 +37,20 @@ class ReportsTableView {
             failStack = 'failed'
         }
 
-        console.log(highChartData)
+        if (date === 'month') {
+            highChartCategories = []
+            for (let i = 1; i < 31; i++) {
+                highChartCategories.push(i.toString())
+            }
+            highChartData = {
+                urgent: data.urgent,
+                high: data.high,
+                middle: data.middle,
+                low: data.low,
+                failed: data.failed
+            }
+        }
+        
         highChart.chart('highChart', {
             chart: {
                 type: 'column',
@@ -48,11 +61,11 @@ class ReportsTableView {
                 categories: highChartCategories,
                 min: 0,
                 labels: {
+                    step: 1,
                     style: {
                         color: 'white'
                     }
-                },
-                minorScale: 1
+                }
             },
             plotOptions: {
                 column: {/*
@@ -98,6 +111,7 @@ class ReportsTableView {
                 lineWidth: 1,
                 gridLineColor: '#345168',
                 labels: {
+                    step: 1,
                     style: {
                         color: 'white'
                     }
