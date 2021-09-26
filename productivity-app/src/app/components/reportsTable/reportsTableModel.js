@@ -64,7 +64,7 @@ class ReportsTableModel {
             }
         })
         const finalWeekDays = []
-        Object.keys(dataObj.weekDays).forEach(key => arr[dataObj.weekDays[key]] = key)
+        Object.keys(dataObj.weekDays).forEach(key => finalWeekDays[dataObj.weekDays[key]] = key)
         dataObj.weekDays = finalWeekDays
 
         return dataObj
