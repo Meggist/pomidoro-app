@@ -11,7 +11,6 @@ class ReportsTableView {
     append = () => this.reportsContainer.innerHTML = template()
 
     appendHighChart = ({date, type, data: {urgent, high, middle, low, failed, weekDays}}) => {
-        console.log(date, type, urgent, high, middle, low, failed, weekDays)
         let highChartCategories = []
         let highChartData = {}
         let columnOptions = {}
@@ -110,7 +109,6 @@ class ReportsTableView {
                 borderRadius: 6,
 
                 formatter: function () {
-                    console.log(this)
                     let tooltipDate
 
                     if (date === 'day') {
@@ -123,8 +121,6 @@ class ReportsTableView {
                     return `<span style="font-size:12px">${tooltipDate}</span><br>
                         <span>${type[0].toUpperCase() + type.slice(1)}: ${this.y}</span>`
                 },
-
-
                 shared: false
             },
 
