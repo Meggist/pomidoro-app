@@ -10,31 +10,53 @@ class ReportsTableView {
 
     append = () => this.reportsContainer.innerHTML = template()
 
-    appendHighChart = ({date, data}) => {
+    appendHighChart = ({date, type, data: {urgent, high, middle, low, failed, weekDays}}) => {
+        console.log(date, type, urgent, high, middle, low, failed, weekDays)
         let highChartCategories = []
         let highChartData = {}
+        let columnOptions = {}
+        let seriesOptions = {}
         let failStack = 'succeed'
         if (date === 'day') {
             highChartCategories = ['URGENT', 'HIGH', 'MIDDLE', 'LOW', 'FAILED']
             highChartData = {
-                urgent: [data.urgent, 0, 0, 0, 0],
-                high: [0, data.high, 0, 0, 0],
-                middle: [0, 0, data.middle, 0, 0],
-                low: [0, 0, 0, data.low, 0],
-                failed: [0, 0, 0, 0, data.failed]
+                urgent: [urgent, 0, 0, 0, 0],
+                high: [0, high, 0, 0, 0],
+                middle: [0, 0, middle, 0, 0],
+                low: [0, 0, 0, low, 0],
+                failed: [0, 0, 0, 0, failed]
+            }
+
+            columnOptions = {
+                minPointLength: 0,
+                borderWidth: 0,
+                pointWidth: 40,
+                dataLabels: {
+                    align: 'center'
+                },
+                stacking: 'normal'
+            }
+            seriesOptions = {
+                groupPadding: 0.5
             }
         }
 
         if (date === 'week') {
-            highChartCategories = data.weekDays
+            highChartCategories = weekDays
             highChartData = {
-                urgent: data.urgent,
-                high: data.high,
-                middle: data.middle,
-                low: data.low,
-                failed: data.failed
+                urgent: urgent,
+                high: high,
+                middle: middle,
+                low: low,
+                failed: failed
             }
             failStack = 'failed'
+
+            columnOptions = {
+                borderWidth: 0,
+                stacking: 'normal'
+            }
+            seriesOptions = {}
         }
 
         if (date === 'month') {
@@ -43,14 +65,20 @@ class ReportsTableView {
                 highChartCategories.push(i.toString())
             }
             highChartData = {
-                urgent: data.urgent,
-                high: data.high,
-                middle: data.middle,
-                low: data.low,
-                failed: data.failed
+                urgent: urgent,
+                high: high,
+                middle: middle,
+                low: low,
+                failed: failed
             }
+
+            columnOptions = {
+                borderWidth: 0,
+                stacking: 'normal'
+            }
+            seriesOptions = {}
         }
-        
+
         highChart.chart('highChart', {
             chart: {
                 type: 'column',
@@ -67,42 +95,39 @@ class ReportsTableView {
                     }
                 }
             },
-            plotOptions: {
-                column: {/*
-                    minPointLength: 0,
-                    borderWidth: 0,
-                    pointWidth: 40,
-                    dataLabels: {
-                        align: 'center'
-                    },
-                    */
-                    stacking: 'normal'
-                },
-                /*
-                series: {
-                    groupPadding: 0.5
-                },
-                 */
-                legend: {
-                    color: 'rgba(141, 165, 184, 1)',
-                }
+            legend: {
+                enabled: false,
             },
-            /*
+            plotOptions: {
+                column: columnOptions,
+                series: seriesOptions,
+            },
             tooltip: {
                 className: 'tool-tip',
                 backgroundColor: 'rgba(219, 234, 245, 0.9)',
                 borderColor: 'none',
                 useHTML: true,
                 borderRadius: 6,
+
                 formatter: function () {
-                    const columnValue = this.points.find(item => item.y !== 0).y
-                    return `<span style="font-size:12px">${this.x}</span><br>
-                        <span>${data.title[0].toUpperCase() + data.title.slice(1)}: ${columnValue}</span>`
+                    console.log(this)
+                    let tooltipDate
+
+                    if (date === 'day') {
+                        tooltipDate = this.x
+                    }
+
+                    if (date === 'week' || date === 'month') {
+                        tooltipDate = this.series.name
+                    }
+                    return `<span style="font-size:12px">${tooltipDate}</span><br>
+                        <span>${type[0].toUpperCase() + type.slice(1)}: ${this.y}</span>`
                 },
-                shared: true
+
+
+                shared: false
             },
 
-             */
             yAxis: {
                 min: 0,
                 title: {

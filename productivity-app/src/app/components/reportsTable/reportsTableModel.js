@@ -63,9 +63,9 @@ class ReportsTableModel {
                     : ++dataObj[this.getPriority(item.priority)][completeDay]
             }
         })
-        //const obj = Object.assign({}, dataObj.weekDays)
-        //dataObj.weekDays = Object.keys(obj).forEach(dataObj[]);
-        console.log(dataObj)
+        const finalWeekDays = []
+        Object.keys(dataObj.weekDays).forEach(key => finalWeekDays[dataObj.weekDays[key]] = key)
+        dataObj.weekDays = finalWeekDays
         return dataObj
     }
 
@@ -109,6 +109,7 @@ class ReportsTableModel {
                 let filteredData = Object.values(data).filter(item => this.periodFilter(new Date(item.completeDate)))
                 finalObject.date = this.period
                 finalObject.data = this.periodRender(filteredData)
+                finalObject.type = this.type
                 return finalObject
             })
             .then(data => eventBus.publish('getReportsData', data))
