@@ -13,8 +13,9 @@ class CycleController {
 
     append = data => this.view.renderCounters(data)
 
-    handleSaveEvent = data => {
-        this.model.pushValues(data)
+    handleSaveEvent = async data => {
+        $('main').notification({type: 'success', text: 'Settings was successfully saved'})
+        await this.model.pushValues(data)
         window.location.href = "http://localhost:3000/task-list"
     }
 }

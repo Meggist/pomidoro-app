@@ -40,6 +40,7 @@ class GlobalListController {
 
     moveTask = id => {
         if (this.model.dailyTasksAmount >= 5) {
+            $('main').notification({type: 'error', text: 'Unable to move to the daily task list. Try again later'})
             return
         }
         let editedTask
@@ -53,7 +54,10 @@ class GlobalListController {
         const taskData = Object.assign({}, editedTask.model)
         delete taskData.id
         dataBase.updateField(`taskCollection/${id}`, taskData)
-            .then(() => eventBus.publish('updateTaskCollection'))
+            .then(() => {
+                eventBus.publish('updateTaskCollection')
+                $('main').notification({type: 'info', text: 'You task was moved to the daily task list'})
+            })
     }
 
     bindAllEvents = () => {

@@ -32,6 +32,7 @@ class TaskListController {
             this.view.displayLists(taskCollection)
         }
     }
+
 }
 
 export default TaskListController

@@ -229,6 +229,7 @@ class ModalView {
             eventBus.publish('cleanBasket')
             eventBus.publish('acceptDeleteModal', data)
             this.closeModalWindow()
+            $('main').notification({type:'success', text:'Your tasks was successfully removed'})
             return
         }
         const values = this.selectModalInputsValue()
@@ -241,14 +242,14 @@ class ModalView {
             }
             eventBus.publish('acceptAddModal', values)
             this.closeModalWindow()
-            console.log("Task added successfully")
+            $('main').notification({type:'success', text:'Your task was successfully saved'})
             return
         }
 
         if (data.deadlineDate) {
             values.id = data.id
             eventBus.publish('acceptEditModal', values)
-            console.log("Task edited successfully")
+            $('main').notification({type:'success', text:'Your task was successfully saved'})
             this.closeModalWindow()
         }
     }

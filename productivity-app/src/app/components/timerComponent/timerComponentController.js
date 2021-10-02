@@ -16,8 +16,12 @@ class TimerComponentController {
 
     finishTask = () => {
         this.view.displayFinishedTask()
-        //this.view.displayCompletedPomodorosIcons()
         this.model.finishTask()
+        const allUsedPomodoros = this.model.activeTask.failedPomodoros + this.model.activeTask.completedCount
+        const isNextLongBreak = !(this.view.pastedWorkIterations < this.view.cycleData.workIteration)
+        this.model.activeTask.estimation === allUsedPomodoros && isNextLongBreak
+            ? $('main').notification({type:'warning', text:'Long break started, please have a rest!'})
+            : $('main').notification({type:'success', text:'You finished task!'})
     }
 
     finishPomodoro = () => {
@@ -29,6 +33,7 @@ class TimerComponentController {
             return
         }
         this.startBreak('finish')
+        $('main').notification({type:'info', text:'You finished pomodoro!'})
     }
 
     addPomodoro = () => {

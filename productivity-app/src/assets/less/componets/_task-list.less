@@ -422,12 +422,15 @@
 .tasks__notification {
   float: right;
   display: flex;
-  width: 100%;
+  width: 94%;
   opacity: 0.9;
   margin-top: -6.875rem;
   height: 4.5rem;
   border-radius: 0.3125rem;
   border: solid white 0.0625rem;
+  position: fixed;
+  bottom: 2.125rem;
+  right: 3%
 }
 
 .notification__icon {
@@ -903,6 +906,11 @@
 }
 
 @media (min-width: 90rem) {
+  .tasks__notification {
+    right: 0;
+    left:50%;
+    margin-left: 110px;
+  }
 
   .tasks__category-indicator {
     width: 0.5rem;
