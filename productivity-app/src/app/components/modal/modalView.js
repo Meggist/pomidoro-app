@@ -110,11 +110,9 @@ class ModalView {
         4: 'urgent'
     })[index]
 
-    displayDate = () => {
-        this.dateInput.valueAsDate = new Date()
-    }
-
     displayModalWindow = data => {
+        $('#modalInputDate').datepicker()
+
         document.querySelector('.modal-wrapper').classList.remove('hidden')
         document.querySelector('.header').classList.add('hidden')
         document.querySelector('.main').classList.add('modal-display')
@@ -223,6 +221,8 @@ class ModalView {
     }
 
     bindCloseEvent = () => this.closeModalButton.onclick = this.cancelButton.onclick= this.closeModalWindow
+
+
 
     bindAcceptEvent = data => this.createTaskButton.onclick = this.removeButton.onclick = () => {
         if (data.isDeleting) {

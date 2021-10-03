@@ -36,6 +36,9 @@
         "firebase": "^8.9.1",
         "highcharts": "^9.2.2",
         "idempotent-babel-polyfill": "^7.4.4",
-        "jquery": "^3.6.0"
+        "jquery": "^3.6.0",
+        "jquery-ui-bundle": "^1.12.1-migrate",
+        "jquery-ui-css": "^1.11.5",
+        "webpack-jquery-ui": "^2.0.1"
     }
 }

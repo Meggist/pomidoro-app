@@ -17,7 +17,7 @@ module.exports = {
         ],
         alias: {
             '@less-helpers-module': path.resolve(__dirname, 'src/assets/less/helpers'), // alias for less helpers
-            '@assets-root-path': path.resolve(__dirname, 'src/assets') // alias for assets (use for images & fonts)
+            '@assets-root-path': path.resolve(__dirname, 'src/assets'), // alias for assets (use for images & fonts)
         }
     },
     module: {
