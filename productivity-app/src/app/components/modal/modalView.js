@@ -111,7 +111,8 @@ class ModalView {
     })[index]
 
     displayModalWindow = data => {
-        $('#modalInputDate').datepicker()
+        $('#modalInputDate').datepicker({ dateFormat: 'dd-mm-yy' })
+        this.dateInput.value = new Date().toISOString().split('T')[0]
 
         document.querySelector('.modal-wrapper').classList.remove('hidden')
         document.querySelector('.header').classList.add('hidden')
@@ -161,9 +162,6 @@ class ModalView {
         this.bindPrioritiesEvents()
         this.bindCloseEvent()
         this.bindAcceptEvent(data)
-        if (!data.deadlineDate) {
-            this.displayDate()
-        }
     }
 
     closeModalWindow = () => {
