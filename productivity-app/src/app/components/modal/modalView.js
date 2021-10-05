@@ -111,7 +111,7 @@ class ModalView {
     })[index]
 
     displayModalWindow = data => {
-        $('#modalInputDate').datepicker({ dateFormat: 'dd-mm-yy' })
+        $('#modalInputDate').datepicker({dateFormat: 'dd-mm-yy'})
         this.dateInput.value = new Date().toISOString().split('T')[0]
 
         document.querySelector('.modal-wrapper').classList.remove('hidden')
@@ -218,19 +218,23 @@ class ModalView {
         this.priorities.forEach(item => item.onclick = () => this.choosePoint(item, 'priority'))
     }
 
-    bindCloseEvent = () => this.closeModalButton.onclick = this.cancelButton.onclick= this.closeModalWindow
-
-
+    bindCloseEvent = () => this.closeModalButton.onclick = this.cancelButton.onclick = this.closeModalWindow
 
     bindAcceptEvent = data => this.createTaskButton.onclick = this.removeButton.onclick = () => {
         if (data.isDeleting) {
             eventBus.publish('cleanBasket')
             eventBus.publish('acceptDeleteModal', data)
             this.closeModalWindow()
-            $('main').notification({type:'success', text:'Your tasks was successfully removed'})
+            $('main').notification({type: 'success', text: 'Your tasks was successfully removed'})
             return
         }
         const values = this.selectModalInputsValue()
+
+        if (values.title === '') {
+            alert('Write down the title')
+            return
+        }
+
         if (!data.deadlineDate) {
             values.status = {
                 GLOBAL_LIST: true,
@@ -240,14 +244,14 @@ class ModalView {
             }
             eventBus.publish('acceptAddModal', values)
             this.closeModalWindow()
-            $('main').notification({type:'success', text:'Your task was successfully saved'})
+            $('main').notification({type: 'success', text: 'Your task was successfully saved'})
             return
         }
 
         if (data.deadlineDate) {
             values.id = data.id
             eventBus.publish('acceptEditModal', values)
-            $('main').notification({type:'success', text:'Your task was successfully saved'})
+            $('main').notification({type: 'success', text: 'Your task was successfully saved'})
             this.closeModalWindow()
         }
     }
