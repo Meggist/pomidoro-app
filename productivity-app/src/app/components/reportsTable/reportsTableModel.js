@@ -107,10 +107,12 @@ class ReportsTableModel {
         dataBase.getFieldFromDB('taskCollection')
             .then(data => {
                 const finalObject = {}
-                let filteredData = Object.values(data).filter(item => this.periodFilter(new Date(item.completeDate)))
-                finalObject.date = this.period
-                finalObject.data = this.periodRender(filteredData)
+                if (data) {
+                    let filteredData = Object.values(data).filter(item => this.periodFilter(new Date(item.completeDate)))
+                    finalObject.data = this.periodRender(filteredData)
+                }
                 finalObject.type = this.type
+                finalObject.date = this.period
                 return finalObject
             })
             .then(data => eventBus.publish('getReportsData', data))

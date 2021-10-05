@@ -10,7 +10,15 @@ class ReportsTableView {
 
     append = () => this.reportsContainer.innerHTML = template()
 
-    appendHighChart = ({date, type, data: {urgent, high, middle, low, failed, weekDays}}) => {
+    appendHighChart = ({
+                           date, type,
+                           data = {
+                               urgent: 0, high: 0, middle: 0, low: 0, failed: 0,
+                               weekDays: ['MON', 'TUE', 'WED', 'THU',
+                                   'FRI', 'SAT', 'SUN']
+                           }
+                       }) => {
+        const {urgent, high, middle, low, failed, weekDays} = data
         let highChartCategories = []
         let highChartData = {}
         let columnOptions = {}

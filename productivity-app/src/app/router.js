@@ -79,8 +79,4 @@ if (!sessionStorage.isNoFirstVisit) {
     router.add('reports/month/pomodoros', () => new Reports('month', 'pomodoros'))
 }
 
-setTimeout(() => {
-    if (document.getElementById('root').innerHTML === '') {
-        location.reload()
-    }
-},10000)
+window.onerror = () => location.reload()

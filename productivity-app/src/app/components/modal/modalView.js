@@ -111,8 +111,8 @@ class ModalView {
     })[index]
 
     displayModalWindow = data => {
-        $('#modalInputDate').datepicker({dateFormat: 'dd-mm-yy'})
-        this.dateInput.value = new Date().toISOString().split('T')[0]
+        $('#modalInputDate').datepicker()
+        //this.dateInput.value = new Date().toISOString().split('T')[0]
 
         document.querySelector('.modal-wrapper').classList.remove('hidden')
         document.querySelector('.header').classList.add('hidden')
@@ -228,12 +228,20 @@ class ModalView {
             $('main').notification({type: 'success', text: 'Your tasks was successfully removed'})
             return
         }
+
+        if (this.dateInput.value === '') {
+            alert('Select the deadline date')
+            return
+        }
+
         const values = this.selectModalInputsValue()
 
         if (values.title === '') {
             alert('Write down the title')
             return
         }
+
+
 
         if (!data.deadlineDate) {
             values.status = {
