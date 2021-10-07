@@ -40,7 +40,8 @@ module.exports = {
         }, {
             test: /\.(woff|woff2|eot|ttf|otf)$/,
             use: ['file-loader']
-        },{  test: /\.m?js$/,
+        }, {
+            test: /\.m?js$/,
             exclude: /(node_modules|bower_components)/,
             use: {
                 loader: 'babel-loader',
@@ -48,7 +49,8 @@ module.exports = {
                     presets: ['@babel/preset-env']
                 }
             }
-        },{ test: /\.hbs/,
+        }, {
+            test: /\.hbs/,
             loader: 'handlebars-loader',
             exclude: /(node_modules|bower_components)/
         }
@@ -76,5 +78,3 @@ module.exports = {
         port: 3000
     }
 };
-
-

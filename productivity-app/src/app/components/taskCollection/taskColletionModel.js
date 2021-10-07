@@ -10,7 +10,7 @@ class TaskCollectionModel {
 
     getTasksData = () => {
         this.tasks = []
-        dataBase.db.ref('taskCollection').get()
+        return dataBase.db.ref('taskCollection').get()
             .then(collection => {
                 const correctCollection = collection.val()
                 if (correctCollection) {

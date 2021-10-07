@@ -31,7 +31,7 @@ class TaskItemView {
         11: 'December'
     })[index]
 
-    getDate = (task) => {
+    getDate = task => {
         let deadlineDate = new Date(task.deadlineDate)
         let currentDate = new Date(Date.now())
         if (deadlineDate.getDate() === currentDate.getDate()) {

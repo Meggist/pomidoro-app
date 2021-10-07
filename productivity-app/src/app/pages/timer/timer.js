@@ -8,7 +8,7 @@ class Timer {
     constructor() {
         router.changeDefaultRoute()
         document.getElementById('root').innerHTML = template()
-        const header = new Header('Timer')
+        this.header = new Header('Timer')
         dataBase.getFieldFromDB('taskCollection').then(taskCollection =>
             dataBase.getFieldFromDB('cycleData').then(cycleData => new TimerComponent(taskCollection, cycleData))
         )
