@@ -44,7 +44,12 @@ class ReportsTableView {
                 stacking: 'normal'
             }
             seriesOptions = {
-                groupPadding: 0.5
+                groupPadding: 0.5,
+                states: {
+                    inactive: {
+                        enabled: false,
+                    },
+                },
             }
         }
 
@@ -63,7 +68,13 @@ class ReportsTableView {
                 borderWidth: 0,
                 stacking: 'normal'
             }
-            seriesOptions = {}
+            seriesOptions = {
+                states: {
+                    inactive: {
+                        enabled: false,
+                    },
+                },
+            }
         }
 
         if (date === 'month') {
@@ -83,7 +94,13 @@ class ReportsTableView {
                 borderWidth: 0,
                 stacking: 'normal'
             }
-            seriesOptions = {}
+            seriesOptions = {
+                states: {
+                    inactive: {
+                        enabled: false,
+                    },
+                },
+            }
         }
 
         highChart.chart('highChart', {
